@@ -28,6 +28,7 @@ $RECYCLE.BIN/
 /Obj/
 /Builds/
 /Logs/
+/gitignore/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -81,5 +82,3 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 Ruins-Of-Might/Ruins-Of-Might/Library/
-Ruins-Of-Might/Ruins-Of-Might/obj/
-Ruins-Of-Might/Ruins-Of-Might/Temp/
