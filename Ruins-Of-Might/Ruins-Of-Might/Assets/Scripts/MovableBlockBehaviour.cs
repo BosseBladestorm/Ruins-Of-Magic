@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Not used
+/// </summary>
 public class MovableBlockBehaviour : CrystalBase {
 
     [Header("Settings")]
@@ -13,7 +16,7 @@ public class MovableBlockBehaviour : CrystalBase {
     [SerializeField] Transform m_root = null;
     [SerializeField] Transform m_target = null;
     [SerializeField] Transform m_block = null;
-    [SerializeField] AudioSource m_audiosrc = null;
+    [SerializeField] AudioSource m_audioSource = null;
     [SerializeField] Animator m_animator = null;
 
     [Header("Audio Clips")]
@@ -36,8 +39,8 @@ public class MovableBlockBehaviour : CrystalBase {
         m_moveTowards = m_target;
 
         if(audioClip_moveToTarget != null) {
-            m_audiosrc.clip = audioClip_moveToTarget;
-            m_audiosrc.Play();
+            m_audioSource.clip = audioClip_moveToTarget;
+            m_audioSource.Play();
 
         }
 
@@ -50,8 +53,8 @@ public class MovableBlockBehaviour : CrystalBase {
         m_moveTowards = m_root;
 
         if (audioClip_moveToTarget != null) {
-            m_audiosrc.clip = audioClip_moveFromTarget;
-            m_audiosrc.Play();
+            m_audioSource.clip = audioClip_moveFromTarget;
+            m_audioSource.Play();
 
         }
 
@@ -66,7 +69,7 @@ public class MovableBlockBehaviour : CrystalBase {
             m_block.position = Vector2.MoveTowards(m_block.position, m_moveTowards.position, Time.deltaTime * m_moveSpeed);
 
         } else {
-            m_audiosrc.Stop();
+            m_audioSource.Stop();
 
             if (m_animator != null)
                m_animator.SetTrigger(animTrigger_moveFromTarget);
