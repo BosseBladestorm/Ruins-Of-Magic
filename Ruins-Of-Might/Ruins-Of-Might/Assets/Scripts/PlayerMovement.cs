@@ -4,28 +4,50 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 10f;
-    [SerializeField] float jumpForce = 50f;
+    [SerializeField] float m_speed = 10f;
+    [SerializeField] float m_jumpForce = 50f;
 
-    [SerializeField] new Transform transform = null;
+    [SerializeField] Vector2 m_velocity;
 
-    private new Rigidbody2D rigidbody;
-    private GroundCheck groundCheck;
+    [SerializeField] Transform m_transform = null;
 
-    // Start is called before the first frame update
+    [SerializeField] Rigidbody2D m_rigidbody = null;
+    [SerializeField] GroundCheck m_groundCheck = null;
+
+    [SerializeField] Animator m_animator = null;
+
+    public string moveBool;
+    public string jumpStartTrigger;
+
     void Start() {
-        rigidbody = GetComponent<Rigidbody2D>();
-        groundCheck = GetComponentInChildren<GroundCheck>();
+        if (m_rigidbody == null) {
+            m_rigidbody = GetComponent<Rigidbody2D>();
+        }
+        if (m_groundCheck == null) {
+            m_groundCheck = GetComponentInChildren<GroundCheck>();
+        }
     }
 
-    // Update is called once per frame
     void Update() {
-        transform.Translate(Vector2.right * Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime);
-        //rigidbody.AddForce(Vector2.right * Input.GetAxisRaw("Horizontal") * speed, ForceMode2D.Force);
+        m_velocity = new Vector2(Input.GetAxisRaw("Horizontal") * m_speed, m_rigidbody.velocity.y);
+        //m_transform.Translate(Vector2.right * Input.GetAxisRaw("Horizontal") * m_speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded || Input.GetKeyDown(KeyCode.W) && groundCheck.isGrounded) {
-            rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if (Input.GetKeyDown(KeyCode.Space) && m_groundCheck.isGrounded || Input.GetKeyDown(KeyCode.W) && m_groundCheck.isGrounded) {
+            m_rigidbody.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
+            m_animator.SetTrigger(jumpStartTrigger);
         }
+
+        m_rigidbody.velocity = m_velocity;
+
+        if(Input.GetAxisRaw("Horizontal") != 0) {
+            m_transform.localScale = new Vector3(1 * Input.GetAxisRaw("Horizontal"), 1,1);
+            m_animator.SetBool(moveBool, true);
+        }
+
+        else {
+            m_animator.SetBool(moveBool, false);
+        }
+
         // NOTE: Obselete jump
         //if (marioJump) {
         //    if (Input.GetKeyDown(KeyCode.Space)) {

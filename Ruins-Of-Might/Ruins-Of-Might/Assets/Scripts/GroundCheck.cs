@@ -14,4 +14,7 @@ public class GroundCheck : MonoBehaviour
         isGrounded = false;
     }
 
+    private void OnTriggerStay2D(Collider2D collision) {
+        isGrounded = true;
+    }
 }

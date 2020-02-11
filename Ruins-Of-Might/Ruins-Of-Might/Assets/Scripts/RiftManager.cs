@@ -1,21 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class RiftManager : MonoBehaviour
 {
-    [SerializeField] static GameObject staff;
-    [SerializeField] LayerMask ObstecalMask;
-    [SerializeField] GameObject tempStaff;
+    [SerializeField] LayerMask m_raycastIgnore;
+    [SerializeField] Transform riftTransform;
     static List<RiftManager> riftsInViewList = new List<RiftManager>();
-    static RiftManager activeRift;
+    public static RiftManager activeRift { get; private set; }
+
+    public StaffBehaviour staff = null;
+    public CrystalBase target = null;
 
     private static bool hasCycled;
     private static int riftIndex;
+    
 
     private void Start(){
         riftsInViewList.Clear();
-        staff = tempStaff;
+        target = null;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
@@ -29,6 +32,7 @@ public class RiftManager : MonoBehaviour
         riftsInViewList.Add(this);
 
     }
+
     private void OnTriggerExit2D(Collider2D collider){
 
         riftsInViewList.Remove(this);
@@ -40,38 +44,81 @@ public class RiftManager : MonoBehaviour
 
     private void Update(){
 
-        if(activeRift == this) {
-            if (!hasCycled) {
-                if (Input.GetKeyDown(KeyCode.E)) {
-                    ChangeActiveRift(1);
-                    hasCycled = true;
+        if (activeRift == this) {
+            m_RiftCycleCheck();
 
-                }
+            if (target == null) {
 
-                if (Input.GetKeyDown(KeyCode.Q)) {
-                    ChangeActiveRift(-1);
-                    hasCycled = true;
-                }
+                Debug.DrawLine(riftTransform.position, staff.transform.position, Color.red);
+
+                RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, staff.transform.position, ~m_raycastIgnore.value);
+
+                if (!hit.collider?.GetComponent<StaffBehaviour>())
+                    return;
+
+                if (Input.GetMouseButton(0))
+                    staff.Fire();
+                else if (Input.GetMouseButtonUp(0))
+                    staff.StopFire();
 
             } else {
-                hasCycled = false;
-            }
 
-            if (Input.GetButton("Fire1"))
-                BeamTrigger();
+                if (Input.GetMouseButton(0)) {
+                    ChangeTarget(null);
+                    return;
+                }
+
+                RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, target.transform.position, ~m_raycastIgnore.value);
+
+                if (hit.collider?.GetComponent<CrystalBase>()) {
+                    Debug.DrawLine(transform.position, target.transform.position, Color.red);
+
+
+                } else {
+                    ChangeTarget(null);
+
+                }
+
+            }
 
         }
-        
+
     }
 
-    private void BeamTrigger(){
-        Vector2 staffPosition = staff.transform.position;
-        Vector2 riftPosition = transform.position;
-            if (!Physics2D.Linecast(riftPosition, staffPosition, ObstecalMask.value)){
-                RaycastHit2D hit = Physics2D.Linecast(riftPosition, staffPosition);
-                Debug.DrawLine(riftPosition, staffPosition, Color.red);
+    private void m_RiftCycleCheck() {
+        if (!hasCycled) {
+            if (Input.GetKeyDown(KeyCode.E)) {
+                ChangeActiveRift(1);
+                hasCycled = true;
+
             }
+
+            if (Input.GetKeyDown(KeyCode.Q)) {
+                ChangeActiveRift(-1);
+                hasCycled = true;
+            }
+
+        } else {
+            hasCycled = false;
+        }
     }
+
+    public void ChangeTarget(CrystalBase newTarget) {
+
+        if (target != null)
+            target.OnReleaseCrystal();
+
+        if(newTarget == null) {
+            target = null;
+            return;
+
+        }
+
+        target = newTarget;
+        newTarget.OnTriggerCrystal();
+
+    }
+
     private void ChangeActiveRift(int step){
         riftIndex += step;
 
@@ -86,6 +133,8 @@ public class RiftManager : MonoBehaviour
             activeRift = riftsInViewList[riftIndex];
     }
 
+    private void OnValidate() {
+        
+    }
 
-    
 }

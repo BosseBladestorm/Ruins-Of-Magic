@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8585710762793199963}
+  - component: {fileID: 8585710762793199965}
   - component: {fileID: 8585710762793199962}
   - component: {fileID: 8585710762793199960}
-  - component: {fileID: 8585710762793199965}
+  - component: {fileID: 1167114460}
   m_Layer: 0
   m_Name: Crystal_Wind
   m_TagString: Untagged
@@ -34,6 +35,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8585710762793199965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585710762793199964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c18f34d0694214e8e199301ff1da02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_isInstant: 0
+  m_growthSpeed: 25
+  m_angle: 90
+  m_force: 20
+  m_windPivot: {fileID: 8585710763094635751}
+  m_beamBase: {fileID: 8585710763796814708}
+  m_crystalTransform: {fileID: 8585710762793199963}
+  m_windBeam: {fileID: 8585710764263958201}
 --- !u!212 &8585710762793199962
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,7 +130,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7789962, y: 1.7789934}
   m_EdgeRadius: 0
---- !u!114 &8585710762793199965
+--- !u!114 &1167114460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,17 +139,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8585710762793199964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c18f34d0694214e8e199301ff1da02, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ebed2f9db76dfb4e8c41fc29f8cd1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isInstant: 0
-  m_growthSpeed: 25
-  m_angle: 90
-  m_force: 20
-  m_windPivot: {fileID: 8585710763094635751}
-  m_beamBase: {fileID: 8585710763796814708}
-  m_crystalTransform: {fileID: 8585710762793199963}
-  m_windBeam: {fileID: 8585710764263958201}
 --- !u!1 &8585710763094635750
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8585710763094635751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wind_Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8585710763796814708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wind_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +216,11 @@ GameObject:
   - component: {fileID: 8585710764263958203}
   - component: {fileID: 8585710764263958200}
   - component: {fileID: 8585710764263958201}
-  m_Layer: 0
+<<<<<<< HEAD
+  m_Layer: 2
+=======
+  m_Layer: 8
+>>>>>>> feature/Herman
   m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}

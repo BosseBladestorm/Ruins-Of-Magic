@@ -23,7 +23,7 @@ public class WindBehaviour : MonoBehaviour {
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();
             m_affectedObjects.Add(target);
-            target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            //target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             target.GetComponent<Rigidbody2D>().isKinematic = true;
         }
 
@@ -34,7 +34,7 @@ public class WindBehaviour : MonoBehaviour {
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();
             m_affectedObjects.Remove(target);
-            target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+           // target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             target.GetComponent<Rigidbody2D>().isKinematic = false;
 
         }
