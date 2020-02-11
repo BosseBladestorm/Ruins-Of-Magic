@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 8585710764263958203}
   - component: {fileID: 8585710764263958200}
   - component: {fileID: 8585710764263958201}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
