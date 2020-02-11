@@ -60,7 +60,12 @@ public class WindCrystalBehaviour : CrystalBase {
 
     public override void OnTriggerCrystal() {
 
-        if(m_isInstant) {
+        if (isTriggered)
+            return;
+        else
+            isTriggered = true;
+
+        if (m_isInstant) {
             m_windPivot.gameObject.SetActive(true);
 
         } else {
@@ -71,6 +76,13 @@ public class WindCrystalBehaviour : CrystalBase {
     }
 
     public override void OnReleaseCrystal() {
+
+        Debug.Log("Wind Crystal Released");
+
+        if (!isTriggered)
+            return;
+        else
+            isTriggered = false;
 
         if (m_isInstant) {
             m_windPivot.gameObject.SetActive(false);
@@ -93,6 +105,13 @@ public class WindCrystalBehaviour : CrystalBase {
             m_windBeam.force = m_force;
 
         }
+
+
+        if (m_beamBase == null)
+            Debug.LogWarning("beamBase is set to null (required)");
+
+        if(m_crystalTransform == null)
+            Debug.LogWarning("crystalTransform is set to null (required)");
 
     }
 
