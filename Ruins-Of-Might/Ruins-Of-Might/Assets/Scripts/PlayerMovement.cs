@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update() {
         transform.Translate(Vector2.right * Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime);
+        //rigidbody.AddForce(Vector2.right * Input.GetAxisRaw("Horizontal") * speed, ForceMode2D.Force);
 
         if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded || Input.GetKeyDown(KeyCode.W) && groundCheck.isGrounded) {
             rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);

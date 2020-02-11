@@ -16,7 +16,6 @@ public class RiftManager : MonoBehaviour
     private void Start(){
         riftsInViewList.Clear();
         staff = tempStaff;
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
