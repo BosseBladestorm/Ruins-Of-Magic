@@ -6,7 +6,7 @@ public class StaffBehaviour : MonoBehaviour {
 
     [SerializeField] Transform m_staffOrigin = null; //add onvalidate
     [SerializeField] LayerMask m_raycastIgnore;
-    [SerializeField] MouseEventPortObject m_mouseEventPort;
+    [SerializeField] LayerMask m_crystalLayer;
     [SerializeField] Animator m_animator;
     [SerializeField] string m_activateStaffBoolName;
 
@@ -21,10 +21,16 @@ public class StaffBehaviour : MonoBehaviour {
         if (m_IsFiring)
             FireBeam();
 
+        if(Input.GetMouseButtonUp(0)) {
+            RaycastHit2D hit = Physics2D.Raycast(m_mousePos, Vector2.zero, 10f, m_crystalLayer.value);
+            StopFire(hit.transform?.GetComponent<CrystalBase>());
+            
+        }
+
     }
 
     private void FireBeam() {
-        
+        Debug.Log("fire");
         RaycastHit2D hit = Physics2D.Linecast(m_staffOrigin.position, m_mousePos, ~m_raycastIgnore.value);
 
         if(hit.transform != null)
@@ -55,13 +61,13 @@ public class StaffBehaviour : MonoBehaviour {
 
     public void Fire() {
         m_IsFiring = true;
-        m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
+       // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
 
     }
 
     public void StopFire() {
         m_IsFiring = false;
-        m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
+       // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
 
         if (m_targetCrystal != null)
             m_targetCrystal.OnReleaseCrystal();
@@ -70,12 +76,12 @@ public class StaffBehaviour : MonoBehaviour {
 
     }
 
-    public void StopFire(MouseEventListner sender) {
+    public void StopFire(CrystalBase snapTarget) {
 
         m_IsFiring = false;
 
-        if (sender.transform.GetComponent<CrystalBase>() != null) {
-            RiftManager.activeRift.ChangeTarget(sender.transform.GetComponent<CrystalBase>());
+        if (snapTarget != null) {
+            RiftManager.activeRift.ChangeTarget(snapTarget);
             m_targetCrystal = null;
 
         } else {
@@ -89,21 +95,10 @@ public class StaffBehaviour : MonoBehaviour {
 
     }
 
-    private void OnEnable() {
-        m_mouseEventPort.OnMouseButtonUp += StopFire;
-    }
-
-    private void OnDisable() {
-        m_mouseEventPort.OnMouseButtonUp -= StopFire;
-    }
-
     private void OnValidate() {
 
         if (m_staffOrigin == null)
             Debug.LogWarning("staffOrigin is set to null");
-
-        if (m_mouseEventPort == null)
-            Debug.LogWarning("mouseEventPort is set to null");
 
         if (m_animator == null)
             Debug.LogWarning("animator is set to null");

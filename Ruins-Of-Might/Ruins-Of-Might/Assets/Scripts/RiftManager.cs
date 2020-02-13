@@ -53,7 +53,7 @@ public class RiftManager : MonoBehaviour
 
                 RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, staff.transform.position, ~m_raycastIgnore.value);
 
-                if (!hit.collider?.GetComponent<StaffBehaviour>())
+                if (hit.collider != null)
                     return;
 
                 if (Input.GetMouseButton(0))

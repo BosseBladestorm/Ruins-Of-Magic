@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 280582462}
   - component: {fileID: 2669779098171141240}
   - component: {fileID: 3942275059716748801}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8444138483917685219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03955976, y: -0.237357, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,10 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b03ce112a706cf49bf541acc5bbf135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staffOrigin: {fileID: 8444138483917685228}
+  m_staffOrigin: {fileID: 8444138483917685228}
   m_raycastIgnore:
     serializedVersion: 2
     m_Bits: 768
+  m_crystalLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_animator: {fileID: 0}
+  m_activateStaffBoolName: 
 --- !u!212 &280582462
 SpriteRenderer:
   m_ObjectHideFlags: 0
