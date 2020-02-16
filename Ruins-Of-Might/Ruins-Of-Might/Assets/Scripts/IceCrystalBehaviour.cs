@@ -9,7 +9,6 @@ public class IceCrystalBehaviour : CrystalBase
     [SerializeField] bool m_isInstant = false;
     [SerializeField] float m_growthSpeed = 1f;
     [SerializeField] [Range(0, 360)] private float m_angle = 0f;
-    [SerializeField] float m_force = 10f;
 
     [Header("External Requirements")]
     [SerializeField] Transform m_IcePivot = null;
@@ -77,7 +76,7 @@ public class IceCrystalBehaviour : CrystalBase
 
     public override void OnReleaseCrystal() {
 
-        Debug.Log("Wind Crystal Released");
+        Debug.Log("Ice Crystal Released");
 
         if (!isTriggered)
             return;
@@ -101,8 +100,6 @@ public class IceCrystalBehaviour : CrystalBase
 
         } else if (m_IceBeam != null){
             m_IcePivot.eulerAngles = new Vector3(0, 0, m_angle - 180);
-            m_IceBeam.angle = m_angle;
-            m_IceBeam.force = m_force;
 
         }
 

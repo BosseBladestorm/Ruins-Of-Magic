@@ -19,6 +19,7 @@ public class WindBehaviour : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
+        Debug.Log(collider.name);
 
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();

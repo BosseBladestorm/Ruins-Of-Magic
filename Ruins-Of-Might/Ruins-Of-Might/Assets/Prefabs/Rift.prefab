@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_raycastIgnore:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 0
   riftTransform: {fileID: 3032926930067405426}
   staff: {fileID: 0}
   target: {fileID: 0}

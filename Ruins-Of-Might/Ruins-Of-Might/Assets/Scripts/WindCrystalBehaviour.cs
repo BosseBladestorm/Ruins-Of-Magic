@@ -77,8 +77,6 @@ public class WindCrystalBehaviour : CrystalBase {
 
     public override void OnReleaseCrystal() {
 
-        Debug.Log("Wind Crystal Released");
-
         if (!isTriggered)
             return;
         else

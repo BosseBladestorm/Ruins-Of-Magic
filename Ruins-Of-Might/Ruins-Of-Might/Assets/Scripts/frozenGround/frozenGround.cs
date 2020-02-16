@@ -5,34 +5,22 @@ using UnityEngine;
 public class frozenGround : MonoBehaviour
 {
     private SpriteRenderer sprite;
-    private BoxCollider2D collider;
+    private BoxCollider2D m_collider;
     private PhysicsMaterial2D material;
     [SerializeField] public PhysicsMaterial2D matFrozen;
     [SerializeField] public PhysicsMaterial2D matNotFrozen;
 
     public void Start() {
         sprite = GetComponent<SpriteRenderer>();
-        collider = GetComponent<BoxCollider2D>();
-        material = collider.sharedMaterial;
+        m_collider = GetComponent<BoxCollider2D>();
+        material = m_collider.sharedMaterial;
     }
-    private void Update() {
-
-        changeMaterial();
-    }
-
-    private void changeMaterial() {
-        if (Input.GetButtonDown("Fire1")) {
-            //material.friction += 1f;
-            GetComponent<BoxCollider2D>().sharedMaterial = matFrozen;
-            sprite.color = new Color(1, 0, 0); 
+    public void Freezing() {
+        GetComponent<BoxCollider2D>().sharedMaterial = matFrozen;
+        sprite.color = new Color(1, 0, 0);
         }
-            
-
-        else if (Input.GetButtonDown("Fire2")) {
-            //material.friction -= 1f;
-            GetComponent<BoxCollider2D>().sharedMaterial = matNotFrozen;
-            sprite.color = new Color(0, 1, 0); 
+    public void NotFreezing() {
+        GetComponent<BoxCollider2D>().sharedMaterial = matNotFrozen;
+        sprite.color = new Color(0, 1, 0);
         }
-            
-    }
 }
