@@ -5,16 +5,17 @@ using UnityEngine;
 public class IceBehaviour : MonoBehaviour
 {
 
-    //public LayerMask m_layerMask;
+    public LayerMask m_layerMaskIgnore;
 
     [SerializeField] public PhysicsMaterial2D m_matFrozen;
     //[SerializeField] public PhysicsMaterial2D m_matNotFrozen;
     private void OnTriggerEnter2D(Collider2D collider) {
-        
-        if (collider.gameObject.layer.Equals(11)) {
-            Freezing(collider);
-            }
-        
+        Debug.Log(collider.name);
+        RaycastHit2D hit2D = Physics2D.Linecast(transform.position, collider.transform.position, ~m_layerMaskIgnore.value);
+        if (hit2D) {
+                Freezing(collider);
+                }
+            
      }
     //private void OnTriggerExit2D(Collider2D collider) {
        
