@@ -23,8 +23,11 @@ public class StaffBehaviour : MonoBehaviour {
 
         if(Input.GetMouseButtonUp(0)) {
             RaycastHit2D hit = Physics2D.Raycast(m_mousePos, Vector2.zero, 10f, m_crystalLayer.value);
-            StopFire(hit.transform?.GetComponent<CrystalBase>());
-            
+
+            if(hit.transform?.GetComponent<CrystalBase>() == null)
+                StopFire();
+            else
+                StopFire(hit.transform.GetComponent<CrystalBase>());
         }
 
     }
@@ -61,13 +64,15 @@ public class StaffBehaviour : MonoBehaviour {
 
     public void Fire() {
         m_IsFiring = true;
-       // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
+
+        // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
 
     }
 
     public void StopFire() {
         m_IsFiring = false;
-       // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
+        Debug.Log("TEST22");
+        // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
 
         if (m_targetCrystal != null)
             m_targetCrystal.OnReleaseCrystal();
@@ -77,7 +82,7 @@ public class StaffBehaviour : MonoBehaviour {
     }
 
     public void StopFire(CrystalBase snapTarget) {
-
+        Debug.Log("TEST23");
         m_IsFiring = false;
 
         if (snapTarget != null) {
