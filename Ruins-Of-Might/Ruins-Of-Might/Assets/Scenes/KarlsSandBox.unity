@@ -461,9 +461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad955bd41c3db844bb2015880fb9b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_layerMaskIgnore:
+  m_layerMask:
     serializedVersion: 2
-    m_Bits: 1831
+    m_Bits: 17
   m_matFrozen: {fileID: 6200000, guid: e0f643de8d253c44a960e082c0dc7f97, type: 2}
 --- !u!212 &209223962
 SpriteRenderer:
@@ -673,7 +673,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757098358}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -743,7 +743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757098358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.79, y: 4.18, z: 0}
+  m_LocalPosition: {x: 1.72, y: 3.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 905574591}
   - component: {fileID: 905574590}
   - component: {fileID: 905574592}
-  m_Layer: 11
+  m_Layer: 4
   m_Name: IceGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1067,7 @@ PrefabInstance:
     - target: {fileID: 3032926930067405424, guid: c3d7d41c245329b409507ca4eece0eb7,
         type: 3}
       propertyPath: m_raycastIgnore.m_Bits
-      value: 822
+      value: 772
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d7d41c245329b409507ca4eece0eb7, type: 3}
