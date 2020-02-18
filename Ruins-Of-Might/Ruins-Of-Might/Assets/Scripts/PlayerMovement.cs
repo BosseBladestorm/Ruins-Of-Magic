@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Animator m_animator = null;
 
+    public StaffBehaviour staff = null;
     public string moveBool;
     public string jumpStartTrigger;
 
