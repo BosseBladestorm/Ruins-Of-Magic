@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] float m_speed = 10f;
     [SerializeField] float m_jumpForce = 50f;
@@ -17,8 +17,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator m_animator = null;
 
     public StaffBehaviour staff = null;
-    public string moveBool;
-    public string jumpStartTrigger;
+
+    private float m_runToIdleTime;
+    private float m_runToIdleSensitivity = 0.1f;
+
+    [Header("Animator parameters")]
+    [SerializeField] string animRunningBool;
+    [SerializeField] string animJumpStartTrigger;
+    [SerializeField] string animGroundedBool;
+    [SerializeField] string animWindBool;
 
     void Start() {
         if (m_rigidbody == null) {
@@ -30,23 +37,30 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
-        //m_transform.Translate(Vector2.right * Input.GetAxisRaw("Horizontal") * m_speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space) && m_groundCheck.isGrounded || Input.GetKeyDown(KeyCode.W) && m_groundCheck.isGrounded) {
             m_rigidbody.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
-            m_animator.SetTrigger(jumpStartTrigger);
+            m_animator.SetTrigger(animJumpStartTrigger);
         }
 
 
         if(Input.GetAxisRaw("Horizontal") != 0) {
             m_rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * m_speed, m_rigidbody.velocity.y);
             m_transform.localScale = new Vector3(1 * Input.GetAxisRaw("Horizontal"), 1,1);
-            m_animator.SetBool(moveBool, true);
+            m_animator.SetBool(animRunningBool, true);
+            m_runToIdleTime = 0;
+
+        } else {
+
+            if(m_runToIdleTime < m_runToIdleSensitivity + 1f)
+                m_runToIdleTime += Time.deltaTime;
+
+            if(m_runToIdleTime >= m_runToIdleSensitivity)
+                m_animator.SetBool(animRunningBool, false);
+
         }
 
-        else {
-            m_animator.SetBool(moveBool, false);
-        }
+        m_animator.SetBool(animGroundedBool, m_groundCheck.isGrounded);
 
         // NOTE: Obselete jump
         //if (marioJump) {
@@ -62,4 +76,10 @@ public class PlayerMovement : MonoBehaviour
         //}
 
     }
+
+    public void SetBeamAnimatorBool(bool value) {
+        m_animator.SetBool(animWindBool, value);
+
+    }
+
 }
