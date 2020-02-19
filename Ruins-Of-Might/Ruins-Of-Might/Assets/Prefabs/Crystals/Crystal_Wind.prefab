@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8585710762793199964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.4, y: -3.74, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children:
   - {fileID: 8585710763796814708}
   m_Father: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_isInstant: 0
   m_growthSpeed: 25
   m_angle: 90
-  m_force: 20
+  m_force: 78
   m_windPivot: {fileID: 8585710763094635751}
   m_beamBase: {fileID: 8585710763796814708}
   m_crystalTransform: {fileID: 8585710762793199963}
@@ -311,5 +311,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b4a41a49a6229428f18da93b4d8d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 20
+  force: 78
   angle: 90

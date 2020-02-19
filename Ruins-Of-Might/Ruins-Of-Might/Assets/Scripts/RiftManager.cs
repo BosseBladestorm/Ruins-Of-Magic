@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class RiftManager : MonoBehaviour
-{
+public class RiftManager : MonoBehaviour {
+
+    [SerializeField] SpawnEventPortObject spawnEventPort = null;
     [SerializeField] LayerMask m_raycastIgnore;
     [SerializeField] Transform riftTransform;
     static List<RiftManager> riftsInViewList = new List<RiftManager>();
@@ -58,8 +59,6 @@ public class RiftManager : MonoBehaviour
 
                 if (Input.GetMouseButton(0))
                     staff.Fire();
-                else if (Input.GetMouseButtonUp(0))
-                    staff.StopFire();
 
             } else {
 
@@ -133,8 +132,25 @@ public class RiftManager : MonoBehaviour
             activeRift = riftsInViewList[riftIndex];
     }
 
+    private void SetStaff(SpawnEventPortObject sender, GameObject player) {
+        staff = player.GetComponent<PlayerBehaviour>().staff;
+
+    }
+
+    private void OnEnable() {
+        spawnEventPort.OnSpawnPlayer += SetStaff;
+    }
+
+    private void OnDisable() {
+        spawnEventPort.OnSpawnPlayer -= SetStaff;
+
+    }
+
     private void OnValidate() {
-        
+
+        if (spawnEventPort == null)
+            Debug.LogWarning("spawnEventPort is set to null");
+
     }
 
 }

@@ -8,11 +8,13 @@ public class StaffBehaviour : MonoBehaviour {
     [SerializeField] LayerMask m_raycastIgnore;
     [SerializeField] LayerMask m_crystalLayer;
     [SerializeField] Animator m_animator;
-    [SerializeField] string m_activateStaffBoolName;
 
     private bool m_IsFiring = false;
     private Vector2 m_mousePos;
     private CrystalBase m_targetCrystal = null;
+
+    [Header("Animator parameters")]
+    [SerializeField] string animUseMagicBool;
 
     private void Update() {
 
@@ -23,14 +25,17 @@ public class StaffBehaviour : MonoBehaviour {
 
         if(Input.GetMouseButtonUp(0)) {
             RaycastHit2D hit = Physics2D.Raycast(m_mousePos, Vector2.zero, 10f, m_crystalLayer.value);
-            StopFire(hit.transform?.GetComponent<CrystalBase>());
-            
+
+            if(hit.transform?.GetComponent<CrystalBase>() == null)
+                StopFire();
+            else
+                StopFire(hit.transform.GetComponent<CrystalBase>());
         }
 
     }
 
     private void FireBeam() {
-        Debug.Log("fire");
+
         RaycastHit2D hit = Physics2D.Linecast(m_staffOrigin.position, m_mousePos, ~m_raycastIgnore.value);
 
         if(hit.transform != null)
@@ -61,13 +66,13 @@ public class StaffBehaviour : MonoBehaviour {
 
     public void Fire() {
         m_IsFiring = true;
-       // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
+        m_animator.SetBool(animUseMagicBool, m_IsFiring);
 
     }
 
     public void StopFire() {
         m_IsFiring = false;
-       // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
+        m_animator.SetBool(animUseMagicBool, m_IsFiring);
 
         if (m_targetCrystal != null)
             m_targetCrystal.OnReleaseCrystal();
@@ -77,8 +82,8 @@ public class StaffBehaviour : MonoBehaviour {
     }
 
     public void StopFire(CrystalBase snapTarget) {
-
         m_IsFiring = false;
+        m_animator.SetBool(animUseMagicBool, m_IsFiring);
 
         if (snapTarget != null) {
             RiftManager.activeRift.ChangeTarget(snapTarget);
