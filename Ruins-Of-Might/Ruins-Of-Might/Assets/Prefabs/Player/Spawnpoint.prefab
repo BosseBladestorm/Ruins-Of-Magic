@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9a01c24153c3a4fa6f790a0e921e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1688878968245742222, guid: d1a6b4352169ee246a122abb47616cf5, type: 3}
+  playerPrefab: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
+    type: 3}
   transform: {fileID: 2014685294794019843}
   gizmoSize: 0.46
+  spawnEventPort: {fileID: 0}
