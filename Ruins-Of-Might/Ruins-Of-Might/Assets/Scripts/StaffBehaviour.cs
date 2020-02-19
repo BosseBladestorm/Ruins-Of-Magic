@@ -71,7 +71,6 @@ public class StaffBehaviour : MonoBehaviour {
 
     public void StopFire() {
         m_IsFiring = false;
-        Debug.Log("TEST22");
         // m_animator.SetBool(m_activateStaffBoolName, m_IsFiring);
 
         if (m_targetCrystal != null)
@@ -82,7 +81,6 @@ public class StaffBehaviour : MonoBehaviour {
     }
 
     public void StopFire(CrystalBase snapTarget) {
-        Debug.Log("TEST23");
         m_IsFiring = false;
 
         if (snapTarget != null) {
