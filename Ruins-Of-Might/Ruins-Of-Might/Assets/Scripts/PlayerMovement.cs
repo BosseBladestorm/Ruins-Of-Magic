@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
-        //m_transform.Translate(Vector2.right * Input.GetAxisRaw("Horizontal") * m_speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space) && m_groundCheck.isGrounded || Input.GetKeyDown(KeyCode.W) && m_groundCheck.isGrounded) {
             m_rigidbody.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
