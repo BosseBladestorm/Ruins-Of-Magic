@@ -15,14 +15,11 @@ public class CrystalBehaviour : CrystalBase {
     [Header("External Requirements")]
     [SerializeField] Transform m_beamPivot = null;
     [SerializeField] Transform m_beamBase = null;
-    [SerializeField] Transform m_beamTarget = null;
     [SerializeField] Transform m_crystalTransform = null;
     [SerializeField] BeamBase m_beam = null;
+    [SerializeField] Transform m_defaultBeamTarget;
 
-    private SpriteRenderer m_beamSprite = null;
-
-    private Vector3 m_directionVector;
-
+    private float m_beamSpriteSize;
     private Vector3 m_targetScale;
     private Vector3 m_minScale;
     private Vector3 m_adjustedMaxScale;
@@ -31,13 +28,14 @@ public class CrystalBehaviour : CrystalBase {
 
     private void Start() {
 
-        m_beamSprite = m_beam.transform.GetComponent<SpriteRenderer>();
         m_beamPivot.gameObject.SetActive(false);
         m_maxScale = m_beamPivot.transform.localScale;
         m_adjustedMaxScale = m_maxScale;
         m_minScale = new Vector3(0, m_beamPivot.transform.localScale.y, m_beamPivot.transform.localScale.z);
         m_targetScale = m_minScale;
-        m_directionVector = Vector2.up;//new Vector3(Mathf.Cos(Mathf.Deg2Rad * m_angle), Mathf.Sin(Mathf.Deg2Rad * m_angle), 0f);
+
+        Sprite beamSprite = m_beam.transform.GetComponent<SpriteRenderer>().sprite;
+        m_beamSpriteSize = beamSprite.rect.width / beamSprite.pixelsPerUnit;
 
         if (!m_isInstant)
             m_beamPivot.transform.localScale = m_minScale;
@@ -46,14 +44,25 @@ public class CrystalBehaviour : CrystalBase {
 
     private void Update() {
 
-        if(!m_isInstant)
+        RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, ~m_beamMask.value);
+
+        if (hit.transform == null)
+            m_adjustedMaxScale = m_maxScale;
+        else
+            SetAdjustedMaxScale(hit.point);
+            
+
+        if (!m_isInstant)
             if (m_beamPivot.transform.localScale != m_targetScale) {
-                m_beamPivot.transform.localScale = Vector3.MoveTowards(m_beamPivot.localScale, m_targetScale, m_growthSpeed * Time.deltaTime);
+                m_beamPivot.transform.localScale = Vector3.MoveTowards(m_beamPivot.transform.localScale, m_targetScale, m_growthSpeed * Time.deltaTime);
 
                 if (m_beamPivot.transform.localScale.x == 0)
                     m_beamPivot.gameObject.SetActive(false);
 
             }
+
+        if(isTriggered)
+            m_targetScale = m_adjustedMaxScale;
 
     }
 
@@ -69,27 +78,8 @@ public class CrystalBehaviour : CrystalBase {
     }
 
     public void SetAdjustedMaxScale(Vector3 target) {
-
-        m_beamTarget.position = target;
-
-        float spriteSize = m_beamSprite.sprite.rect.width / m_beamSprite.sprite.pixelsPerUnit;
-        Vector3 scale = m_beam.transform.localScale;
-        scale.x = (Mathf.Abs(m_beamPivot.position.y - target.y) / spriteSize * 0.25f);
-        m_beam.transform.localScale = scale;
-        m_beam.transform.position = new Vector3(
-            m_beam.transform.position.x, 
-            m_beamPivot.transform.position.y + spriteSize * 8f, 
-            m_beam.transform.position.z);
-
-        Debug.Log(spriteSize);
-        //float centerPos = (m_adjustedMaxScale.y + m_beamPivot.position.y) / 2f;
-        //float scale = Mathf.Abs(target.y - m_beamPivot.position.y);
-        //Debug.Log(m_beamPivot.position.y);
-
-        //Debug.Log(scale);
-        //m_beam.transform.position = new Vector3(transform.position.x, centerPos, transform.position.z);
-        //m_beam.transform.localScale = new Vector3(scale, m_beam.transform.localScale.y, 1);
-        //m_adjustedMaxScale
+        float scaleY = Vector2.Distance(target, m_beamPivot.position);
+        m_adjustedMaxScale = new Vector3((scaleY / m_beamSpriteSize) / m_beam.transform.localScale.x, 1, 1);
 
     }
 
@@ -100,13 +90,6 @@ public class CrystalBehaviour : CrystalBase {
         else
             isTriggered = true;
 
-        RaycastHit2D hit = Physics2D.Raycast(m_beamPivot.position, m_directionVector, Vector3.Distance(m_beamPivot.position, m_beamTarget.position), ~m_beamMask.value);
-
-        if (hit.transform == null)
-            m_adjustedMaxScale = m_maxScale;
-        else
-            SetAdjustedMaxScale(hit.point);
-            
         if (m_isInstant) {
             m_beamPivot.gameObject.SetActive(true);
 
