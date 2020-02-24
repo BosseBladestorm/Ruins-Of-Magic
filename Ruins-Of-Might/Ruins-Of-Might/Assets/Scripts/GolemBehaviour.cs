@@ -44,7 +44,8 @@ public class GolemBehaviour : CrystalBase
     }
 
     private void FixedUpdate() {
-        m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
+        if(isActive)
+            m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
         
     }
 
@@ -63,11 +64,18 @@ public class GolemBehaviour : CrystalBase
 
     public override void OnTriggerCrystal() {
 
-        if (isTriggered) {
+        if (isTriggered)
             return;
-        }
-
+        
         isTriggered = true;
+        isActive = isTriggered;
+
+    }
+    public override void OnReleaseCrystal() {
+        if (!isTriggered)
+            return;
+        else
+            isTriggered = false;
         isActive = isTriggered;
 
     }
