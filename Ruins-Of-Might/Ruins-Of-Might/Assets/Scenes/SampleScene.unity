@@ -851,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 8585710764263958201, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
         type: 3}
       propertyPath: force
-      value: 125
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8585710764263958202, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
         type: 3}
@@ -935,6 +935,11 @@ PrefabInstance:
     - target: {fileID: 8585710762793199965, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
         type: 3}
       propertyPath: m_force
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585710764263958201, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
+        type: 3}
+      propertyPath: force
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8585710764263958202, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
@@ -1069,7 +1074,7 @@ PrefabInstance:
     - target: {fileID: 8585710764263958201, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
         type: 3}
       propertyPath: angle
-      value: 0
+      value: 178
       objectReference: {fileID: 0}
     - target: {fileID: 8585710764263958201, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
         type: 3}
@@ -1178,7 +1183,7 @@ PrefabInstance:
     - target: {fileID: 8585710764263958201, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
         type: 3}
       propertyPath: force
-      value: 125
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8585710764263958202, guid: f8c4f791c2a0b8f43a7cf4926a3d45c1,
         type: 3}
@@ -1831,6 +1836,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gizmoSize.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332580734496634053, guid: 82cc7adb61f6f494e8abbc2f2516a670,
+        type: 3}
+      propertyPath: nextSceneName
+      value: Level 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82cc7adb61f6f494e8abbc2f2516a670, type: 3}
