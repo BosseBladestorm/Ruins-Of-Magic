@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da353b3092ae724dae14de2f18ae70d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gizmoSize: {x: 1, y: 1}
+  gizmoSize: {x: 10, y: 10}
   nextSceneName: 
 --- !u!61 &-2685866822474085457
 BoxCollider2D:

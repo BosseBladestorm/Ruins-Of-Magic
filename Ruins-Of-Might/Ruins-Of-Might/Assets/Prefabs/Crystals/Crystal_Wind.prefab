@@ -49,7 +49,7 @@ MonoBehaviour:
   m_isInstant: 0
   m_growthSpeed: 25
   m_angle: 90
-  m_force: 78
+  m_force: 100
   m_windPivot: {fileID: 8585710763094635751}
   m_beamBase: {fileID: 8585710763796814708}
   m_crystalTransform: {fileID: 8585710762793199963}
@@ -311,5 +311,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b4a41a49a6229428f18da93b4d8d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 78
+  force: 100
   angle: 90
