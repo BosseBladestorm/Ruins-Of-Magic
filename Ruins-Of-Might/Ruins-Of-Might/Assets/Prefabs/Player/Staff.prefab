@@ -48,12 +48,12 @@ MonoBehaviour:
   m_staffOrigin: {fileID: 8444138483917685228}
   m_raycastIgnore:
     serializedVersion: 2
-    m_Bits: 772
+    m_Bits: 2820
   m_crystalLayer:
     serializedVersion: 2
     m_Bits: 1024
   m_animator: {fileID: 0}
-  m_activateStaffBoolName: 
+  animUseMagicBool: UseMagic
 --- !u!50 &2669779098171141240
 Rigidbody2D:
   serializedVersion: 4
