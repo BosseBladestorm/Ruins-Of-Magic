@@ -162,7 +162,7 @@ MonoBehaviour:
   m_force: 100
   m_beamMask:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 2048
   m_beamPivot: {fileID: 8585710763094635751}
   m_beamBase: {fileID: 8585710763796814708}
   m_crystalTransform: {fileID: 8585710762793199963}
