@@ -44,7 +44,7 @@ public class CrystalBehaviour : CrystalBase {
 
     private void Update() {
 
-        RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, ~m_beamMask.value);
+        RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, m_beamMask.value);
 
         if (hit.transform == null)
             m_adjustedMaxScale = m_maxScale;

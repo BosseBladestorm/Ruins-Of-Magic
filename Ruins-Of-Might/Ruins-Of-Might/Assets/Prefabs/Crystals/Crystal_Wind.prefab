@@ -96,8 +96,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2052163533
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 074bf974590709a44bf6240d37d86a01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_force: 100
   m_beamMask:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 2048
   m_beamPivot: {fileID: 8585710763094635751}
   m_beamBase: {fileID: 8585710763796814708}
   m_crystalTransform: {fileID: 8585710762793199963}

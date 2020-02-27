@@ -6,6 +6,7 @@ public class RiftManager : MonoBehaviour {
     [SerializeField] SpawnEventPortObject spawnEventPort = null;
     [SerializeField] LayerMask m_raycastIgnore;
     [SerializeField] Transform riftTransform;
+    [SerializeField] MagicBeamBehaviour m_beam;
     static List<RiftManager> riftsInViewList = new List<RiftManager>();
     public static RiftManager activeRift { get; private set; }
 
@@ -41,21 +42,33 @@ public class RiftManager : MonoBehaviour {
         if (activeRift == this)
             ChangeActiveRift(-1);
 
+        if (target == null)
+            m_beam.gameObject.SetActive(false);
+
     }
 
     private void Update(){
 
         if (activeRift == this) {
+
+            m_beam.gameObject.SetActive(true);
             m_RiftCycleCheck();
 
             if (target == null) {
 
-                Debug.DrawLine(riftTransform.position, staff.transform.position, Color.red);
+                m_beam.target = staff.transform.position;
+                //Debug.DrawLine(riftTransform.position, staff.transform.position, Color.red);
 
                 RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, staff.transform.position, ~m_raycastIgnore.value);
 
-                if (hit.collider != null)
+                if (hit.collider != null) {
+                    m_beam.gameObject.SetActive(false);
+                    
+                    //TODO (Herman): test for other rifts in view and swap rift
+
+                    staff.StopFire();
                     return;
+                }
 
                 if (Input.GetMouseButton(0))
                     staff.Fire();
@@ -70,8 +83,8 @@ public class RiftManager : MonoBehaviour {
                 RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, target.transform.position, ~m_raycastIgnore.value);
 
                 if (hit.collider?.GetComponent<CrystalBase>()) {
-                    Debug.DrawLine(transform.position, target.transform.position, Color.red);
-
+                    //Debug.DrawLine(transform.position, target.transform.position, Color.red);
+                    m_beam.target = hit.transform.position;
 
                 } else {
                     ChangeTarget(null);
@@ -119,6 +132,7 @@ public class RiftManager : MonoBehaviour {
     }
 
     private void ChangeActiveRift(int step){
+
         riftIndex += step;
 
         if (riftIndex >= riftsInViewList.Count)
@@ -130,6 +144,7 @@ public class RiftManager : MonoBehaviour {
             activeRift = null;
         else
             activeRift = riftsInViewList[riftIndex];
+
     }
 
     private void SetStaff(SpawnEventPortObject sender, GameObject player) {

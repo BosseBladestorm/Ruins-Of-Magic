@@ -8,6 +8,7 @@ public class StaffBehaviour : MonoBehaviour {
     [SerializeField] LayerMask m_raycastIgnore;
     [SerializeField] LayerMask m_crystalLayer;
     [SerializeField] Animator m_animator;
+    [SerializeField] MagicBeamBehaviour m_beam;
 
     private bool m_IsFiring = false;
     private Vector2 m_mousePos;
@@ -32,16 +33,20 @@ public class StaffBehaviour : MonoBehaviour {
                 StopFire(hit.transform.GetComponent<CrystalBase>());
         }
 
+        transform.position = m_staffOrigin.transform.position;
+
     }
 
     private void FireBeam() {
 
         RaycastHit2D hit = Physics2D.Linecast(m_staffOrigin.position, m_mousePos, ~m_raycastIgnore.value);
 
-        if(hit.transform != null)
-            Debug.DrawLine(m_staffOrigin.position, hit.point, Color.red);
+        m_beam.gameObject.SetActive(true);
+
+        if (hit.transform != null)
+            m_beam.target = hit.point;
         else
-            Debug.DrawLine(m_staffOrigin.position, m_mousePos, Color.red);
+            m_beam.target = m_mousePos;
 
         if (hit.transform?.GetComponent<CrystalBase>() == null) {
 
@@ -73,6 +78,7 @@ public class StaffBehaviour : MonoBehaviour {
     public void StopFire() {
         m_IsFiring = false;
         m_animator.SetBool(animUseMagicBool, m_IsFiring);
+        m_beam.gameObject.SetActive(false);
 
         if (m_targetCrystal != null)
             m_targetCrystal.OnReleaseCrystal();
@@ -84,6 +90,7 @@ public class StaffBehaviour : MonoBehaviour {
     public void StopFire(CrystalBase snapTarget) {
         m_IsFiring = false;
         m_animator.SetBool(animUseMagicBool, m_IsFiring);
+        m_beam.gameObject.SetActive(false);
 
         if (snapTarget != null) {
             RiftManager.activeRift.ChangeTarget(snapTarget);
