@@ -4,25 +4,16 @@ using UnityEngine;
 
 public class MagicBeamBehaviour : MonoBehaviour {
 
-    [SerializeField] Transform m_pivot;
+    [SerializeField] Transform m_origin;
     [SerializeField] SpriteRenderer m_spriteRenderer;
-    private Vector3 m_target;
-    private float m_spriteWidth;
-
-    private void Start() {
-        m_spriteWidth = m_spriteRenderer.sprite.rect.width;
-
-    }
+    public Vector3 target;
 
     private void Update() {
-        
-
-
-    }
-
-    public void ScaleBeam() {
-        float scaleY = Vector2.Distance(m_target, m_pivot.position);
-        transform.localScale = new Vector3((scaleY / m_beamSpriteSize) / m_beam.transform.localScale.x, 1, 1);
+        float scaleY = Vector2.Distance(target, m_origin.position);
+        m_spriteRenderer.transform.localPosition = new Vector3((target.x - m_origin.transform.position.x) / 2f, (target.y - m_origin.transform.position.y) / 2f, 0f);
+        m_spriteRenderer.size = new Vector2(m_spriteRenderer.size.x, scaleY / m_spriteRenderer.transform.localScale.x);
+        float angle = Mathf.Atan2(target.y - m_spriteRenderer.transform.position.y, target.x - m_spriteRenderer.transform.position.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90f));
 
     }
 
