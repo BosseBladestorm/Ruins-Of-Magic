@@ -162,7 +162,7 @@ MonoBehaviour:
   m_force: 100
   m_beamMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2304
   m_beamPivot: {fileID: 8585710763094635751}
   m_beamBase: {fileID: 8585710763796814708}
   m_crystalTransform: {fileID: 8585710762793199963}
@@ -219,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 8585710763094635750}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -1, y: 4.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.175, y: 1, z: 1}
   m_Children:
   - {fileID: 8585710764263958202}
   m_Father: {fileID: 8585710763796814708}
@@ -352,7 +352,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.68731093, y: 0}
+  m_Offset: {x: 0.5592761, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -363,7 +363,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.78367, y: 2.65}
+  m_Size: {x: 10.5276, y: 2.65}
   m_EdgeRadius: 0
 --- !u!114 &8585710764263958201
 MonoBehaviour:
