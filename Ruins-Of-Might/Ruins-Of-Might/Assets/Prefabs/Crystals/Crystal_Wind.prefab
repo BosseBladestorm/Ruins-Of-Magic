@@ -162,7 +162,7 @@ MonoBehaviour:
   m_force: 100
   m_beamMask:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 2048
   m_beamPivot: {fileID: 8585710763094635751}
   m_beamBase: {fileID: 8585710763796814708}
   m_crystalTransform: {fileID: 8585710762793199963}
@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 8585710764263958203}
   - component: {fileID: 8585710764263958200}
   - component: {fileID: 8585710764263958201}
+  - component: {fileID: 5960413577625755103}
   m_Layer: 8
   m_Name: Wind
   m_TagString: Untagged
@@ -379,3 +380,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 100
   angle: 90
+--- !u!50 &5960413577625755103
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585710764263958205}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 2
+  m_CollisionDetection: 0
+  m_Constraints: 0
