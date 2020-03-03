@@ -396,6 +396,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1678790052448529602}
     m_Modifications:
+    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_ARC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3104088462094495026, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -475,16 +485,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 8.405001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
-        type: 3}
-      propertyPath: m_Name
-      value: Player_ARC
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 102211207191505802, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
         type: 3}
@@ -1023,6 +1023,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1678790052448529602}
     m_Modifications:
+    - target: {fileID: 8444138483917685219, guid: 9974de2d8b2a9e74382537e4d990ffcd,
+        type: 3}
+      propertyPath: m_Name
+      value: Staff
+      objectReference: {fileID: 0}
     - target: {fileID: 8444138483917685229, guid: 9974de2d8b2a9e74382537e4d990ffcd,
         type: 3}
       propertyPath: m_animator
@@ -1038,6 +1043,16 @@ PrefabInstance:
       propertyPath: m_staffOrigin
       value: 
       objectReference: {fileID: 4106078570780500902}
+    - target: {fileID: 8444138483917685229, guid: 9974de2d8b2a9e74382537e4d990ffcd,
+        type: 3}
+      propertyPath: m_raycastIgnore.m_Bits
+      value: 2820
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444138483917685229, guid: 9974de2d8b2a9e74382537e4d990ffcd,
+        type: 3}
+      propertyPath: m_crystalLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 8444138483917685228, guid: 9974de2d8b2a9e74382537e4d990ffcd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1102,11 +1117,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444138483917685219, guid: 9974de2d8b2a9e74382537e4d990ffcd,
-        type: 3}
-      propertyPath: m_Name
-      value: Staff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9974de2d8b2a9e74382537e4d990ffcd, type: 3}

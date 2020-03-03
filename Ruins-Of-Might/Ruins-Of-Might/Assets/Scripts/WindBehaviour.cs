@@ -7,6 +7,11 @@ public class WindBehaviour : BeamBase {
     private void Update() {
         BaseUpdate();
 
+        foreach (DynamicObjectBase obj in affectedObjects) {
+            obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * force, Mathf.Sin(Mathf.Deg2Rad * angle) * force);
+
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {

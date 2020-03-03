@@ -50,7 +50,6 @@ public class CrystalBehaviour : CrystalBase {
             m_adjustedMaxScale = m_maxScale;
         else
             SetAdjustedMaxScale(hit.point);
-            
 
         if (!m_isInstant)
             if (m_beamPivot.transform.localScale != m_targetScale) {
@@ -82,7 +81,7 @@ public class CrystalBehaviour : CrystalBase {
         m_adjustedMaxScale = new Vector3((scaleY / m_beamSpriteSize) / m_beam.transform.localScale.x, 1, 1);
 
     }
-
+   
     public override void OnTriggerCrystal() {
 
         if (isTriggered)

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FireBehaviour : BeamBase {
 
+    [SerializeField] Transform m_beamTarget;
+
     private void Update() {
         BaseUpdate();
 
@@ -19,6 +21,23 @@ public class FireBehaviour : BeamBase {
             if (collider.GetComponent<PlayerBehaviour>() != null)
                 collider.GetComponent<PlayerBehaviour>().SetBeamAnimatorBool(true);
 
+        }
+
+        if(collider.GetComponent<WindBehaviour>() != null) {
+
+            RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position, m_beamTarget.position);
+            foreach(RaycastHit2D hit in hits) {
+               
+                if(hit.transform.GetComponent<WindBehaviour>()) {
+
+                    Vector2 centerpoint = new Vector2(hit.transform.position.x, hit.point.y);
+                    Debug.DrawLine(transform.position, centerpoint, Color.blue, 1000f);
+                    break;
+
+                }
+
+            }
+            
         }
 
     }
