@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindBehaviour : MonoBehaviour {
-
-    public float force = 10f;
-    public float angle = 0f;
-
-    private List<DynamicObjectBase> m_affectedObjects = new List<DynamicObjectBase>();
+public class WindBehaviour : BeamBase {
 
     private void Update() {
-        
-        foreach(DynamicObjectBase obj in m_affectedObjects) {
+        BaseUpdate();
+
+        foreach (DynamicObjectBase obj in affectedObjects) {
             obj.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle) * force, Mathf.Sin(Mathf.Deg2Rad * angle) * force);
 
         }
@@ -22,7 +18,7 @@ public class WindBehaviour : MonoBehaviour {
 
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();
-            m_affectedObjects.Add(target);
+            OnObjectEnter(target);
             target.GetComponent<Rigidbody2D>().isKinematic = true;
 
             if (collider.GetComponent<PlayerBehaviour>() != null)
@@ -36,7 +32,7 @@ public class WindBehaviour : MonoBehaviour {
 
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();
-            m_affectedObjects.Remove(target);
+            OnObjectExit(target);
             target.GetComponent<Rigidbody2D>().isKinematic = false;
 
             if (collider.GetComponent<PlayerBehaviour>() != null)

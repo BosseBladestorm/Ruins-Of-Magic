@@ -22,8 +22,8 @@ public class GoalBehaviour : MonoBehaviour
     {
         if(inGoal == true) {
                 Debug.Log("Next Scene");
-            if (Input.GetKeyDown(KeyCode.E)) {
-                //SceneManager.LoadScene(nextSceneName);
+            if (Input.GetKeyDown(KeyCode.F)) {
+                SceneManager.LoadScene(nextSceneName);
             }
         }
     }

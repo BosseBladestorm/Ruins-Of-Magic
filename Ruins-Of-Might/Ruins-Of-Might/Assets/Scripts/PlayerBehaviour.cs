@@ -34,6 +34,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (m_groundCheck == null) {
             m_groundCheck = GetComponentInChildren<GroundCheck>();
         }
+        
     }
 
     void Update() {
@@ -46,7 +47,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if(Input.GetAxisRaw("Horizontal") != 0) {
             m_rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * m_speed, m_rigidbody.velocity.y);
-            m_transform.localScale = new Vector3(1 * Input.GetAxisRaw("Horizontal"), 1,1);
+            m_animator.transform.localScale = new Vector3(1 * Input.GetAxisRaw("Horizontal"), 1,1);
             m_animator.SetBool(animRunningBool, true);
             m_runToIdleTime = 0;
 
