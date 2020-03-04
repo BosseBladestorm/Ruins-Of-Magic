@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 3032926930067405426}
   - component: {fileID: 3032926930067405427}
   - component: {fileID: 3032926930067405424}
+  - component: {fileID: 2623622437182348944}
   m_Layer: 9
   m_Name: Rift
   m_TagString: Untagged
@@ -166,6 +167,29 @@ MonoBehaviour:
   m_beam: {fileID: 185465150711252842}
   staff: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &2623622437182348944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032926930067405425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Untagged
+  Event: event:/Rift Ambiance Pt2
+  PlayEvent: 5
+  StopEvent: 6
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &4410256890413859598
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 4410256890413859598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 3032926930067405426}
   m_RootOrder: 1

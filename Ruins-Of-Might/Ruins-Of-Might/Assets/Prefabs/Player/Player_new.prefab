@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 1844807679170465229}
   - component: {fileID: 3217607174701216741}
   - component: {fileID: 5446264935255148928}
+  - component: {fileID: 3436542306674818724}
+  - component: {fileID: 4089497567709669222}
   m_Layer: 2
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -197,6 +199,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.85, y: 0.05630496}
   m_EdgeRadius: 0
+--- !u!114 &3436542306674818724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317136676230527967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Walkable
+  Event: event:/Land 2
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &4089497567709669222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317136676230527967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Walkable
+  Event: event:/Jump 1
+  PlayEvent: 6
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &9204194100324227527
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +258,7 @@ GameObject:
   - component: {fileID: -4358751324323690078}
   - component: {fileID: -1944040481424624275}
   - component: {fileID: -3017377226511319710}
+  - component: {fileID: 6775392729390384183}
   m_Layer: 2
   m_Name: Player_new
   m_TagString: Untagged
@@ -317,6 +366,29 @@ MonoBehaviour:
   animJumpStartTrigger: Jumping
   animGroundedBool: Grounded
   animWindBool: Flying
+--- !u!114 &6775392729390384183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204194100324227527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1001 &3445593636904235051
 PrefabInstance:
   m_ObjectHideFlags: 0
