@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6873470287602129960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637189581964711376
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-6269883544361790352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +33,7 @@ MonoBehaviour:
   Path: event:/Goal
   guid: bc6c9e4c5100024889c6b79a425c0e2a
   Banks:
-  - {fileID: 8583150798428134635}
+  - {fileID: -6873470287602129960}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -37,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 4823828070248402197}
-  - {fileID: 8583150798428134635}
+  - {fileID: -6873470287602129960}
   EditorEvents:
   - {fileID: 5136402973071769586}
   - {fileID: 3483912842195213545}
@@ -46,10 +64,10 @@ MonoBehaviour:
   - {fileID: -6269883544361790352}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8583150798428134635}
+  - {fileID: -6873470287602129960}
   StringsBanks:
   - {fileID: 4823828070248402197}
-  stringsBankWriteTime: 637189246334758070
+  stringsBankWriteTime: 637189581964721370
   cacheVersion: 3
 --- !u!114 &3483912842195213545
 MonoBehaviour:
@@ -66,7 +84,7 @@ MonoBehaviour:
   Path: event:/Rift Ambiance Pt2
   guid: 6114a9b9ff2b364cb331580bd44a2d65
   Banks:
-  - {fileID: 8583150798428134635}
+  - {fileID: -6873470287602129960}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -88,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637189246334758070
+  lastModified: 637189581964721370
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -109,7 +127,7 @@ MonoBehaviour:
   Path: event:/Jump 1
   guid: 704d2c70baedc346800f2880ca885206
   Banks:
-  - {fileID: 8583150798428134635}
+  - {fileID: -6873470287602129960}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -132,7 +150,7 @@ MonoBehaviour:
   Path: event:/Land 2
   guid: 280903ca078e9546a53dfb91db4a6924
   Banks:
-  - {fileID: 8583150798428134635}
+  - {fileID: -6873470287602129960}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -155,7 +173,7 @@ MonoBehaviour:
   Path: event:/Fabrik Loop
   guid: 6e61a0d6be32c74283f5544603076859
   Banks:
-  - {fileID: 8583150798428134635}
+  - {fileID: -6873470287602129960}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -180,4 +198,4 @@ MonoBehaviour:
   lastModified: 637189246334694850
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
