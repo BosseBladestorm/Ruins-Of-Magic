@@ -149,7 +149,6 @@ public class RiftManager : MonoBehaviour {
 
     private void SetStaff(SpawnEventPortObject sender, GameObject player) {
         staff = player.GetComponent<PlayerBehaviour>().staff;
-
     }
 
     private void OnEnable() {
