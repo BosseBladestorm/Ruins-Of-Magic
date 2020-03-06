@@ -6,7 +6,7 @@ public class GolemMovement : CrystalBase
 {
     [SerializeField] bool isActive;
     [SerializeField] float speed;
-    [SerializeField] LayerMask wallLayer;
+    [SerializeField] LayerMask layerIgnor;
     [SerializeField] Vector2 endOffSet;
     [SerializeField] float startOffSetX;
     [SerializeField] float startOffSetY;
@@ -50,7 +50,8 @@ public class GolemMovement : CrystalBase
                 startCast.y += startOffSetY;
                 endCast = endOffSet;
                 Debug.DrawRay(startCast, endCast, Color.red);
-                hit = Physics2D.Raycast(startCast, endCast);
+                hit = Physics2D.Linecast(startCast, endCast, layerIgnor);
+                //hit = Physics2D.Raycast(startCast, endCast);
 
             }
             else {
@@ -60,36 +61,40 @@ public class GolemMovement : CrystalBase
                 startCast.y += startOffSetY;
                 endCast = endOffSet;
                 Debug.DrawRay(startCast, endCast, Color.red);
-                hit = Physics2D.Raycast(startCast, endCast);
+                hit = Physics2D.Linecast(startCast, endCast, layerIgnor);
+                //hit = Physics2D.Raycast(startCast, endCast);
             }
 
 
-            if (hit.collider.name.StartsWith("Wall")) {
-                if (movingRight == true) {
-                    moveDirection = +1;
-                    transform.localScale = new Vector2(8,8);
-                    movingRight = false;
-                }
-                else {
-                    moveDirection = -1;
-                    transform.localScale = new Vector2(-8, 8);
-                    movingRight = true;
+            if (hit.collider != null) {
+                if (hit.collider.name.StartsWith("Wall")) {
+                    if (movingRight == true) {
+                        moveDirection = +1;
+                        transform.localScale = new Vector2(8, 8);
+                        movingRight = false;
+                    }
+                    else {
+                        moveDirection = -1;
+                        transform.localScale = new Vector2(-8, 8);
+                        movingRight = true;
+                    }
                 }
             }
+            if (hit.collider != null) {
+                if (hit.collider.name.StartsWith("Pickup")) {
+                    Vector2 objPos;
+                    if (movingRight == true) {
+                        objPos = new Vector2(transform.position.x - 5f, transform.position.y + 2f);
+                    }
+                    else {
+                        objPos = new Vector2(transform.position.x + 5f, transform.position.y + 2f);
+                    }
 
-            if (hit.collider.name.StartsWith("Pickup")) {
-                Vector2 objPos;
-                if (movingRight == true) {
-                    objPos = new Vector2(transform.position.x - 5f, transform.position.y + 2f);
+                    hit.collider.transform.position = objPos;
+                    hit.collider.transform.parent = gameObject.transform;
+                    hit.collider.GetComponent<Rigidbody2D>().isKinematic = true;
+                    hit.collider.GetComponent<BoxCollider2D>().enabled = false;
                 }
-                else {
-                    objPos = new Vector2(transform.position.x + 5f, transform.position.y + 2f);
-                }
-                
-                hit.collider.transform.position = objPos;
-                hit.collider.transform.parent = gameObject.transform;
-                hit.collider.GetComponent<Rigidbody2D>().isKinematic = true;
-                hit.collider.GetComponent<BoxCollider2D>().enabled = false;
             }
 
             rb2d.velocity = new Vector2(moveDirection * speed, rb2d.velocity.y);
@@ -99,12 +104,12 @@ public class GolemMovement : CrystalBase
                 transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
                 Rigidbody2D childRb2d = transform.GetChild(0).GetComponent<Rigidbody2D>();
                 if (movingRight == true) {
-                    childRb2d.isKinematic = false;
+                    //childRb2d.isKinematic = false;
                     childRb2d.AddForce(transform.up * 10f, ForceMode2D.Impulse);           
                     //transform.GetChild(0).transform.position = new Vector2(transform.position.x - 10f, transform.position.y );
                 }
                 else {
-                    childRb2d.isKinematic = false;
+                    //childRb2d.isKinematic = false;
                     childRb2d.AddForce(transform.up * 10f, ForceMode2D.Impulse);
                     //transform.GetChild(0).transform.position = new Vector2(transform.position.x + 10f, transform.position.y );
                 }
@@ -118,7 +123,7 @@ public class GolemMovement : CrystalBase
             return;
 
         isTriggered = true;
-        StartCoroutine(ExampleCoroutine(isTriggered));
+        //StartCoroutine(ExampleCoroutine(isTriggered));
 
     }
     public override void OnReleaseCrystal() {
