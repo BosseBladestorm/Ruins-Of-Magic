@@ -177,6 +177,9 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+<<<<<<< HEAD
+--- !u!1 &899548856
+=======
 --- !u!1 &486403130
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +336,7 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243867515
+>>>>>>> a2af05c89c575b209661d51bbe8472a95a45038d
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -749,3 +753,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7628832422612993192
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7628832422803105938, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_Name
+      value: Golem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105943, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628832422803105939, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: wanderPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 444073769}
+    - target: {fileID: 7628832422803105939, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: wanderPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1720171389}
+    - target: {fileID: 7628832422803105939, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: wanderPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1732301990}
+    - target: {fileID: 7628832422803105939, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: wanderPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 1720171389}
+    - target: {fileID: 7628832422803105939, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: wanderPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 444073769}
+    - target: {fileID: 7628832422803105939, guid: 63da4f737e485a14ebd16ac3257494af,
+        type: 3}
+      propertyPath: wanderPoints.Array.data[5]
+      value: 
+      objectReference: {fileID: 1732301990}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 63da4f737e485a14ebd16ac3257494af, type: 3}
