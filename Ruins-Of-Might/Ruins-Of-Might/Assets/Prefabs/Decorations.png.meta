@@ -1,46 +1,34 @@
 fileFormatVersion: 2
-guid: 017c20ddf4f399a45a64ca7c7c325720
+guid: 490aca0e0c025cf48bc250c2642879b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7044600463676044407
-    second: Prototyp tile set_0
+      213: 4234090705077185718
+    second: Decorations_0
   - first:
-      213: -8615579322400288778
-    second: Prototyp tile set_1
+      213: 5936755781256884489
+    second: Decorations_1
   - first:
-      213: -2963231235286402838
-    second: Prototyp tile set_2
+      213: -4254563025835751457
+    second: Decorations_2
   - first:
-      213: -8490375831801270974
-    second: Prototyp tile set_3
+      213: -6378001285771275336
+    second: Decorations_3
   - first:
-      213: -4045228829231875134
-    second: Prototyp tile set_4
+      213: -5616891256712012705
+    second: Decorations_4
   - first:
-      213: 3590381136845241553
-    second: Prototyp tile set_5
+      213: 6598800818792424630
+    second: Decorations_5
   - first:
-      213: -6215361854555260148
-    second: Prototyp tile set_6
+      213: -3457936716284645164
+    second: Decorations_6
   - first:
-      213: -1510491178772386539
-    second: Prototyp tile set_7
+      213: 8185991327826330270
+    second: Decorations_7
   - first:
-      213: 6415228432188114747
-    second: Prototyp tile set_8
-  - first:
-      213: 1027246535109887491
-    second: Prototyp tile set_9
-  - first:
-      213: -5747112777334618709
-    second: Prototyp tile set_10
-  - first:
-      213: -3553576731424432708
-    second: Prototyp tile set_11
-  - first:
-      213: -247817337025878049
-    second: Prototyp tile set_12
+      213: 2977761442387407660
+    second: Decorations_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -125,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prototyp tile set_0
+      name: Decorations_0
       rect:
         serializedVersion: 2
         x: 0
@@ -139,14 +127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dc7fa7500a2c994e937417845292d67
-      internalID: -7044600463676044407
+      spriteID: 340bf9e47f0237a41ba121bbc1ab98d5
+      internalID: 4234090705077185718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_1
+      name: Decorations_1
       rect:
         serializedVersion: 2
         x: 256
@@ -160,14 +148,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f99961f3f7066c44a7d095acfd7ec89
-      internalID: -8615579322400288778
+      spriteID: ed519ac4cbe6bb5458c0d6ee985b3520
+      internalID: 5936755781256884489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_2
+      name: Decorations_2
       rect:
         serializedVersion: 2
         x: 512
@@ -181,35 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 698e5b50138c2824d85ac8aedfe79925
-      internalID: -2963231235286402838
+      spriteID: f8526d1e987a915478f3752b9c3e4f5d
+      internalID: -4254563025835751457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_3
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 768
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c535b3af19a2ef418c8c9004394b58a
-      internalID: -8490375831801270974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Prototyp tile set_4
+      name: Decorations_3
       rect:
         serializedVersion: 2
         x: 0
@@ -223,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ba1fc296571b114cab0c62b924d259c
-      internalID: -4045228829231875134
+      spriteID: 6fc1221019d27bf4bac56fc9cb41abf1
+      internalID: -6378001285771275336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_5
+      name: Decorations_4
       rect:
         serializedVersion: 2
         x: 256
@@ -244,14 +211,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc5e4452a4b25ff468915967ba57a25a
-      internalID: 3590381136845241553
+      spriteID: 5554ed3dc589cef4ea822083014a8a3c
+      internalID: -5616891256712012705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_6
+      name: Decorations_5
       rect:
         serializedVersion: 2
         x: 512
@@ -265,35 +232,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0923a428c2f46e94a80b2fbf84b604c0
-      internalID: -6215361854555260148
+      spriteID: 77af7bbb525ce3a45ae6e164b299749d
+      internalID: 6598800818792424630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_7
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee3290233c9bc3442ad9889c8ede7838
-      internalID: -1510491178772386539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Prototyp tile set_8
+      name: Decorations_6
       rect:
         serializedVersion: 2
         x: 0
@@ -307,14 +253,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5bd22eef9b92b14f8a30da65c97390a
-      internalID: 6415228432188114747
+      spriteID: 983122e23bcff134faecad3004f3898c
+      internalID: -3457936716284645164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_9
+      name: Decorations_7
       rect:
         serializedVersion: 2
         x: 256
@@ -328,14 +274,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38593cd04c6c7a1439e1518913ff7fcf
-      internalID: 1027246535109887491
+      spriteID: e0909f79a69420f4cb18f042f69ff81d
+      internalID: 8185991327826330270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prototyp tile set_10
+      name: Decorations_8
       rect:
         serializedVersion: 2
         x: 512
@@ -349,50 +295,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1281ee03f2ec7e4f9273b5fa0fce5cd
-      internalID: -5747112777334618709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Prototyp tile set_11
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6951ad08d0467945a5c8f380d5c6664
-      internalID: -3553576731424432708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Prototyp tile set_12
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48acfd0b5bbf3774da7f20d6911597b8
-      internalID: -247817337025878049
+      spriteID: e7fcef50b15d5514e84d6aefa3265652
+      internalID: 2977761442387407660
       vertices: []
       indices: 
       edges: []
@@ -406,9 +310,7 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: ca5a5724a29732f479a7fd4463130a0f, type: 3}
-      name: _NormalMap
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
