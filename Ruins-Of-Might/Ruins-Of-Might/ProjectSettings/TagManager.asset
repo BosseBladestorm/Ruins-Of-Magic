@@ -17,10 +17,10 @@ TagManager:
   - Beams
   - Rifts
   - Crystal
-  - 
-  - 
-  - 
-  - 
+  - BeamAffector
+  - Background
+  - Middleground
+  - Foreground
   - 
   - 
   - 
@@ -41,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 49191339
+    locked: 0
+  - name: Beams
+    uniqueID: 1404997073
+    locked: 0
+  - name: Middleground
+    uniqueID: 2052163533
+    locked: 0
+  - name: Player
+    uniqueID: 2674104883
+    locked: 0
+  - name: Foreground
+    uniqueID: 3376007113
     locked: 0
