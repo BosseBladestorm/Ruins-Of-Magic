@@ -157,7 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isInstant: 0
-  m_growthSpeed: 25
   m_angle: 90
   m_force: 100
   m_beamMask:
@@ -378,8 +377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b4a41a49a6229428f18da93b4d8d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pivot: {fileID: 8585710763094635751}
+  m_growthSpeed: 1
   force: 100
   angle: 90
+  isOrigin: 1
+  beamTarget: {fileID: 729494459}
 --- !u!50 &5960413577625755103
 Rigidbody2D:
   serializedVersion: 4

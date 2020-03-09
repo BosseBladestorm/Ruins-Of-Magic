@@ -5958,6 +5958,28 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 546, y: 550}
+  - name: Sprite_Karaktar_Hat_Seperate_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 1436
+      width: 293
+      height: 553
+    spriteID: 21e8889f4e088c4478098ce83f71ca50
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 1436}
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
