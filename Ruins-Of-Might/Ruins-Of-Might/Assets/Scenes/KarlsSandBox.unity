@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 1330371356}
   - component: {fileID: 1330371354}
   m_Layer: 15
-  m_Name: GolemRework
+  m_Name: Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1490,15 +1490,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 2594273110046674013, guid: b78931eb121babf46a1e10906118dbf9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2594273110046674000, guid: b78931eb121babf46a1e10906118dbf9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -49.6
+      value: -23.6
       objectReference: {fileID: 0}
     - target: {fileID: 2594273110046674000, guid: b78931eb121babf46a1e10906118dbf9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.8
+      value: -46.1
       objectReference: {fileID: 0}
     - target: {fileID: 2594273110046674000, guid: b78931eb121babf46a1e10906118dbf9,
         type: 3}

@@ -27,10 +27,17 @@ public class GolemBehaviour : CrystalBase
     private int moveDirection;
     private SpriteRenderer sprite;
 
+    private float m_runToIdleTime;
+    private float m_runToIdleSensitivity = 0.1f;
+
     [Header("Animator parameters")]
-    [SerializeField] string animRunningBool;
-    [SerializeField] string animJumpStartTrigger;
-    [SerializeField] string animGroundedBool;
+    [SerializeField] string activateTrigger;
+    [SerializeField] string animWalkingBool;
+    [SerializeField] string liftTrigger;
+    [SerializeField] string carryBool;
+    [SerializeField] string dropTrigger;
+    [SerializeField] string DeactivateTrigger;
+
     void Start()
     {
         if (m_rigidbody == null) {
@@ -76,38 +83,52 @@ public class GolemBehaviour : CrystalBase
                 if (hit.collider.gameObject.layer.Equals(0)) {
                     if (movingRight == true) {
                         moveDirection = +1;
-                        sprite.flipX = false;
-                        //transform.localScale = new Vector2(8, 8);
+                        //sprite.flipX = false;
+                        transform.localScale = new Vector2(8, 8);
                         movingRight = false;
                     }
                     else {
                         moveDirection = -1;
-                        sprite.flipX = true;
-                        //transform.localScale = new Vector2(-8, 8);
+                        //sprite.flipX = true;
+                        transform.localScale = new Vector2(-8, 8);
                         movingRight = true;
                     }
                 }
             }
             if (hit.collider != null && hit.collider != this) {
-                if (hit.collider.gameObject.layer.Equals(10)) {
-                    
+                if (hit.collider.gameObject.layer.Equals(10) && transform.GetChild(0).childCount == 0) {
+
+                    m_animator.SetTrigger(liftTrigger);
+
                     hit.collider.transform.position = m_pickUpPos.position;
-                    hit.collider.transform.parent = gameObject.transform;
+                    hit.collider.transform.parent = gameObject.transform.GetChild(0);
 
                     hit.collider.GetComponent<CrystalBase>().OnTriggerCrystal();
                     hit.collider.GetComponent<BoxCollider2D>().enabled = false;
                 }
             }
+
+            if(transform.GetChild(0).childCount > 0) {
+                m_animator.SetBool(carryBool, true);
+            }
+            else {
+                m_animator.SetBool(carryBool, false);
+                
+            }
+            m_animator.SetBool(animWalkingBool, true);
             m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
         }
         if (isActive == false) {
-            if(transform.childCount > 2) {
-                var childBox2d = transform.GetChild(2);
+            //Debug.Log(transform.GetChild(0).childCount);
+            if(transform.GetChild(0).childCount == 1) {
+                m_animator.SetBool(animWalkingBool, false);
+                m_animator.SetTrigger(dropTrigger);
+                var child = transform.GetChild(0).GetChild(0);
 
-                childBox2d.GetComponent<BoxCollider2D>().enabled = true;
-                childBox2d.GetComponent<CrystalBase>().OnReleaseCrystal();
-                childBox2d.transform.position = m_dropOffPos.position;
-                Transform child = transform.GetChild(2).GetComponent<Transform>();
+                child.GetComponent<BoxCollider2D>().enabled = true;
+                child.GetComponent<CrystalBase>().OnReleaseCrystal();
+                child.transform.position = m_dropOffPos.position;
+                
                 child.parent = null;
             }
         }
@@ -119,7 +140,7 @@ public class GolemBehaviour : CrystalBase
 
         isTriggered = true;
         StartCoroutine(ExampleCoroutine(isTriggered));
-
+        m_animator.SetTrigger(activateTrigger);
     }
     public override void OnReleaseCrystal() {
         if (!isTriggered)
@@ -127,6 +148,6 @@ public class GolemBehaviour : CrystalBase
         else
             isTriggered = false;
         isActive = isTriggered;
-
+        m_animator.SetTrigger(DeactivateTrigger);
     }
 }
