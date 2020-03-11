@@ -48,7 +48,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.303
   m_Color: {r: 0.88461196, g: 0.93168557, b: 0.9716981, a: 1}
-  m_Intensity: 2.18
+  m_Intensity: 10
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000ab99ee02d18dbe53cd87517a339a639fc9c739c9
   m_LightCookieSprite: {fileID: 0}
@@ -14501,8 +14501,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b4a41a49a6229428f18da93b4d8d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pivot: {fileID: 0}
+  m_growthSpeed: 1
+  sprite: {fileID: 0}
   force: 100
   angle: 90
+  isOrigin: 1
+  beamTarget: {fileID: 0}
 --- !u!50 &8791329277601207706
 Rigidbody2D:
   serializedVersion: 4
