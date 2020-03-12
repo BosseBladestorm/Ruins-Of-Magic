@@ -1,41 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7930894818637712690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637191123445141004
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-6630097449570657888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637188407356974039
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
 --- !u!114 &-8215625349850764057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +33,24 @@ MonoBehaviour:
   Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637188384678381958
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-7930894818637712690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637191123445141004
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -180,6 +162,47 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6630097449570657888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637188407356974039
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6456616602858363821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Rift Ambiance Pt2
+  m_EditorClassIdentifier: 
+  Path: event:/Rift Ambiance Pt2
+  guid: 6114a9b9ff2b364cb331580bd44a2d65
+  Banks:
+  - {fileID: -6975128819566024695}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 22500
 --- !u!114 &-6385867281634275766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +244,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 500
---- !u!114 &-6456616602858363821
+--- !u!114 &-2896894666728931238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,20 +253,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Rift Ambiance Pt2
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: event:/Rift Ambiance Pt2
-  guid: 6114a9b9ff2b364cb331580bd44a2d65
-  Banks:
-  - {fileID: -6975128819566024695}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 22500
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637193620793242857
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1923909497766656022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,10 +279,10 @@ MonoBehaviour:
   - {fileID: -6975128819566024695}
   EditorEvents:
   - {fileID: 1109968288388553590}
-  - {fileID: 4991074952256619678}
-  - {fileID: -1395456940668106770}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: -5492202482116440835}
-  - {fileID: 5012051009355537720}
+  - {fileID: 0}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6975128819566024695}
@@ -272,6 +290,55 @@ MonoBehaviour:
   - {fileID: 5949487573413105336}
   stringsBankWriteTime: 637193508102748643
   cacheVersion: 3
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 139819501727017244}
+  - {fileID: -7930894818637712690}
+  - {fileID: -2896894666728931238}
+  EditorEvents:
+  - {fileID: 0}
+  - {fileID: -6456616602858363821}
+  - {fileID: 0}
+  - {fileID: 7343723607420759738}
+  - {fileID: 6823660132688384830}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -7930894818637712690}
+  StringsBanks:
+  - {fileID: 139819501727017244}
+  stringsBankWriteTime: 637193620792902645
+  cacheVersion: 3
+--- !u!114 &139819501727017244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637193620792902645
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 906
+  Exists: 1
 --- !u!114 &604656575127412439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,100 +380,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 122500
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 139819501727017244}
-  - {fileID: -7930894818637712690}
-  EditorEvents:
-  - {fileID: -6630097449570657888}
-  - {fileID: -6456616602858363821}
-  - {fileID: -1923909497766656022}
-  - {fileID: 7343723607420759738}
-  - {fileID: 6823660132688384830}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -7930894818637712690}
-  StringsBanks:
-  - {fileID: 139819501727017244}
-  stringsBankWriteTime: 637191123444951507
-  cacheVersion: 3
---- !u!114 &139819501727017244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.strings.bank
-  SubDir: 
-  lastModified: 637191123444951507
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 906
-  Exists: 1
---- !u!114 &6823660132688384830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Goal
-  m_EditorClassIdentifier: 
-  Path: event:/Goal
-  guid: bc6c9e4c5100024889c6b79a425c0e2a
-  Banks:
-  - {fileID: -6975128819566024695}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 5000
---- !u!114 &7343723607420759738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Jump 1
-  m_EditorClassIdentifier: 
-  Path: event:/Jump 1
-  guid: 704d2c70baedc346800f2880ca885206
-  Banks:
-  - {fileID: -6975128819566024695}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 500
 --- !u!114 &5517065930566729760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +490,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6823660132688384830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Goal
+  m_EditorClassIdentifier: 
+  Path: event:/Goal
+  guid: bc6c9e4c5100024889c6b79a425c0e2a
+  Banks:
+  - {fileID: -6975128819566024695}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5000
 --- !u!114 &7250373070667219599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +531,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7343723607420759738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Jump 1
+  m_EditorClassIdentifier: 
+  Path: event:/Jump 1
+  guid: 704d2c70baedc346800f2880ca885206
+  Banks:
+  - {fileID: -6975128819566024695}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
 --- !u!114 &7937906803042285174
 MonoBehaviour:
   m_ObjectHideFlags: 0
