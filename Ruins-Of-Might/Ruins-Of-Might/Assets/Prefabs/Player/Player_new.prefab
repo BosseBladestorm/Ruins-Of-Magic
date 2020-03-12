@@ -372,16 +372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1678790052448529602}
     m_Modifications:
-    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
-        type: 3}
-      propertyPath: m_Name
-      value: Player_ARC
-      objectReference: {fileID: 0}
-    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3104088462094495026, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -451,6 +441,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_ARC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084397682701749987, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3255876772850116527, guid: d8975329ed5c93b4eb6fb53701b6aa3d,
         type: 3}
@@ -1087,7 +1087,7 @@ PrefabInstance:
     - target: {fileID: 8444138483917685229, guid: 9974de2d8b2a9e74382537e4d990ffcd,
         type: 3}
       propertyPath: m_crystalLayer.m_Bits
-      value: 1024
+      value: 33792
       objectReference: {fileID: 0}
     - target: {fileID: 8444138483917685228, guid: 9974de2d8b2a9e74382537e4d990ffcd,
         type: 3}
