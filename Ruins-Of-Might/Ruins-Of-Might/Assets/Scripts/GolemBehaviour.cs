@@ -4,87 +4,127 @@ using UnityEngine;
 
 public class GolemBehaviour : CrystalBase
 {
-    [SerializeField] float m_speed = 10f;
-
-    [SerializeField] Transform[] wanderPoints;
-    [SerializeField] Transform currentWanderPoint;
-    [SerializeField] LayerMask pickupable;
-    [SerializeField] int wanderPointIndex;
     [SerializeField] bool isActive;
-    private int indexDirection;
+    [SerializeField] float m_speed;
+
+    [SerializeField] LayerMask m_layer;
+
+    [SerializeField] Vector2 endOffSet;
+    [SerializeField] float startOffSetX;
+    [SerializeField] float startOffSetY;
+
+    [SerializeField] Animator m_animator = null;
+
+    private Rigidbody2D m_rigidbody = null;
+
+    private Vector2 startCast;
+    private Vector2 endCast = Vector2.zero;
+
+    [SerializeField] Transform m_pickUpPos = null;
+    [SerializeField] Transform m_dropOffPos = null;
+
+    private bool movingRight = true;
     private int moveDirection;
 
-    [SerializeField] Rigidbody2D m_rigidbody;
-    [SerializeField] Transform m_transform;
-    // Start is called before the first frame update
+    [Header("Animator parameters")]
+    [SerializeField] string activateBool;
+    [SerializeField] string liftTrigger;
+    [SerializeField] string carryBool;
 
     void Start()
     {
-        
         if (m_rigidbody == null) {
             m_rigidbody = GetComponent<Rigidbody2D>();
         }
-
-        if (m_transform == null) {
-            m_transform = GetComponent<Transform>();
-        }
-
-        if (currentWanderPoint == null) {
-            currentWanderPoint = wanderPoints[0];
+        if (movingRight == true) {
+            moveDirection = +1;
+            movingRight = false;
         }
     }
-
     IEnumerator ExampleCoroutine(bool triggerTest) {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(1.5f);
-        isActive = triggerTest;
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        isActive = isTriggered;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
+    private void FixedUpdate() {
         if (isActive) {
+            startCast = transform.position;
+            startCast.y += startOffSetY;
+            RaycastHit2D hit;
+            if (movingRight == true) {
+               
+                startCast.x -= startOffSetX;
+            }
+            else {
+                startCast.x += startOffSetX;
+                
+            }
+            endCast = endOffSet;
+            Debug.DrawRay(startCast, endCast, Color.red);
+            hit = Physics2D.Linecast(startCast, endCast, m_layer);
+
+            if (hit.collider != null && hit.collider != this) {
+                if (hit.collider.gameObject.layer.Equals(0)) {
+                    if (movingRight == true) {
+                        moveDirection = +1;
+                        transform.localScale = new Vector2(1, 1);
+                        movingRight = false;
+                    }
+                    else {
+                        moveDirection = -1;
+                        transform.localScale = new Vector2(-1, 1);
+                        movingRight = true;
+                    }
+                }
+            }
+            if (hit.collider != null && hit.collider != this) {
+                if (hit.collider.gameObject.layer.Equals(10) && m_pickUpPos.childCount == 0) {
+                    m_animator.SetTrigger(liftTrigger);
+                    hit.collider.transform.position = m_pickUpPos.position;
+                    hit.collider.transform.parent = m_pickUpPos;
+                    m_pickUpPos.parent = transform;
+
+                    hit.collider.GetComponent<CrystalBase>().OnTriggerCrystal();
+                    hit.collider.GetComponent<BoxCollider2D>().enabled = false;
+                    
+                }
+                
+            }
+
+            if(m_pickUpPos.childCount > 0) {
+                m_animator.SetBool(carryBool, true);
+            }
+            else {
+                m_animator.SetBool(carryBool, false);
+                
+            }
             
-            if (currentWanderPoint.position.x - m_transform.position.x > 0)
-                moveDirection = +1;
-            else if (currentWanderPoint.position.x - m_transform.position.x < 0)
-                moveDirection = -1;
-            Debug.Log(moveDirection * m_speed);
+        }
+        if (isActive == false) {
+            if(m_pickUpPos.childCount == 1) {
+                
+                var child = m_pickUpPos.GetChild(0);
+
+                child.GetComponent<BoxCollider2D>().enabled = true;
+                child.GetComponent<CrystalBase>().OnReleaseCrystal();
+                child.transform.position = m_dropOffPos.position;
+                
+                child.parent = null;
+            }
         }
     }
-
-    private void FixedUpdate() {
-        if(isActive)
+    private void Update() {
+        if (isActive) {
             m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision) {
-        Debug.Log("change");
-        if (collision.transform == currentWanderPoint) {
-            if (wanderPointIndex <= 0)
-                indexDirection = 1;
-            if (wanderPointIndex >= wanderPoints.Length -1)
-                indexDirection = -1;
-
-            wanderPointIndex += indexDirection;
-            currentWanderPoint = wanderPoints[wanderPointIndex];
         }
     }
     public override void OnTriggerCrystal() {
 
         if (isTriggered)
             return;
-        
+
         isTriggered = true;
         StartCoroutine(ExampleCoroutine(isTriggered));
-        //isActive = isTriggered;
-
+        m_animator.SetBool(activateBool, true);
     }
     public override void OnReleaseCrystal() {
         if (!isTriggered)
@@ -92,6 +132,6 @@ public class GolemBehaviour : CrystalBase
         else
             isTriggered = false;
         isActive = isTriggered;
-
+        m_animator.SetBool(activateBool, false);
     }
 }
