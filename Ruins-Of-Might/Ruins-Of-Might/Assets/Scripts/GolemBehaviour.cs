@@ -24,6 +24,7 @@ public class GolemBehaviour : CrystalBase
     [SerializeField] Transform m_dropOffPos = null;
 
     private bool movingRight = true;
+    public bool pickedUp = false;
     private int moveDirection;
 
     [Header("Animator parameters")]
@@ -42,8 +43,14 @@ public class GolemBehaviour : CrystalBase
         }
     }
     IEnumerator ExampleCoroutine(bool triggerTest) {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         isActive = isTriggered;
+    }
+    IEnumerator pickedUpCoroutine() {
+        pickedUp = true;
+        m_animator.SetTrigger(liftTrigger);
+        yield return new WaitForSeconds(1.5f);
+        pickedUp = false;
     }
     private void FixedUpdate() {
         if (isActive) {
@@ -78,7 +85,10 @@ public class GolemBehaviour : CrystalBase
             }
             if (hit.collider != null && hit.collider != this) {
                 if (hit.collider.gameObject.layer.Equals(10) && m_pickUpPos.childCount == 0) {
-                    m_animator.SetTrigger(liftTrigger);
+
+                   
+                    
+                    StartCoroutine(pickedUpCoroutine());
                     hit.collider.transform.position = m_pickUpPos.position;
                     hit.collider.transform.parent = m_pickUpPos;
                     m_pickUpPos.parent = transform;
@@ -113,8 +123,14 @@ public class GolemBehaviour : CrystalBase
         }
     }
     private void Update() {
-        if (isActive) {
-            m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
+        if (isActive == true) {
+            if (pickedUp) {
+                m_rigidbody.velocity = Vector2.zero;
+            }
+            else {
+                m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
+            }
+            
         }
     }
     public override void OnTriggerCrystal() {
