@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BeamBase : MonoBehaviour {
 
-    [SerializeField] Transform m_pivot = null;
+    public Transform pivot = null;
     [SerializeField] float m_growthSpeed = 1f;
-    [SerializeField] Sprite sprite = null;
 
     public float force = 10f;
     public float angle = 0f;
@@ -18,8 +17,7 @@ public class BeamBase : MonoBehaviour {
     private Vector3 m_targetScale;
 
     private void Start() {
-        sprite = GetComponent<SpriteRenderer>().sprite;
-        m_pivot.transform.localScale = new Vector3(0, m_pivot.transform.localScale.y, m_pivot.transform.localScale.z);
+        pivot.transform.localScale = new Vector3(0, pivot.transform.localScale.y, pivot.transform.localScale.z);
 
     }
 
@@ -36,21 +34,21 @@ public class BeamBase : MonoBehaviour {
         affectedObjects.Remove(target);
     }
 
-    public void ScaleToPoint(Vector3 point) {
-        Transform parentTransform = transform.parent;
-        float scaleY = Vector2.Distance(point, m_pivot.position);
-        float ratio = sprite.rect.width / sprite.pixelsPerUnit;
-        m_targetScale = new Vector3((scaleY / ratio) / transform.localScale.x, 1, 1);
+    public virtual void ScaleToPoint(Vector3 point) {;
+        float scaleY = Vector2.Distance(point, pivot.position);
+        float ratio = 1.34f / 100f;
+        transform.localPosition = new Vector3(-37.3f, -0.22f, 0);
+        m_targetScale = new Vector3(scaleY * ratio, 1, 1);
 
     }
 
     public void BaseUpdate() {
 
-        if (m_pivot.transform.localScale != m_targetScale) {
-            m_pivot.transform.localScale = Vector3.MoveTowards(m_pivot.transform.localScale, m_targetScale, m_growthSpeed * Time.deltaTime);
+        if (pivot.transform.localScale != m_targetScale) {
+            pivot.transform.localScale = Vector3.MoveTowards(pivot.transform.localScale, m_targetScale, m_growthSpeed * Time.deltaTime);
 
-            if (m_pivot.transform.localScale.x == 0)
-                m_pivot.gameObject.SetActive(false);
+            if (pivot.transform.localScale.x == 0)
+                pivot.gameObject.SetActive(false);
 
         }
 

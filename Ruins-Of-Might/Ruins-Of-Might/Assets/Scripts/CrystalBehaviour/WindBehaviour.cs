@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WindBehaviour : BeamBase {
 
+    [SerializeField] ParticleSystem wind_particles;
+    [SerializeField] ParticleSystem wind_light;
+    [SerializeField] ParticleSystem wind_swirl;
+
     private void Update() {
         BaseUpdate();
 
@@ -14,8 +18,28 @@ public class WindBehaviour : BeamBase {
 
     }
 
+    public override void ScaleToPoint(Vector3 point) {
+        base.ScaleToPoint(point);
+
+        ParticleSystem.MainModule psMain;
+        float dist = Vector2.Distance(pivot.position, point);
+        float newLifeTime;
+
+        psMain = wind_particles.main;
+        newLifeTime = dist / 40f;
+        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.8f, newLifeTime);
+
+        psMain = wind_light.main;
+        newLifeTime = dist / 28.5f;
+        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime, newLifeTime * 0.5f);
+
+        psMain = wind_swirl.main;
+        newLifeTime = dist / 28.5f;
+        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime, newLifeTime * 0.33f);
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collider) {
-        Debug.Log(collider.name);
 
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();
