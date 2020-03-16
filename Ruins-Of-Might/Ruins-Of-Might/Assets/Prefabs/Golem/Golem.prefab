@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430125861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.29, y: -48.550003, z: 0}
+  m_LocalPosition: {x: 12.3, y: -11, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 9051565326709093854}
@@ -130,11 +130,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1025
   endOffSet: {x: 0, y: 25}
-  startOffSetX: 12
+  startOffSetX: 9
   startOffSetY: -14
   m_animator: {fileID: 417717799015769026}
   m_pickUpPos: {fileID: 2015733853}
-  m_dropOffPos: {fileID: 0}
+  m_dropOffPos: {fileID: 430125862}
   pickedUp: 0
   activateBool: IsActivated
   liftTrigger: IsLifting 0
@@ -146,11 +146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9051565326709093854}
     m_Modifications:
-    - target: {fileID: 6108628787968477506, guid: e086a4499bcd48a4a83fcd463d4ac200,
-        type: 3}
-      propertyPath: m_Name
-      value: Golem_Prefab
-      objectReference: {fileID: 0}
     - target: {fileID: 142720342822096659, guid: e086a4499bcd48a4a83fcd463d4ac200,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,6 +201,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6108628787968477506, guid: e086a4499bcd48a4a83fcd463d4ac200,
+        type: 3}
+      propertyPath: m_Name
+      value: Golem_Prefab
+      objectReference: {fileID: 0}
     - target: {fileID: 9030204826715123944, guid: e086a4499bcd48a4a83fcd463d4ac200,
         type: 3}
       propertyPath: m_LocalRotation.z
@@ -214,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 8669876325361217134, guid: e086a4499bcd48a4a83fcd463d4ac200,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.14753027
+      value: -0.1475303
       objectReference: {fileID: 0}
     - target: {fileID: 4939605235609023053, guid: e086a4499bcd48a4a83fcd463d4ac200,
         type: 3}
@@ -224,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 915741605557224556, guid: e086a4499bcd48a4a83fcd463d4ac200,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.2792294
+      value: 0.27922937
       objectReference: {fileID: 0}
     - target: {fileID: 362364099706727714, guid: e086a4499bcd48a4a83fcd463d4ac200,
         type: 3}

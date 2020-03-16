@@ -36,6 +36,10 @@ public class FireBehaviour : BeamBase {
 
         if (collider.GetComponent<PlayerBehaviour>() != null)
             collider.GetComponent<PlayerBehaviour>().Burn();
+
+        if (collider.GetComponent<WoodBehaviour>() != null)
+            collider.GetComponent<WoodBehaviour>().StartCoroutine(collider.GetComponent<WoodBehaviour>().Burn());
+
     }
 
     private void OnTriggerExit2D(Collider2D collider) {
