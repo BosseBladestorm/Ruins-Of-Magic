@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8bd70422af92e8446a2aa95c79f0fed2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e3e00fd2b97ab5439d77ec0675242a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -242,6 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6305629715943393635}
+  - component: {fileID: 8738066378014856298}
   m_Layer: 0
   m_Name: Rift
   m_TagString: Untagged
@@ -264,6 +265,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8738066378014856298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305629715943393634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a37d9b08e04a540a45eded496d3242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnEventPort: {fileID: 0}
+  m_raycastIgnore:
+    serializedVersion: 2
+    m_Bits: 0
+  riftTransform: {fileID: 6305629715943393635}
+  m_beam: {fileID: 0}
+  staff: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &6305629716126362382
 GameObject:
   m_ObjectHideFlags: 0
