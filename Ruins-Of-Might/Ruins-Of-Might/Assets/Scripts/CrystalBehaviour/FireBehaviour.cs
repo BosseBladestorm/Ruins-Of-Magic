@@ -33,6 +33,9 @@ public class FireBehaviour : BeamBase {
 
         }
 
+
+        if (collider.GetComponent<PlayerBehaviour>() != null)
+            collider.GetComponent<PlayerBehaviour>().Burn();
     }
 
     private void OnTriggerExit2D(Collider2D collider) {
