@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,43 +25,33 @@ public class GolemBehaviour : CrystalBase
     [SerializeField] Transform m_dropOffPos = null;
 
     private bool movingRight = true;
+    public bool pickedUp = false;
     private int moveDirection;
-    private SpriteRenderer sprite;
-
-    private float m_runToIdleTime;
-    private float m_runToIdleSensitivity = 0.1f;
 
     [Header("Animator parameters")]
-    [SerializeField] string activateTrigger;
-    [SerializeField] string animWalkingBool;
+    [SerializeField] string activateBool;
     [SerializeField] string liftTrigger;
     [SerializeField] string carryBool;
-    [SerializeField] string dropTrigger;
-    [SerializeField] string DeactivateTrigger;
 
     void Start()
     {
         if (m_rigidbody == null) {
             m_rigidbody = GetComponent<Rigidbody2D>();
         }
-        if (sprite == null) {
-            sprite = GetComponent<SpriteRenderer>();
-        }
-
         if (movingRight == true) {
             moveDirection = +1;
             movingRight = false;
         }
     }
     IEnumerator ExampleCoroutine(bool triggerTest) {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-        //yield on a new YieldInstruction that waits for 1.5 seconds.
+        yield return new WaitForSeconds(1f);
+        isActive = isTriggered;
+    }
+    IEnumerator pickedUpCoroutine() {
+        pickedUp = true;
+       
         yield return new WaitForSeconds(1.5f);
-        isActive = triggerTest;
-        //After we have waited 1.5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-
+        pickedUp = false;
     }
     private void FixedUpdate() {
         if (isActive) {
@@ -83,47 +74,45 @@ public class GolemBehaviour : CrystalBase
                 if (hit.collider.gameObject.layer.Equals(0)) {
                     if (movingRight == true) {
                         moveDirection = +1;
-                        //sprite.flipX = false;
-                        transform.localScale = new Vector2(8, 8);
+                        transform.localScale = new Vector2(1, 1);
                         movingRight = false;
                     }
                     else {
                         moveDirection = -1;
-                        //sprite.flipX = true;
-                        transform.localScale = new Vector2(-8, 8);
+                        transform.localScale = new Vector2(-1, 1);
                         movingRight = true;
                     }
                 }
             }
             if (hit.collider != null && hit.collider != this) {
-                if (hit.collider.gameObject.layer.Equals(10) && transform.GetChild(0).childCount == 0) {
+                if (hit.collider.gameObject.layer.Equals(10) && m_pickUpPos.childCount == 0) {
 
+                    StartCoroutine(pickedUpCoroutine());
                     m_animator.SetTrigger(liftTrigger);
-
                     hit.collider.transform.position = m_pickUpPos.position;
-                    hit.collider.transform.parent = gameObject.transform.GetChild(0);
+                    hit.collider.transform.parent = m_pickUpPos;
+                    //m_pickUpPos.parent = transform;
 
                     hit.collider.GetComponent<CrystalBase>().OnTriggerCrystal();
                     hit.collider.GetComponent<BoxCollider2D>().enabled = false;
+                    
                 }
+                
             }
 
-            if(transform.GetChild(0).childCount > 0) {
+            if(m_pickUpPos.childCount > 0 && pickedUp == false) {
                 m_animator.SetBool(carryBool, true);
             }
             else {
                 m_animator.SetBool(carryBool, false);
                 
             }
-            m_animator.SetBool(animWalkingBool, true);
-            m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
+            
         }
         if (isActive == false) {
-            //Debug.Log(transform.GetChild(0).childCount);
-            if(transform.GetChild(0).childCount == 1) {
-                m_animator.SetBool(animWalkingBool, false);
-                m_animator.SetTrigger(dropTrigger);
-                var child = transform.GetChild(0).GetChild(0);
+            if(m_pickUpPos.childCount == 1) {
+                
+                var child = m_pickUpPos.GetChild(0);
 
                 child.GetComponent<BoxCollider2D>().enabled = true;
                 child.GetComponent<CrystalBase>().OnReleaseCrystal();
@@ -133,6 +122,18 @@ public class GolemBehaviour : CrystalBase
             }
         }
     }
+
+    private void Update() {
+        if (isActive == true) {
+            if (pickedUp) {
+                m_rigidbody.velocity = Vector2.zero;
+            }
+            else {
+                m_rigidbody.velocity = new Vector2(moveDirection * m_speed, m_rigidbody.velocity.y);
+            }
+            
+        }
+    }
     public override void OnTriggerCrystal() {
 
         if (isTriggered)
@@ -140,7 +141,7 @@ public class GolemBehaviour : CrystalBase
 
         isTriggered = true;
         StartCoroutine(ExampleCoroutine(isTriggered));
-        m_animator.SetTrigger(activateTrigger);
+        m_animator.SetBool(activateBool, true);
     }
     public override void OnReleaseCrystal() {
         if (!isTriggered)
@@ -148,6 +149,6 @@ public class GolemBehaviour : CrystalBase
         else
             isTriggered = false;
         isActive = isTriggered;
-        m_animator.SetTrigger(DeactivateTrigger);
+        m_animator.SetBool(activateBool, false);
     }
 }

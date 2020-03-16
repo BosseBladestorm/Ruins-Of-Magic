@@ -365,6 +365,7 @@ MonoBehaviour:
   animJumpStartTrigger: Jumping
   animGroundedBool: Grounded
   animWindBool: Flying
+  animFireBool: Burning
 --- !u!1001 &3445593636904235051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1087,7 +1088,7 @@ PrefabInstance:
     - target: {fileID: 8444138483917685229, guid: 9974de2d8b2a9e74382537e4d990ffcd,
         type: 3}
       propertyPath: m_crystalLayer.m_Bits
-      value: 1024
+      value: 33792
       objectReference: {fileID: 0}
     - target: {fileID: 8444138483917685228, guid: 9974de2d8b2a9e74382537e4d990ffcd,
         type: 3}
