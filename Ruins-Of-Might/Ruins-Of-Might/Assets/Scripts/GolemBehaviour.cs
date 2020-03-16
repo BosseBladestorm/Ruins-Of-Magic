@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,7 +49,7 @@ public class GolemBehaviour : CrystalBase
     }
     IEnumerator pickedUpCoroutine() {
         pickedUp = true;
-        m_animator.SetTrigger(liftTrigger);
+       
         yield return new WaitForSeconds(1.5f);
         pickedUp = false;
     }
@@ -86,12 +87,11 @@ public class GolemBehaviour : CrystalBase
             if (hit.collider != null && hit.collider != this) {
                 if (hit.collider.gameObject.layer.Equals(10) && m_pickUpPos.childCount == 0) {
 
-                   
-                    
                     StartCoroutine(pickedUpCoroutine());
+                    m_animator.SetTrigger(liftTrigger);
                     hit.collider.transform.position = m_pickUpPos.position;
                     hit.collider.transform.parent = m_pickUpPos;
-                    m_pickUpPos.parent = transform;
+                    //m_pickUpPos.parent = transform;
 
                     hit.collider.GetComponent<CrystalBase>().OnTriggerCrystal();
                     hit.collider.GetComponent<BoxCollider2D>().enabled = false;
@@ -100,7 +100,7 @@ public class GolemBehaviour : CrystalBase
                 
             }
 
-            if(m_pickUpPos.childCount > 0) {
+            if(m_pickUpPos.childCount > 0 && pickedUp == false) {
                 m_animator.SetBool(carryBool, true);
             }
             else {
@@ -122,6 +122,7 @@ public class GolemBehaviour : CrystalBase
             }
         }
     }
+
     private void Update() {
         if (isActive == true) {
             if (pickedUp) {
