@@ -289,7 +289,7 @@ MonoBehaviour:
   lastModified: 637198849913463407
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +307,7 @@ MonoBehaviour:
   - {fileID: -7930894818637712690}
   - {fileID: 5585178657441583032}
   - {fileID: -1756097709185258357}
+  - {fileID: 5959248233533038721}
   EditorEvents:
   - {fileID: 0}
   - {fileID: -6456616602858363821}
@@ -318,7 +319,7 @@ MonoBehaviour:
   - {fileID: -7930894818637712690}
   StringsBanks:
   - {fileID: 139819501727017244}
-  stringsBankWriteTime: 637198849913473380
+  stringsBankWriteTime: 637193508102748643
   cacheVersion: 3
 --- !u!114 &139819501727017244
 MonoBehaviour:
@@ -334,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637198849913473380
+  lastModified: 637193508102748643
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -436,6 +437,24 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 906
+  Exists: 1
+--- !u!114 &5959248233533038721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637193508103087658
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &5994976745408268726
 MonoBehaviour:
