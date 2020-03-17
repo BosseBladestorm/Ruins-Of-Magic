@@ -1,95 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1047151308
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1047151309}
-  - component: {fileID: 1047151311}
-  - component: {fileID: 1047151310}
-  m_Layer: 0
-  m_Name: Point Light 2D
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1047151309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047151308}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.260421, y: -2.2037282, z: -0.6359611}
-  m_LocalScale: {x: 0.68532336, y: 0.26498362, z: 0.4080979}
-  m_Children: []
-  m_Father: {fileID: 9089491244563180200}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1047151311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047151308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LightType: 3
-  m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.303
-  m_Color: {r: 0.88461196, g: 0.93168557, b: 0.9716981, a: 1}
-  m_Intensity: 10
-  m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 00000000ab99ee02d18dbe53cd87517a339a639fc9c739c9
-  m_LightCookieSprite: {fileID: 0}
-  m_UseNormalMap: 1
-  m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
-  m_PointLightInnerAngle: 360
-  m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.62
-  m_PointLightOuterRadius: 9.7
-  m_PointLightDistance: 3
-  m_PointLightQuality: 1
-  m_ShapeLightParametricSides: 5
-  m_ShapeLightParametricAngleOffset: 0
-  m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
-  m_ShapeLightFalloffOffset: {x: 0, y: 0}
-  m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
---- !u!95 &1047151310
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047151308}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 590cd300724b051489943628a0cd3423, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4122829090403153480
 GameObject:
   m_ObjectHideFlags: 0
@@ -9864,7 +9774,6 @@ Transform:
   m_Children:
   - {fileID: 4122829090403153485}
   - {fileID: 2410629604615330900}
-  - {fileID: 1047151309}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -14501,13 +14410,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b4a41a49a6229428f18da93b4d8d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pivot: {fileID: 0}
+  pivot: {fileID: 0}
   m_growthSpeed: 1
-  sprite: {fileID: 0}
   force: 100
   angle: 90
   isOrigin: 1
   beamTarget: {fileID: 0}
+  wind_particles: {fileID: 0}
+  wind_light: {fileID: 0}
+  wind_swirl: {fileID: 0}
 --- !u!50 &8791329277601207706
 Rigidbody2D:
   serializedVersion: 4

@@ -4818,7 +4818,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2273827788386121534}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1967314192144551687
 SpriteRenderer:
@@ -4898,7 +4898,6 @@ Transform:
   m_LocalPosition: {x: -118.7, y: -75.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2687775591654810796}
   - {fileID: 2273827790345766161}
   - {fileID: 1967314192144551684}
   m_Father: {fileID: 0}
@@ -5106,14 +5105,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2273827790345766162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.9, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 0.39998698, z: 1}
   m_Children:
   - {fileID: 7541506414252453342}
   - {fileID: 2273827788620507778}
   - {fileID: 6748727736430318483}
   m_Father: {fileID: 2273827788386121534}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2687775591654810797
 GameObject:
@@ -5127,7 +5126,7 @@ GameObject:
   - component: {fileID: 2687775591654810798}
   - component: {fileID: 2687775591654810799}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: Animated Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5141,11 +5140,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2687775591654810797}
   m_LocalRotation: {x: -0, y: -0.00000021073423, z: -0, w: 1}
-  m_LocalPosition: {x: 0.19649482, y: -0.4900043, z: 20}
-  m_LocalScale: {x: 1.1750004, y: 1, z: 1}
+  m_LocalPosition: {x: 0.19649506, y: 0.17519045, z: 20}
+  m_LocalScale: {x: 1.1750004, y: 2.5000813, z: 1}
   m_Children: []
-  m_Father: {fileID: 2273827788386121534}
-  m_RootOrder: 0
+  m_Father: {fileID: 6748727736430318483}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2687775591654810798
 MonoBehaviour:
@@ -5161,9 +5160,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.303
+  m_FalloffIntensity: 1
   m_Color: {r: 0.88461196, g: 0.93168557, b: 0.9716981, a: 1}
-  m_Intensity: 10
+  m_Intensity: 0.1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000ab99ee02d18dbe53cd87517a339a639fc9c739c9
   m_LightCookieSprite: {fileID: 0}
@@ -5172,8 +5171,8 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.62
-  m_PointLightOuterRadius: 9.7
+  m_PointLightInnerRadius: 4.58
+  m_PointLightOuterRadius: 15.55
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -14782,6 +14781,7 @@ Transform:
   - {fileID: 3295868698358574495}
   - {fileID: 6698402098674482709}
   - {fileID: 9221415340092228470}
+  - {fileID: 2687775591654810796}
   m_Father: {fileID: 2273827790345766161}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
