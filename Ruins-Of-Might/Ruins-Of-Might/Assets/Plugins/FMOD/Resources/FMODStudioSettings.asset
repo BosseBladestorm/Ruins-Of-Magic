@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Ruins Of Magic Sounds/Ruins Of Magic Sounds.fspro
-  sourceBankPath: Assets\Ruins Of Magic Sounds\Build
+  sourceProjectPath: 
+  sourceBankPath: 
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -74,11 +74,7 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks:
-  - Master
-  Banks:
-  - Master
-  - Master
-  - Master
+  MasterBanks: []
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
