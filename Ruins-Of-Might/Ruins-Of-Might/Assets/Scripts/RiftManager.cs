@@ -13,6 +13,9 @@ public class RiftManager : MonoBehaviour {
     public StaffBehaviour staff = null;
     public CrystalBase target = null;
 
+    [SerializeField] Transform[] childsSmall;
+    [SerializeField] Transform[] childsLarge;
+
     private static bool hasCycled;
     private static int riftIndex;
     
@@ -20,7 +23,6 @@ public class RiftManager : MonoBehaviour {
     private void Start(){
         riftsInViewList.Clear();
         target = null;
-
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
@@ -36,7 +38,6 @@ public class RiftManager : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D collider){
-
         riftsInViewList.Remove(this);
 
         if (activeRift == this)
@@ -53,6 +54,12 @@ public class RiftManager : MonoBehaviour {
 
             m_beam.gameObject.SetActive(true);
             m_RiftCycleCheck();
+            foreach (Transform m in childsLarge) {
+                m.gameObject.SetActive(true);
+            }
+            foreach (Transform m in childsSmall) {
+                m.gameObject.SetActive(false);
+            }
 
             if (target == null) {
 
@@ -93,6 +100,15 @@ public class RiftManager : MonoBehaviour {
 
             }
 
+        }
+
+        if (activeRift != this) {
+            foreach (Transform m in childsLarge) {
+                m.gameObject.SetActive(false);
+            }
+            foreach (Transform m in childsSmall) {
+                m.gameObject.SetActive(true);
+            }
         }
 
     }

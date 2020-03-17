@@ -272,6 +272,24 @@ MonoBehaviour:
   - {fileID: 5949487573413105336}
   stringsBankWriteTime: 637193508102748643
   cacheVersion: 3
+--- !u!114 &-1756097709185258357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637198849913463407
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +306,8 @@ MonoBehaviour:
   - {fileID: 139819501727017244}
   - {fileID: -7930894818637712690}
   - {fileID: 5585178657441583032}
+  - {fileID: -1756097709185258357}
+  - {fileID: 5606170942379624492}
   EditorEvents:
   - {fileID: 0}
   - {fileID: -6456616602858363821}
@@ -299,7 +319,7 @@ MonoBehaviour:
   - {fileID: -7930894818637712690}
   StringsBanks:
   - {fileID: 139819501727017244}
-  stringsBankWriteTime: 637194625200829272
+  stringsBankWriteTime: 637198939209399388
   cacheVersion: 3
 --- !u!114 &139819501727017244
 MonoBehaviour:
@@ -315,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637194625200829272
+  lastModified: 637198939209399388
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -395,6 +415,24 @@ MonoBehaviour:
   Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637194625200809278
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &5606170942379624492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic Sounds/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637198939209379316
   LoadResult: 0
   FileSizes: []
   Exists: 1

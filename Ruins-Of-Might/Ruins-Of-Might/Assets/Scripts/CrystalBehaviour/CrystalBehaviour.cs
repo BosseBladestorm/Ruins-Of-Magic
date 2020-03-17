@@ -69,11 +69,6 @@ public class CrystalBehaviour : CrystalBase {
         if (m_beamPivot == null) {
             Debug.LogWarning("pivot is set to null (required)");
 
-        } else if (m_beam != null){
-            m_beamPivot.eulerAngles = new Vector3(0, 0, m_angle - 180);
-            m_beam.angle = m_angle;
-            m_beam.force = m_force;
-
         }
 
     }
