@@ -21,6 +21,11 @@ public class BeamBase : MonoBehaviour {
 
     }
 
+    public virtual void ShrinkBeam() {
+        ScaleToPoint(pivot.transform.position);
+
+    }
+
     private void Update() {
         BaseUpdate();
 
