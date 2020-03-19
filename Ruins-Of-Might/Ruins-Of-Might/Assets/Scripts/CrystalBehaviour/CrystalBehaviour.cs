@@ -28,7 +28,7 @@ public class CrystalBehaviour : CrystalBase {
             if (hit.transform == null)
                 m_beam.ScaleToPoint(m_defaultBeamTarget.position);
             else
-                m_beam.ScaleToPoint(hit.point);
+                m_beam.ScaleToPoint(new Vector2(hit.point.x - 25f, hit.point.y - 25f));
 
     }
 
@@ -38,7 +38,7 @@ public class CrystalBehaviour : CrystalBase {
     }
 
     private void ShrinkBeam() {
-        m_beam.ScaleToPoint(m_beamPivot.transform.position);
+        m_beam.ShrinkBeam();
 
     }
    
@@ -69,12 +69,10 @@ public class CrystalBehaviour : CrystalBase {
         if (m_beamPivot == null) {
             Debug.LogWarning("pivot is set to null (required)");
 
-        } else if (m_beam != null){
-            m_beamPivot.eulerAngles = new Vector3(0, 0, m_angle - 180);
-            m_beam.angle = m_angle;
-            m_beam.force = m_force;
-
         }
+
+        m_beam.angle = m_angle;
+        m_beam.force = m_force;
 
     }
 

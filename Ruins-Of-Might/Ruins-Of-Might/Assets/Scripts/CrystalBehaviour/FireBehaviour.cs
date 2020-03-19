@@ -5,15 +5,62 @@ using UnityEngine;
 public class FireBehaviour : BeamBase {
 
     [SerializeField] GameObject firePrefab;
-    private Vector3 m_targetScale;
+    [SerializeField] ParticleSystem defaultFire;
+    [SerializeField] ParticleSystem firePt1;
+    [SerializeField] ParticleSystem firePt2;
 
+    ParticleSystem fireSystem;
+    private FireBehaviour m_fireChild = null; //NOTE (herman): this is not pretty but i cba. Fight me.
+
+    private void Start() {
+
+        if (isOrigin)
+            fireSystem = defaultFire;
+        else
+            fireSystem = firePt2;
+
+    }
+
+
+    private Vector3 lastTargetPos;
     private void Update() {
         BaseUpdate();
 
-        //NOTE: FIXA SCALING
-       /*if (transform.parent.localScale != m_targetScale)
-                transform.parent.transform.localScale = Vector3.MoveTowards(transform.parent.transform.localScale, m_targetScale, 5f * Time.deltaTime);
-        */
+        if(!isOrigin && beamTarget.position != lastTargetPos) {
+            ScaleToPoint(beamTarget.position);
+            lastTargetPos = beamTarget.position;
+        }
+
+    }
+
+    public override void ScaleToPoint(Vector3 point) {
+        base.ScaleToPoint(point);
+
+        ParticleSystem.MainModule psMain;
+        float dist = Vector2.Distance(pivot.position, point);
+        float newLifeTime;
+
+        psMain = fireSystem.main;
+        newLifeTime = dist / 33f;
+        psMain.startLifetime = newLifeTime;
+
+    }
+
+    public override void ShrinkBeam() {
+        if (m_fireChild == null)
+            ScaleToPoint(pivot.transform.position);
+        else {
+            m_fireChild.ScaleToPoint(m_fireChild.pivot.position);
+            StartCoroutine(ShrinkDoubleBeam());
+
+        }
+
+    }
+
+    IEnumerator ShrinkDoubleBeam() {
+        yield return new WaitForSeconds(m_fireChild.pivot.localScale.x);
+        Destroy(m_fireChild.transform.parent.parent.gameObject);
+        ScaleToPoint(pivot.position);
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
@@ -21,48 +68,56 @@ public class FireBehaviour : BeamBase {
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();
             OnObjectEnter(target);
-            target.GetComponent<Rigidbody2D>().isKinematic = true;
-
-            if (collider.GetComponent<PlayerBehaviour>() != null)
-                collider.GetComponent<PlayerBehaviour>().SetBeamAnimatorBool(true);
 
         }
 
-        //Varför blev jag programmerare???????????
-       /* if (isOrigin) {
+        if (isOrigin)
             if (collider.GetComponent<WindBehaviour>() != null) {
+
+
+                Debug.Log("asdftest");
 
                 RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position, beamTarget.position);
                 foreach (RaycastHit2D hit in hits) {
 
                     if (hit.transform.GetComponent<WindBehaviour>()) {
 
-                        Vector2 centerpoint = new Vector2(hit.transform.position.x, hit.point.y);
-                        GameObject fire = Instantiate(firePrefab, transform.parent.parent);
-                        fire.transform.position = centerpoint;
-                        fire.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
-
-
-                        FireBehaviour fireBehaviour = fire.GetComponentInChildren<FireBehaviour>();
-                        WindBehaviour windBehaviour = hit.transform.GetComponent<WindBehaviour>();
-                        fireBehaviour.beamTarget = windBehaviour.beamTarget;
-                        fireBehaviour.isOrigin = false;
-                        fireBehaviour.angle = windBehaviour.angle;
-                        fireBehaviour.force = windBehaviour.force;
-
-                        float scaleY = Vector2.Distance(beamTarget.position, transform.parent.position);
-                        m_targetScale = new Vector3((scaleY / (GetComponent<SpriteRenderer>().sprite.rect.width / GetComponent<SpriteRenderer>().sprite.pixelsPerUnit)) / transform.parent.localScale.x, 1, 1);
-
-                        //Debug.DrawLine(transform.position, centerpoint, Color.blue, 1000f);
+                        fireSystem.gameObject.SetActive(false);
+                        fireSystem = firePt1;
+                        fireSystem.gameObject.SetActive(true);
+                        StartCoroutine(FireDelay(hit));
                         break;
 
                     }
-
                 }
-
             }
 
-        } */
+        if (collider.GetComponent<PlayerBehaviour>() != null)
+            collider.GetComponent<PlayerBehaviour>().Burn();
+
+        if (collider.GetComponent<WoodBehaviour>() != null)
+            collider.GetComponent<WoodBehaviour>().StartCoroutine(collider.GetComponent<WoodBehaviour>().Burn());
+
+    }
+
+    IEnumerator FireDelay(RaycastHit2D hit) {
+
+        yield return new WaitForSeconds(1f);
+        Vector2 centerpoint = new Vector2(hit.transform.position.x, hit.point.y);
+        GameObject fire = Instantiate(firePrefab, transform.parent.parent);
+        fire.transform.position = centerpoint;
+        fire.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+
+        FireBehaviour fireBehaviour = fire.GetComponentInChildren<FireBehaviour>();
+        WindBehaviour windBehaviour = hit.transform.GetComponent<WindBehaviour>();
+        fireBehaviour.defaultFire.gameObject.SetActive(false);
+        fireBehaviour.firePt2.gameObject.SetActive(true);
+        fireBehaviour.isOrigin = false;
+        fireBehaviour.angle = windBehaviour.angle;
+        fireBehaviour.force = windBehaviour.force;
+        fireBehaviour.beamTarget = windBehaviour.beamTarget;
+        m_fireChild = fireBehaviour;
 
     }
 
@@ -71,10 +126,6 @@ public class FireBehaviour : BeamBase {
         if (collider.GetComponent<DynamicObjectBase>() != null) {
             DynamicObjectBase target = collider.GetComponent<DynamicObjectBase>();
             OnObjectExit(target);
-            target.GetComponent<Rigidbody2D>().isKinematic = false;
-
-            if (collider.GetComponent<PlayerBehaviour>() != null)
-                collider.GetComponent<PlayerBehaviour>().SetBeamAnimatorBool(false);
 
         }
 
