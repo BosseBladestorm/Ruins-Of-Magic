@@ -27,15 +27,15 @@ public class WindBehaviour : BeamBase {
 
         psMain = wind_particles.main;
         newLifeTime = dist / 40f;
-        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.8f, newLifeTime);
+        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.7f, newLifeTime * 0.9f);
 
         psMain = wind_light.main;
         newLifeTime = dist / 28.5f;
-        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime, newLifeTime * 0.5f);
+        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.5f, newLifeTime * 0.25f);
 
         psMain = wind_swirl.main;
         newLifeTime = dist / 28.5f;
-        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime, newLifeTime * 0.33f);
+        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.5f, newLifeTime * 0.33f * 0.5f);
 
     }
 

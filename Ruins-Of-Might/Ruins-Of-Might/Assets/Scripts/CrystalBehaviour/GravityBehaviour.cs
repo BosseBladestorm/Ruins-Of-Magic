@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GravityBehaviour : BeamBase {
 
-    [SerializeField] ParticleSystem wind_particles;
-    [SerializeField] ParticleSystem wind_light;
-    [SerializeField] ParticleSystem wind_swirl;
+    [SerializeField] ParticleSystem gravity_lightning;
+    [SerializeField] ParticleSystem gravity_vortex;
+    [SerializeField] ParticleSystem gravity_dots;
 
     private void Update() {
         BaseUpdate();
@@ -25,17 +25,17 @@ public class GravityBehaviour : BeamBase {
         float dist = Vector2.Distance(pivot.position, point);
         float newLifeTime;
 
-        psMain = wind_particles.main;
-        newLifeTime = dist / 40f;
-        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.8f, newLifeTime);
+        psMain = gravity_lightning.main; 
+        newLifeTime = dist / 22f;
+        psMain.startLifetime = newLifeTime;
 
-        psMain = wind_light.main;
-        newLifeTime = dist / 28.5f;
-        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime, newLifeTime * 0.5f);
+        psMain = gravity_vortex.main;
+        newLifeTime = dist / 47f;
+        psMain.startLifetime = newLifeTime;
 
-        psMain = wind_swirl.main;
-        newLifeTime = dist / 28.5f;
-        psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime, newLifeTime * 0.33f);
+        psMain = gravity_dots.main;
+        newLifeTime = dist / 47f;
+        psMain.startLifetime = newLifeTime;
 
     }
 
