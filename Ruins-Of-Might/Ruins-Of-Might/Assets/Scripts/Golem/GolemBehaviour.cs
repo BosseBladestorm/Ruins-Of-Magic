@@ -159,6 +159,9 @@ public class GolemBehaviour : CrystalBase
     private void Flip() {
         facingDiraction *= -1;
         this.gameObject.transform.Rotate(0.0f, 180f, 0.0f);
+        if(m_pickUpPos.childCount == 1) {
+            m_pickUpPos.GetChild(0).transform.Rotate(0.0f, 180f, 0.0f);
+        }
     }
     private void SwitchState(State state) {
         switch (currentState) {
