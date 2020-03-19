@@ -89,6 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8835034266992685031}
+  - component: {fileID: 4655390005947800260}
   m_Layer: 0
   m_Name: RiftSpheresLarge (1)
   m_TagString: Untagged
@@ -114,6 +115,24 @@ Transform:
   m_Father: {fileID: 3032926930067405426}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &4655390005947800260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345955979372504586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d53a7bf87f5dcf41b04bbed3e46e63e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  reverseRotation: 0
+  pulsate: 0
+  maxScale: 2
+  minScale: 0.2
+  pulsationSpeed: 1
 --- !u!1 &892104728924186008
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5568277370778248314}
+  - component: {fileID: 2174868570031862711}
   m_Layer: 0
   m_Name: RiftSpheresLarge
   m_TagString: Untagged
@@ -405,6 +425,24 @@ Transform:
   m_Father: {fileID: 3032926930067405426}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2174868570031862711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785819704010861915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d53a7bf87f5dcf41b04bbed3e46e63e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 10
+  reverseRotation: 0
+  pulsate: 0
+  maxScale: 2
+  minScale: 0.2
+  pulsationSpeed: 1
 --- !u!1 &2023922974771407439
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5220335034459877047}
+  - component: {fileID: 4363601565461529376}
   m_Layer: 0
   m_Name: RiftSpheresSmall (1)
   m_TagString: Untagged
@@ -1023,6 +1062,24 @@ Transform:
   m_Father: {fileID: 3032926930067405426}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &4363601565461529376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166835485092210730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d53a7bf87f5dcf41b04bbed3e46e63e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 5
+  reverseRotation: 0
+  pulsate: 1
+  maxScale: 1.1
+  minScale: 0.9
+  pulsationSpeed: 0.1
 --- !u!1 &4339468250062517591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8925180080223918860}
+  - component: {fileID: 4677921596318826627}
   m_Layer: 0
   m_Name: RiftSpheresSmall
   m_TagString: Untagged
@@ -1547,6 +1605,24 @@ Transform:
   m_Father: {fileID: 3032926930067405426}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4677921596318826627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932814275749686899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d53a7bf87f5dcf41b04bbed3e46e63e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 5
+  reverseRotation: 0
+  pulsate: 1
+  maxScale: 1.1
+  minScale: 0.9
+  pulsationSpeed: 0.1
 --- !u!1 &6041098933806732097
 GameObject:
   m_ObjectHideFlags: 0
