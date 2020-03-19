@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GolemBehaviour : CrystalBase
+public class GolemOldBehaviour : CrystalBase
 {
     [SerializeField] bool isActive;
     [SerializeField] float m_speed;
@@ -71,7 +71,7 @@ public class GolemBehaviour : CrystalBase
             hit = Physics2D.Linecast(startCast, endCast, m_layer);
 
             if (hit.collider != null && hit.collider != this) {
-                if (hit.collider.gameObject.layer.Equals(0)) {
+                if (hit.collider.gameObject.name.StartsWith("Ground")) {
                     if (movingRight == true) {
                         moveDirection = +1;
                         transform.localScale = new Vector2(1, 1);
@@ -95,7 +95,6 @@ public class GolemBehaviour : CrystalBase
 
                     hit.collider.GetComponent<CrystalBase>().OnTriggerCrystal();
                     hit.collider.GetComponent<BoxCollider2D>().enabled = false;
-                    
                 }
                 
             }
