@@ -63,8 +63,7 @@ public class RiftManager : MonoBehaviour {
 
             if (target == null) {
 
-                m_beam.target = staff.transform.position;
-                //Debug.DrawLine(riftTransform.position, staff.transform.position, Color.red);
+                m_beam.target = staff.staffTarget.transform.position;
 
                 RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, staff.transform.position, ~m_raycastIgnore.value);
 
