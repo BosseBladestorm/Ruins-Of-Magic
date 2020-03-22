@@ -42,6 +42,7 @@ public class GolemBehaviour : CrystalBase
     IEnumerator ExampleCoroutine(bool triggerTest) {
         yield return new WaitForSeconds(1f);
         isActive = isTriggered;
+        
     }
     IEnumerator pickedUpCoroutine() {
         
