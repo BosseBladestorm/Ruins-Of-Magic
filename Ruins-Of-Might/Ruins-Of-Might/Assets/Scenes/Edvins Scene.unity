@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14465,12 +14465,12 @@ PrefabInstance:
     - target: {fileID: 2594293344783382650, guid: 13f06e4062256504581aa64ed37c2aa9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -74.226036
+      value: 12.6
       objectReference: {fileID: 0}
     - target: {fileID: 2594293344783382650, guid: 13f06e4062256504581aa64ed37c2aa9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -91.1
+      value: -90.4
       objectReference: {fileID: 0}
     - target: {fileID: 2594293344783382650, guid: 13f06e4062256504581aa64ed37c2aa9,
         type: 3}
@@ -17102,6 +17102,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9985019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212042132506434655, guid: f49d78bc9aa9f414dbe7bbb4478436b7,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212042132506434655, guid: f49d78bc9aa9f414dbe7bbb4478436b7,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f49d78bc9aa9f414dbe7bbb4478436b7, type: 3}

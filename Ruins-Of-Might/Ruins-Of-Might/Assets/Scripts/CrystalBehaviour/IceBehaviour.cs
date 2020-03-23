@@ -1,23 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class IceBehaviour : MonoBehaviour {
 
+    [SerializeField] TileBase tileA;
+    [SerializeField] TileBase tileB;
+    [SerializeField] string tilemapName;
     [SerializeField] LayerMask m_layerMask;
-    [SerializeField] PhysicsMaterial2D m_matFrozen;
+
+    private Tilemap tilemap;
+    void Start()
+    {
+        tilemap = GameObject.Find(tilemapName).GetComponent<Tilemap>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collider) {
         var hit = Physics2D.Linecast(this.transform.position, collider.transform.position, m_layerMask);
         if (hit) {
-            Freezing(hit.transform.gameObject);
+            Freezing();
         }
     }
 
-    private void Freezing(GameObject obj) {
-
-        obj.GetComponent<BoxCollider2D>().sharedMaterial = m_matFrozen;
-        obj.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0);
+    private void Freezing() {
+        tilemap.SwapTile(tileA, tileB);
     }
 
 }
