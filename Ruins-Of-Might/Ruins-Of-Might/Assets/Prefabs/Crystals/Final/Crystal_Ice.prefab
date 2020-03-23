@@ -4921,7 +4921,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   m_beamPivot: {fileID: 2273827788620507778}
-  m_beam: {fileID: 2273827789869201628}
+  m_beam: {fileID: 8489749127602679237}
   m_defaultBeamTarget: {fileID: 7541506414252453342}
 --- !u!61 &2273827788386121533
 BoxCollider2D:
@@ -4990,7 +4990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2273827789869201631}
   - component: {fileID: 2273827789869201629}
-  - component: {fileID: 2273827789869201628}
+  - component: {fileID: 8489749127602679237}
   - component: {fileID: 4188194482563285946}
   m_Layer: 8
   m_Name: Ice
@@ -5039,7 +5039,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.5276, y: 2.65}
   m_EdgeRadius: 0
---- !u!114 &2273827789869201628
+--- !u!114 &8489749127602679237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5048,18 +5048,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2273827789869201624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b4a41a49a6229428f18da93b4d8d62, type: 3}
+  m_Script: {fileID: 11500000, guid: bad955bd41c3db844bb2015880fb9b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivot: {fileID: 2273827788620507778}
+  pivot: {fileID: 0}
   m_growthSpeed: 1
   force: 100
   angle: 90
   isOrigin: 1
-  beamTarget: {fileID: 7541506414252453342}
-  wind_particles: {fileID: 0}
-  wind_light: {fileID: 0}
-  wind_swirl: {fileID: 0}
+  beamTarget: {fileID: 0}
+  ice_particles: {fileID: 0}
+  ice_light: {fileID: 0}
+  ice_swirl: {fileID: 0}
 --- !u!50 &4188194482563285946
 Rigidbody2D:
   serializedVersion: 4
@@ -14775,7 +14775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8168520184729536967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 6.1, z: 0}
+  m_LocalPosition: {x: -0, y: 54.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3295868698358574495}
