@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class StaffBehaviour : MonoBehaviour {
 
-    [SerializeField] Transform m_staffOrigin = null; //add onvalidate
+    public Transform staffTarget = null;
+    [SerializeField] Transform m_beamOrigin = null;
     [SerializeField] LayerMask m_raycastIgnore;
     [SerializeField] LayerMask m_crystalLayer;
     [SerializeField] Animator m_animator;
@@ -33,15 +34,15 @@ public class StaffBehaviour : MonoBehaviour {
                 StopFire(hit.transform.GetComponent<CrystalBase>());
         }
 
-        transform.position = m_staffOrigin.transform.position;
+        transform.position = m_beamOrigin.transform.position;
 
     }
 
     private void FireBeam() {
 
-        RaycastHit2D hit = Physics2D.Linecast(m_staffOrigin.position, m_mousePos, ~m_raycastIgnore.value);
+        RaycastHit2D hit = Physics2D.Linecast(m_beamOrigin.position, m_mousePos, ~m_raycastIgnore.value);
 
-        m_beam.gameObject.SetActive(true);
+        m_beam.SetActive(true);
 
         if (hit.transform != null)
             m_beam.target = hit.point;
@@ -78,7 +79,8 @@ public class StaffBehaviour : MonoBehaviour {
     public void StopFire() {
         m_IsFiring = false;
         m_animator.SetBool(animUseMagicBool, m_IsFiring);
-        m_beam.gameObject.SetActive(false);
+
+        m_beam.SetActive(false);
 
         if (m_targetCrystal != null)
             m_targetCrystal.OnReleaseCrystal();
@@ -90,7 +92,7 @@ public class StaffBehaviour : MonoBehaviour {
     public void StopFire(CrystalBase snapTarget) {
         m_IsFiring = false;
         m_animator.SetBool(animUseMagicBool, m_IsFiring);
-        m_beam.gameObject.SetActive(false);
+        m_beam.SetActive(false);
 
         if (snapTarget != null) {
             RiftManager.activeRift.ChangeTarget(snapTarget);
@@ -109,7 +111,7 @@ public class StaffBehaviour : MonoBehaviour {
 
     private void OnValidate() {
 
-        if (m_staffOrigin == null)
+        if (staffTarget == null)
             Debug.LogWarning("staffOrigin is set to null");
 
         if (m_animator == null)
