@@ -18,9 +18,12 @@ public class RiftManager : MonoBehaviour {
 
     private static bool hasCycled;
     private static int riftIndex;
-    
+    private const float BEAMSPEED = 200f;
+
+    private bool m_staffActive = false;
 
     private void Start(){
+        m_beam.ResetBeam();
         riftsInViewList.Clear();
         target = null;
     }
@@ -52,8 +55,9 @@ public class RiftManager : MonoBehaviour {
 
         if (activeRift == this) {
 
-            m_beam.gameObject.SetActive(true);
+            m_beam.SetActive(true);
             m_RiftCycleCheck();
+
             foreach (Transform m in childsLarge) {
                 m.gameObject.SetActive(true);
             }
@@ -62,8 +66,6 @@ public class RiftManager : MonoBehaviour {
             }
 
             if (target == null) {
-
-                m_beam.target = staff.staffTarget.transform.position;
 
                 RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, staff.transform.position, ~m_raycastIgnore.value);
 
@@ -76,7 +78,9 @@ public class RiftManager : MonoBehaviour {
                     return;
                 }
 
-                if (Input.GetMouseButton(0))
+                m_beam.ScaleToTarget(staff.staffTarget.transform.position, BEAMSPEED);
+
+                if (Input.GetMouseButton(0) && m_beam.isFullyScaled)
                     staff.Fire();
 
             } else {
@@ -102,6 +106,9 @@ public class RiftManager : MonoBehaviour {
         }
 
         if (activeRift != this) {
+
+            m_beam.ResetBeam();
+
             foreach (Transform m in childsLarge) {
                 m.gameObject.SetActive(false);
             }
@@ -147,6 +154,8 @@ public class RiftManager : MonoBehaviour {
     }
 
     private void ChangeActiveRift(int step){
+
+        m_beam.ResetBeam();
 
         riftIndex += step;
 
