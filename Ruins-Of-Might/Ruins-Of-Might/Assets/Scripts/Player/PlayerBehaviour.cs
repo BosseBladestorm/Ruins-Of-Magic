@@ -18,6 +18,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     [SerializeField] Animator m_animator = null;
 
+    [FMODUnity.EventRef]
+    [SerializeField] string footstepsound;
+    FMOD.Studio.EventInstance footstepevent;
 
     public StaffBehaviour staff = null;
 
@@ -39,6 +42,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (m_groundCheck == null) {
             m_groundCheck = GetComponentInChildren<GroundCheck>();
         }
+
+        footstepevent = FMODUnity.RuntimeManager.CreateInstance (footstepsound);
         
     }
 
@@ -59,7 +64,18 @@ public class PlayerBehaviour : MonoBehaviour
             m_animator.SetBool(animRunningBool, true);
             m_runToIdleTime = 0;
 
+            FMOD.Studio.PLAYBACK_STATE fmodPbState;
+            footstepevent.getPlaybackState(out fmodPbState);
+            if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING && m_groundCheck.isGrounded){
+                footstepevent.start();
+            }
+            else if (!m_groundCheck.isGrounded){
+                footstepevent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+
         } else {
+
+            footstepevent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
             if(m_runToIdleTime < m_runToIdleSensitivity + 1f)
                 m_runToIdleTime += Time.deltaTime;

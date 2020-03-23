@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: Walkable
-  Event: event:/Land 2
+  Event: "event:/Karakt\xE4r/Land 2"
   PlayEvent: 5
   StopEvent: 0
   AllowFadeout: 1
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: Walkable
-  Event: event:/Jump 1
+  Event: "event:/Karakt\xE4r/Jump 1"
   PlayEvent: 6
   StopEvent: 0
   AllowFadeout: 1
@@ -447,6 +447,7 @@ MonoBehaviour:
   m_rigidbody: {fileID: -1944040481424624275}
   m_groundCheck: {fileID: 3217607174701216741}
   m_animator: {fileID: 3548120528059103137}
+  footstepsound: "event:/Karakt\xE4r/Fotsteg"
   staff: {fileID: 4740062144665457430}
   animRunningBool: Running
   animJumpStartTrigger: Jumping
