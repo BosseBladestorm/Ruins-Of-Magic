@@ -110,7 +110,7 @@ public class GolemBehaviour : CrystalBase
         }
     }
     private void ExitIsWalingState() {
-        //golemAnim.SetBool("IsActivated", false);
+        
     }
     //-IsLifting State--------------------------------------------------
     private void EnterIsLiftingState() {
