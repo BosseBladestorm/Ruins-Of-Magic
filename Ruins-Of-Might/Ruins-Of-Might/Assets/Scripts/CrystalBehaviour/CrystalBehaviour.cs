@@ -22,13 +22,16 @@ public class CrystalBehaviour : CrystalBase {
 
     private void Update() {
 
-        RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, m_beamMask.value);
+        if(connectedRifts > 0) {
+            Debug.Log(connectedRifts);
+            RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, m_beamMask.value);
 
-        if(isTriggered)
             if (hit.transform == null)
                 m_beam.ScaleToPoint(m_defaultBeamTarget.position);
             else
                 m_beam.ScaleToPoint(new Vector2(hit.point.x - 25f, hit.point.y - 25f));
+
+        }
 
     }
 
@@ -44,10 +47,19 @@ public class CrystalBehaviour : CrystalBase {
    
     public override void OnTriggerCrystal() {
 
-        if (isTriggered)
+        connectedRifts++;
+
+        if (connectedRifts >= 1)
             return;
-        else
-            isTriggered = true;
+
+        GrowBeam();
+
+    }
+
+    public override void OnTriggerCrystal(bool incrementConnectedRifts) {
+
+        if (connectedRifts >= 1)
+            return;
 
         GrowBeam();
 
@@ -55,10 +67,10 @@ public class CrystalBehaviour : CrystalBase {
 
     public override void OnReleaseCrystal() {
 
-        if (!isTriggered)
+        connectedRifts--;
+
+        if (connectedRifts < 1)
             return;
-        else
-            isTriggered = false;
 
         ShrinkBeam();
 

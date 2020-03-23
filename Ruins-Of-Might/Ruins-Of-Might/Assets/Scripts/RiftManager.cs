@@ -18,7 +18,7 @@ public class RiftManager : MonoBehaviour {
 
     private static bool hasCycled;
     private static int riftIndex;
-    private const float BEAMSPEED = 200f;
+    private const float BEAMSPEED = 300f;
 
     private bool m_staffActive = false;
 
@@ -30,24 +30,38 @@ public class RiftManager : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider){
 
-        if(riftsInViewList.Count == 0) {
-            activeRift = this;
-            riftIndex = 0;
+        if(collider.GetComponent<PlayerBehaviour>() != null) {
+
+            if (riftsInViewList.Count == 0) {
+                activeRift = this;
+                riftIndex = 0;
+
+            }
+
+            riftsInViewList.Add(this);
 
         }
-
-        riftsInViewList.Add(this);
 
     }
 
     private void OnTriggerExit2D(Collider2D collider){
-        riftsInViewList.Remove(this);
 
-        if (activeRift == this)
-            ChangeActiveRift(-1);
+        if (collider.GetComponent<PlayerBehaviour>() != null) {
+            riftsInViewList.Remove(this);
 
-        if (target == null)
-            m_beam.gameObject.SetActive(false);
+            if (activeRift == this)
+                ChangeActiveRift(-1);
+
+            if (target == null) {
+                m_beam.SetActive(false);
+                m_beam.ResetBeam();
+            }
+
+            foreach (RiftManager rift in riftsInViewList) {
+                Debug.Log(rift.name);
+            }
+
+        }
 
     }
 
@@ -70,8 +84,9 @@ public class RiftManager : MonoBehaviour {
                 RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, staff.transform.position, ~m_raycastIgnore.value);
 
                 if (hit.collider != null) {
-                    m_beam.gameObject.SetActive(false);
-                    
+                    m_beam.SetActive(false);
+                    m_beam.ResetBeam();
+
                     //TODO (Herman): test for other rifts in view and swap rift
 
                     staff.StopFire();
@@ -139,6 +154,8 @@ public class RiftManager : MonoBehaviour {
 
     public void ChangeTarget(CrystalBase newTarget) {
 
+        m_beam.ResetBeam();
+
         if (target != null)
             target.OnReleaseCrystal();
 
@@ -149,11 +166,14 @@ public class RiftManager : MonoBehaviour {
         }
 
         target = newTarget;
-        newTarget.OnTriggerCrystal();
+        newTarget.OnTriggerCrystal(false);
 
     }
 
     private void ChangeActiveRift(int step){
+
+        if (riftsInViewList.Count <= 1)
+            return;
 
         m_beam.ResetBeam();
 

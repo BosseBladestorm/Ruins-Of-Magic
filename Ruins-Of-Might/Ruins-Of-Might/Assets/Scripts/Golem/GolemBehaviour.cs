@@ -41,7 +41,7 @@ public class GolemBehaviour : CrystalBase
 
     IEnumerator ExampleCoroutine(bool triggerTest) {
         yield return new WaitForSeconds(1f);
-        isActive = isTriggered;
+        isActive = triggerTest;
         
     }
     IEnumerator pickedUpCoroutine() {
@@ -251,23 +251,26 @@ public class GolemBehaviour : CrystalBase
 
     public override void OnTriggerCrystal() {
 
-        if (isTriggered)
+
+        connectedRifts++;
+
+        if (connectedRifts >= 1)
             return;
 
-        isTriggered = true;
-        StartCoroutine(ExampleCoroutine(isTriggered));
+        StartCoroutine(ExampleCoroutine(true));
         SwitchState(State.IsActive);
 
     }
     public override void OnReleaseCrystal() {
 
-        if (!isTriggered)
-            return;
-        else
-            isTriggered = false;
 
-        isActive = isTriggered;
-        golemAnim.SetBool("IsActivated", false);
+        connectedRifts--;
+
+        if (connectedRifts < 1) {
+            isActive = false;
+            golemAnim.SetBool("IsActivated", false);
+
+        }
 
     }
 }
