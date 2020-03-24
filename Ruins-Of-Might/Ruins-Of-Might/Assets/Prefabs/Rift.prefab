@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_origin: {fileID: 3032926930067405426}
+  m_beamStart: {fileID: 0}
   m_spriteRenderer: {fileID: 5342310894585871229}
   target: {x: 0, y: 0, z: 0}
 --- !u!1 &1730043486707070397
@@ -614,7 +615,6 @@ GameObject:
   - component: {fileID: 3032926930067405426}
   - component: {fileID: 3032926930067405427}
   - component: {fileID: 3032926930067405424}
-  - component: {fileID: 2623622437182348944}
   m_Layer: 9
   m_Name: Rift
   m_TagString: Untagged
@@ -684,29 +684,7 @@ MonoBehaviour:
   childsLarge:
   - {fileID: 5568277370778248314}
   - {fileID: 8835034266992685031}
---- !u!114 &2623622437182348944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3032926930067405425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Untagged
-  Event: event:/Rift Ambiance Pt2
-  PlayEvent: 5
-  StopEvent: 6
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  soundName: event:/Rift/Rift Ambiance
 --- !u!1 &3123369111267748902
 GameObject:
   m_ObjectHideFlags: 0

@@ -294,6 +294,7 @@ MonoBehaviour:
   m_animator: {fileID: 3548120528059103137}
   m_beam: {fileID: 3812172144750931884}
   animUseMagicBool: UseMagic
+  soundName: "event:/Karakt\xE4r/Beam Ambiance"
 --- !u!50 &1291261712360668803
 Rigidbody2D:
   serializedVersion: 4

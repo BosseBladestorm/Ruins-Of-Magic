@@ -32,11 +32,14 @@ public class GolemBehaviour : CrystalBase
     private Rigidbody2D m_rigidbody;
     private Animator golemAnim;
 
+
     private void Start() {
         m_rigidbody = GetComponent<Rigidbody2D>();
         golemAnim = GetComponentInChildren<Animator>();
 
         facingDiraction = 1;
+
+        //soundEvent = FMODUnity.RuntimeManager.CreateInstance (soundName);
     }
 
     IEnumerator ExampleCoroutine(bool triggerTest) {
@@ -127,6 +130,12 @@ public class GolemBehaviour : CrystalBase
             m_rigidbody.velocity = new Vector2(facingDiraction * m_Speed, m_rigidbody.velocity.y);
         
         }
+
+        /*MOD.Studio.PLAYBACK_STATE fmodPbState;
+        soundEvent.getPlaybackState(out fmodPbState);
+        if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
+            soundEvent.start();
+        }*/
     }
     private void ExitIsWalingState() {
         
