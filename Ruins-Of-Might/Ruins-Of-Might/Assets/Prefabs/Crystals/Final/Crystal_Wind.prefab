@@ -167,9 +167,9 @@ MonoBehaviour:
   angle: 90
   isOrigin: 1
   beamTarget: {fileID: 5991575852566667930}
-  wind_particles: {fileID: 6982325270896378766}
-  wind_light: {fileID: 4025866089651314040}
-  wind_swirl: {fileID: 2879300725619646319}
+  ice_particles: {fileID: 6982325270896378766}
+  ice_light: {fileID: 4025866089651314040}
+  ice_swirl: {fileID: 2879300725619646319}
 --- !u!50 &113151771647151358
 Rigidbody2D:
   serializedVersion: 4
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_beamPivot: {fileID: 2594293345017701830}
   m_beam: {fileID: 2594293343831930776}
   m_defaultBeamTarget: {fileID: 5991575852566667930}
+  soundName: event:/Vind kristall/Vind Kristall
 --- !u!61 &2594293344783382649
 BoxCollider2D:
   m_ObjectHideFlags: 0

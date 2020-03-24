@@ -15,9 +15,13 @@ public class CrystalBehaviour : CrystalBase {
     [SerializeField] BeamBase m_beam = null;
     [SerializeField] Transform m_defaultBeamTarget;
 
+    [FMODUnity.EventRef]
+    [SerializeField] string soundName;
+    FMOD.Studio.EventInstance soundEvent;
+
     private void Start() {
         m_beamPivot.gameObject.SetActive(false);
-
+        soundEvent = FMODUnity.RuntimeManager.CreateInstance (soundName);
     }
 
     private void Update() {
@@ -63,6 +67,12 @@ public class CrystalBehaviour : CrystalBase {
 
         GrowBeam();
 
+        FMOD.Studio.PLAYBACK_STATE fmodPbState;
+        soundEvent.getPlaybackState(out fmodPbState);
+        if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
+            soundEvent.start();
+        }
+
     }
 
     public override void OnReleaseCrystal() {
@@ -73,6 +83,7 @@ public class CrystalBehaviour : CrystalBase {
             return;
 
         ShrinkBeam();
+        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
     }
 

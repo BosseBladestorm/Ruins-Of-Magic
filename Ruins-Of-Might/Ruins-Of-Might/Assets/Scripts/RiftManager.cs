@@ -20,12 +20,19 @@ public class RiftManager : MonoBehaviour {
     private static int riftIndex;
     private const float BEAMSPEED = 300f;
 
+    [FMODUnity.EventRef]
+    [SerializeField] string soundName;
+    FMOD.Studio.EventInstance soundEvent;
+    
+
     private bool m_staffActive = false;
 
     private void Start(){
         m_beam.ResetBeam();
         riftsInViewList.Clear();
         target = null;
+
+        soundEvent = FMODUnity.RuntimeManager.CreateInstance (soundName);
     }
 
     private void OnTriggerEnter2D(Collider2D collider){
@@ -70,6 +77,12 @@ public class RiftManager : MonoBehaviour {
         if (activeRift == this) {
 
             m_beam.SetActive(true);
+        FMOD.Studio.PLAYBACK_STATE fmodPbState;
+        soundEvent.getPlaybackState(out fmodPbState);
+        if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
+            soundEvent.start();
+        }
+
             m_RiftCycleCheck();
 
             foreach (Transform m in childsLarge) {
@@ -122,6 +135,7 @@ public class RiftManager : MonoBehaviour {
 
         if (activeRift != this) {
 
+            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);           
             m_beam.ResetBeam();
 
             foreach (Transform m in childsLarge) {
