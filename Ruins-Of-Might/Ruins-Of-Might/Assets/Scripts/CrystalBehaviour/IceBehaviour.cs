@@ -5,28 +5,33 @@ using UnityEngine.Tilemaps;
 
 public class IceBehaviour : BeamBase {
 
-    [SerializeField] TileBase tileA;
-    [SerializeField] TileBase tileB;
-    [SerializeField] string tilemapName;
-    [SerializeField] LayerMask m_layerMask;
+    [SerializeField] string waterName;
+    [SerializeField] GameObject icePre;
 
-    private Tilemap tilemap;
-    void Start()
-    {
-        tilemap = GameObject.Find(tilemapName).GetComponent<Tilemap>();
-    }
+    private int nrChild;
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        var hit = Physics2D.Linecast(this.transform.position, collider.transform.position, m_layerMask);
-        if (hit) {
-            Freezing();
+
+        if (collider.name.StartsWith(waterName)) {
+
+            nrChild = collider.transform.childCount;
+            Vector3[] pos = new Vector3[nrChild];
+
+            for (int i = 0; i < nrChild; i++) {
+
+                Transform go = collider.transform.GetChild(0);
+                pos[i] = go.transform.position;
+                Destroy(go);
+
+            }
+
+            for (int i = 0; i < pos.Length; i++) {
+
+                Instantiate(icePre, pos[i], Quaternion.identity);
+
+            }
         }
     }
-
-    private void Freezing() {
-        tilemap.SwapTile(tileA, tileB);
-    }
-
 }
 
 
