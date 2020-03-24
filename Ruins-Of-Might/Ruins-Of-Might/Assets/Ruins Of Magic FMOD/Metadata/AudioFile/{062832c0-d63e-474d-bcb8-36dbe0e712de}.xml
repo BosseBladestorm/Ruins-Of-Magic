@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{062832c0-d63e-474d-bcb8-36dbe0e712de}">
+		<property name="assetPath">
+			<value>Walk cave8.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.08750566893424036</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2fb97137-dbcf-427a-aa97-6f7412c73597}</destination>
+		</relationship>
+	</object>
+</objects>

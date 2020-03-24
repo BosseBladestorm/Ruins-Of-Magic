@@ -2,10 +2,14 @@
 
 public class CrystalBase : MonoBehaviour {
 
-    protected bool isTriggered = false;
+    protected int connectedRifts = 0;
 
     public virtual void OnTriggerCrystal() {
         Debug.Log("Crystal Triggered");
+
+    }
+
+    public virtual void OnTriggerCrystal(bool incrementConnectedRifts) {
 
     }
 

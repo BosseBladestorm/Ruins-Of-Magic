@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class IceBehaviour : MonoBehaviour {
+public class IceBehaviour : BeamBase {
 
     [SerializeField] TileBase tileA;
     [SerializeField] TileBase tileB;

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{bf6800f9-e5a8-420f-b28d-1f2184822e07}">
+		<property name="assetPath">
+			<value>Golem Walk3.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.287891156462585</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2fb97137-dbcf-427a-aa97-6f7412c73597}</destination>
+		</relationship>
+	</object>
+</objects>

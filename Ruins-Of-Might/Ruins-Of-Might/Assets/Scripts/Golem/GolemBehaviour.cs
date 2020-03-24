@@ -32,16 +32,19 @@ public class GolemBehaviour : CrystalBase
     private Rigidbody2D m_rigidbody;
     private Animator golemAnim;
 
+
     private void Start() {
         m_rigidbody = GetComponent<Rigidbody2D>();
         golemAnim = GetComponentInChildren<Animator>();
 
         facingDiraction = 1;
+
+        //soundEvent = FMODUnity.RuntimeManager.CreateInstance (soundName);
     }
 
     IEnumerator ExampleCoroutine(bool triggerTest) {
         yield return new WaitForSeconds(1f);
-        isActive = isTriggered;
+        isActive = triggerTest;
         
     }
     IEnumerator pickedUpCoroutine() {
@@ -127,6 +130,12 @@ public class GolemBehaviour : CrystalBase
             m_rigidbody.velocity = new Vector2(facingDiraction * m_Speed, m_rigidbody.velocity.y);
         
         }
+
+        /*MOD.Studio.PLAYBACK_STATE fmodPbState;
+        soundEvent.getPlaybackState(out fmodPbState);
+        if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
+            soundEvent.start();
+        }*/
     }
     private void ExitIsWalingState() {
         
@@ -251,23 +260,26 @@ public class GolemBehaviour : CrystalBase
 
     public override void OnTriggerCrystal() {
 
-        if (isTriggered)
+
+        connectedRifts++;
+
+        if (connectedRifts >= 1)
             return;
 
-        isTriggered = true;
-        StartCoroutine(ExampleCoroutine(isTriggered));
+        StartCoroutine(ExampleCoroutine(true));
         SwitchState(State.IsActive);
 
     }
     public override void OnReleaseCrystal() {
 
-        if (!isTriggered)
-            return;
-        else
-            isTriggered = false;
 
-        isActive = isTriggered;
-        golemAnim.SetBool("IsActivated", false);
+        connectedRifts--;
+
+        if (connectedRifts < 1) {
+            isActive = false;
+            golemAnim.SetBool("IsActivated", false);
+
+        }
 
     }
 }
