@@ -18,6 +18,14 @@ public class StaffBehaviour : MonoBehaviour {
     [Header("Animator parameters")]
     [SerializeField] string animUseMagicBool;
 
+    [FMODUnity.EventRef]
+    [SerializeField] string soundName;
+    FMOD.Studio.EventInstance soundEvent;
+
+    void Start(){
+        soundEvent = FMODUnity.RuntimeManager.CreateInstance (soundName);
+    }
+
     private void Update() {
 
         m_mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -39,6 +47,12 @@ public class StaffBehaviour : MonoBehaviour {
     }
 
     private void FireBeam() {
+
+        FMOD.Studio.PLAYBACK_STATE fmodPbState;
+        soundEvent.getPlaybackState(out fmodPbState);
+        if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
+            soundEvent.start();
+        }
 
         RaycastHit2D hit = Physics2D.Linecast(m_beamOrigin.position, m_mousePos, ~m_raycastIgnore.value);
 
@@ -79,7 +93,6 @@ public class StaffBehaviour : MonoBehaviour {
     public void StopFire() {
         m_IsFiring = false;
         m_animator.SetBool(animUseMagicBool, m_IsFiring);
-
         m_beam.SetActive(false);
 
         if (m_targetCrystal != null)
@@ -98,6 +111,7 @@ public class StaffBehaviour : MonoBehaviour {
             RiftManager.activeRift.ChangeTarget(snapTarget);
             m_targetCrystal = null;
 
+
         } else {
 
              if(m_targetCrystal != null)
@@ -106,6 +120,8 @@ public class StaffBehaviour : MonoBehaviour {
              m_targetCrystal = null;
 
         }
+
+        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{30edd2b6-2ab0-4941-a05a-77611ded74d4}">
+		<property name="assetPath">
+			<value>Karaktär brinner.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.4926757369614512</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2fb97137-dbcf-427a-aa97-6f7412c73597}</destination>
+		</relationship>
+	</object>
+</objects>
