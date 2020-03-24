@@ -1545,6 +1545,8 @@ GameObject:
   - component: {fileID: 1913308859}
   - component: {fileID: 1913308858}
   - component: {fileID: 1913308860}
+  - component: {fileID: 1913308862}
+  - component: {fileID: 1913308861}
   m_Layer: 13
   m_Name: Wall
   m_TagString: Walkable
