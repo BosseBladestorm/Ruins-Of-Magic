@@ -312,6 +312,7 @@ MonoBehaviour:
   m_beamStart: {fileID: 0}
   m_spriteRenderer: {fileID: 5342310894585871229}
   target: {x: 0, y: 0, z: 0}
+  isFullyScaled: 0
 --- !u!95 &1699979868
 Animator:
   serializedVersion: 3
@@ -694,7 +695,10 @@ MonoBehaviour:
   spawnEventPort: {fileID: 11400000, guid: bf15626372c6bb348a27c062fecd831b, type: 2}
   m_raycastIgnore:
     serializedVersion: 2
-    m_Bits: 2820
+    m_Bits: 1796
+  m_raycastIgnoreNoCrystal:
+    serializedVersion: 2
+    m_Bits: 772
   riftTransform: {fileID: 3032926930067405426}
   m_beam: {fileID: 185465150711252842}
   staff: {fileID: 0}

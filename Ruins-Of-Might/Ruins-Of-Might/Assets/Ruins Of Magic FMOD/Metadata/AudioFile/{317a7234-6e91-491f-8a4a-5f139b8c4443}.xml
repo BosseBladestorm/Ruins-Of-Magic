@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{317a7234-6e91-491f-8a4a-5f139b8c4443}">
+		<property name="assetPath">
+			<value>Fabrik Loop ver.2.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>122.18183673469387</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2fb97137-dbcf-427a-aa97-6f7412c73597}</destination>
+		</relationship>
+	</object>
+</objects>

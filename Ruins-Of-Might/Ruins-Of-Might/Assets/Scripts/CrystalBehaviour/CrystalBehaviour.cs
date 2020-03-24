@@ -26,8 +26,8 @@ public class CrystalBehaviour : CrystalBase {
 
     private void Update() {
 
-        if(connectedRifts > 0) {
-            Debug.Log(connectedRifts);
+        if (isTriggered) {
+            
             RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, m_beamMask.value);
 
             if (hit.transform == null)
@@ -51,36 +51,21 @@ public class CrystalBehaviour : CrystalBase {
    
     public override void OnTriggerCrystal() {
 
-        connectedRifts++;
-
-        if (connectedRifts >= 1)
+        if (isTriggered)
             return;
 
-        GrowBeam();
-
-    }
-
-    public override void OnTriggerCrystal(bool incrementConnectedRifts) {
-
-        if (connectedRifts >= 1)
-            return;
+        isTriggered = true;
 
         GrowBeam();
-
-        FMOD.Studio.PLAYBACK_STATE fmodPbState;
-        soundEvent.getPlaybackState(out fmodPbState);
-        if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
-            soundEvent.start();
-        }
 
     }
 
     public override void OnReleaseCrystal() {
 
-        connectedRifts--;
-
-        if (connectedRifts < 1)
+        if (!isTriggered)
             return;
+
+        isTriggered = false;
 
         ShrinkBeam();
         soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
