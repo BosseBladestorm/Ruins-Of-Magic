@@ -5,6 +5,7 @@ public class RiftManager : MonoBehaviour {
 
     [SerializeField] SpawnEventPortObject spawnEventPort = null;
     [SerializeField] LayerMask m_raycastIgnore;
+    [SerializeField] LayerMask m_raycastIgnoreNoCrystal;
     [SerializeField] Transform riftTransform;
     [SerializeField] MagicBeamBehaviour m_beam;
     static List<RiftManager> riftsInViewList = new List<RiftManager>();
@@ -64,10 +65,6 @@ public class RiftManager : MonoBehaviour {
                 m_beam.ResetBeam();
             }
 
-            foreach (RiftManager rift in riftsInViewList) {
-                Debug.Log(rift.name);
-            }
-
         }
 
     }
@@ -77,11 +74,12 @@ public class RiftManager : MonoBehaviour {
         if (activeRift == this) {
 
             m_beam.SetActive(true);
-        FMOD.Studio.PLAYBACK_STATE fmodPbState;
-        soundEvent.getPlaybackState(out fmodPbState);
-        if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
-            soundEvent.start();
-        }
+            FMOD.Studio.PLAYBACK_STATE fmodPbState;
+            soundEvent.getPlaybackState(out fmodPbState);
+
+            if(fmodPbState != FMOD.Studio.PLAYBACK_STATE.PLAYING){
+                soundEvent.start();
+            }
 
             m_RiftCycleCheck();
 
@@ -118,10 +116,9 @@ public class RiftManager : MonoBehaviour {
                     return;
                 }
 
-                RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, target.transform.position, ~m_raycastIgnore.value);
+                RaycastHit2D hit = Physics2D.Linecast(riftTransform.position, target.transform.position, ~m_raycastIgnoreNoCrystal.value);
 
                 if (hit.collider?.GetComponent<CrystalBase>()) {
-                    //Debug.DrawLine(transform.position, target.transform.position, Color.red);
                     m_beam.target = hit.transform.position;
 
                 } else {
@@ -136,7 +133,6 @@ public class RiftManager : MonoBehaviour {
         if (activeRift != this) {
 
             soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);           
-            m_beam.ResetBeam();
 
             foreach (Transform m in childsLarge) {
                 m.gameObject.SetActive(false);
@@ -180,7 +176,7 @@ public class RiftManager : MonoBehaviour {
         }
 
         target = newTarget;
-        newTarget.OnTriggerCrystal(false);
+        newTarget.OnTriggerCrystal();
 
     }
 
@@ -189,7 +185,11 @@ public class RiftManager : MonoBehaviour {
         if (riftsInViewList.Count <= 1)
             return;
 
-        m_beam.ResetBeam();
+        if(target == null) {
+            m_beam.ResetBeam();
+            m_beam.SetActive(false);
+        }
+
 
         riftIndex += step;
 

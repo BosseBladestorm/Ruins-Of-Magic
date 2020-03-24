@@ -59,7 +59,9 @@ public class FireBehaviour : BeamBase {
 
     IEnumerator ShrinkDoubleBeam() {
         yield return new WaitForSeconds(m_fireChild.pivot.localScale.x);
-        Destroy(m_fireChild.transform.parent.parent.gameObject);
+        /*  Destroy(m_fireChild.transform.parent.parent.gameObject);
+         *  */
+       firePrefab.SetActive(false);
         ScaleToPoint(pivot.position);
     }
 
@@ -73,9 +75,6 @@ public class FireBehaviour : BeamBase {
 
         if (isOrigin)
             if (collider.GetComponent<WindBehaviour>() != null) {
-
-
-                Debug.Log("asdftest");
 
                 RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position, beamTarget.position);
                 foreach (RaycastHit2D hit in hits) {
@@ -103,21 +102,25 @@ public class FireBehaviour : BeamBase {
     IEnumerator FireDelay(RaycastHit2D hit) {
 
         yield return new WaitForSeconds(1f);
-        Vector2 centerpoint = new Vector2(hit.transform.position.x, hit.point.y);
-        GameObject fire = Instantiate(firePrefab, transform.parent.parent);
-        fire.transform.position = centerpoint;
-        fire.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        /*  Vector2 centerpoint = new Vector2(hit.transform.position.x, hit.point.y);
+          GameObject fire = Instantiate(firePrefab, transform.parent.parent);
+          fire.transform.position = centerpoint;
+          fire.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
 
-        FireBehaviour fireBehaviour = fire.GetComponentInChildren<FireBehaviour>();
-        WindBehaviour windBehaviour = hit.transform.GetComponent<WindBehaviour>();
-        fireBehaviour.defaultFire.gameObject.SetActive(false);
-        fireBehaviour.firePt2.gameObject.SetActive(true);
-        fireBehaviour.isOrigin = false;
-        fireBehaviour.angle = windBehaviour.angle;
-        fireBehaviour.force = windBehaviour.force;
-        fireBehaviour.beamTarget = windBehaviour.beamTarget;
-        m_fireChild = fireBehaviour;
+          FireBehaviour fireBehaviour = fire.GetComponentInChildren<FireBehaviour>();
+          WindBehaviour windBehaviour = hit.transform.GetComponent<WindBehaviour>();
+          fireBehaviour.defaultFire.gameObject.SetActive(false);
+          fireBehaviour.firePt2.gameObject.SetActive(true);
+          fireBehaviour.isOrigin = false;
+          fireBehaviour.angle = windBehaviour.angle;
+          fireBehaviour.force = windBehaviour.force;
+          fireBehaviour.beamTarget = windBehaviour.beamTarget;
+          m_fireChild = fireBehaviour;*/
+
+        firePrefab.SetActive(true);
+        m_fireChild = firePrefab.GetComponent<FireBehaviour>();
+
 
     }
 
