@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: af8236a0630226044aea7ab809292591
+  - enabled: 1
+    path: Assets/Scenes/Animatic.unity
+    guid: b90476a6f34440f408a2e9ef009df994
+  - enabled: 1
+    path: Assets/Scenes/Edvins Scene.unity
+    guid: e16125b9b38a8544c90d921498e695ac
   m_configObjects: {}

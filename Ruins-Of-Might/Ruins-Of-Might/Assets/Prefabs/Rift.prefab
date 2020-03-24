@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 7626990396595820843}
   - component: {fileID: 5342310894585871229}
   - component: {fileID: 185465150711252842}
+  - component: {fileID: 1699979868}
   m_Layer: 2
   m_Name: MagicBeam
   m_TagString: Untagged
@@ -240,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 1021561006673515047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 3032926930067405426}
   m_RootOrder: 0
@@ -283,12 +284,13 @@ SpriteRenderer:
   m_SortingLayerID: 1404997073
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c8d7de827a352f243957eaad63a62e67, type: 3}
+  m_Sprite: {fileID: -3060074595652469834, guid: b54c15e520a91f64584320fa57be52f7,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 0.16, y: 0.45}
+  m_Size: {x: 0.25, y: 0.45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -307,8 +309,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_origin: {fileID: 3032926930067405426}
+  m_beamStart: {fileID: 0}
   m_spriteRenderer: {fileID: 5342310894585871229}
   target: {x: 0, y: 0, z: 0}
+  isFullyScaled: 0
+--- !u!95 &1699979868
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021561006673515047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 254aceae47bcb0a43bad0f850a9d96a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1730043486707070397
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +637,6 @@ GameObject:
   - component: {fileID: 3032926930067405426}
   - component: {fileID: 3032926930067405427}
   - component: {fileID: 3032926930067405424}
-  - component: {fileID: 2623622437182348944}
   m_Layer: 9
   m_Name: Rift
   m_TagString: Untagged
@@ -673,7 +695,10 @@ MonoBehaviour:
   spawnEventPort: {fileID: 11400000, guid: bf15626372c6bb348a27c062fecd831b, type: 2}
   m_raycastIgnore:
     serializedVersion: 2
-    m_Bits: 2820
+    m_Bits: 1796
+  m_raycastIgnoreNoCrystal:
+    serializedVersion: 2
+    m_Bits: 772
   riftTransform: {fileID: 3032926930067405426}
   m_beam: {fileID: 185465150711252842}
   staff: {fileID: 0}
@@ -684,29 +709,7 @@ MonoBehaviour:
   childsLarge:
   - {fileID: 5568277370778248314}
   - {fileID: 8835034266992685031}
---- !u!114 &2623622437182348944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3032926930067405425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Untagged
-  Event: event:/Rift Ambiance Pt2
-  PlayEvent: 5
-  StopEvent: 6
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  soundName: event:/Rift/Rift Ambiance
 --- !u!1 &3123369111267748902
 GameObject:
   m_ObjectHideFlags: 0

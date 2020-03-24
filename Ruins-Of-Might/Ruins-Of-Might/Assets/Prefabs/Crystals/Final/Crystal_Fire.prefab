@@ -134,6 +134,7 @@ MonoBehaviour:
   m_beamPivot: {fileID: 5877373466115567555}
   m_beam: {fileID: 1486354254433216326}
   m_defaultBeamTarget: {fileID: 2789472493099034783}
+  soundName: "event:/Eld kristall/Eld kristall p\xE5"
 --- !u!61 &5877373465880064636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227,40 +228,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2499302004650171840, guid: 5ecbc9d485b64dd4498af73f764b271d,
+    - target: {fileID: 4428158399789339655, guid: 5ecbc9d485b64dd4498af73f764b271d,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
+      propertyPath: m_LocalPosition.x
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1258097333012754247, guid: 5ecbc9d485b64dd4498af73f764b271d,
+    - target: {fileID: 4428158399789339655, guid: 5ecbc9d485b64dd4498af73f764b271d,
         type: 3}
-      propertyPath: m_SortingLayerID
-      value: -918960183
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258097333012754247, guid: 5ecbc9d485b64dd4498af73f764b271d,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1258097333012754247, guid: 5ecbc9d485b64dd4498af73f764b271d,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3345600355714139709, guid: 5ecbc9d485b64dd4498af73f764b271d,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -918960183
-      objectReference: {fileID: 0}
-    - target: {fileID: 3345600355714139709, guid: 5ecbc9d485b64dd4498af73f764b271d,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3345600355714139709, guid: 5ecbc9d485b64dd4498af73f764b271d,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 25
+      propertyPath: m_LocalPosition.y
+      value: 85.3
       objectReference: {fileID: 0}
     - target: {fileID: 5356302683733021531, guid: 5ecbc9d485b64dd4498af73f764b271d,
         type: 3}
@@ -278,15 +254,40 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5356302682229013707, guid: 5ecbc9d485b64dd4498af73f764b271d,
         type: 3}
-    - target: {fileID: 4428158399789339655, guid: 5ecbc9d485b64dd4498af73f764b271d,
+    - target: {fileID: 1258097333012754247, guid: 5ecbc9d485b64dd4498af73f764b271d,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
+      propertyPath: m_SortingLayerID
+      value: -918960183
       objectReference: {fileID: 0}
-    - target: {fileID: 4428158399789339655, guid: 5ecbc9d485b64dd4498af73f764b271d,
+    - target: {fileID: 1258097333012754247, guid: 5ecbc9d485b64dd4498af73f764b271d,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 85.3
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258097333012754247, guid: 5ecbc9d485b64dd4498af73f764b271d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345600355714139709, guid: 5ecbc9d485b64dd4498af73f764b271d,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -918960183
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345600355714139709, guid: 5ecbc9d485b64dd4498af73f764b271d,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345600355714139709, guid: 5ecbc9d485b64dd4498af73f764b271d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499302004650171840, guid: 5ecbc9d485b64dd4498af73f764b271d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ecbc9d485b64dd4498af73f764b271d, type: 3}

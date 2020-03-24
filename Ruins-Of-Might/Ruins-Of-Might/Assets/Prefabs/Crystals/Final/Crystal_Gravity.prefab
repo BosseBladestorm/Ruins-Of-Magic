@@ -19297,6 +19297,7 @@ MonoBehaviour:
   m_beamPivot: {fileID: 8860058176639417088}
   m_beam: {fileID: 8860058177804216667}
   m_defaultBeamTarget: {fileID: 996330755260480604}
+  soundName: "event:/Gravity kristall/Gravity Kristall P\xE5"
 --- !u!61 &8860058176337913535
 BoxCollider2D:
   m_ObjectHideFlags: 0

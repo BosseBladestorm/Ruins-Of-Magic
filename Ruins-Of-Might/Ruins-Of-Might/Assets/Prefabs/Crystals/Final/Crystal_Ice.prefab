@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425150384331023213}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2, y: 34.5, z: 0}
+  m_LocalPosition: {x: -0.8, y: -12.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6748727736430318483}
@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -667,7 +667,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 6.6888113, y: 67.35835, z: 1}
+    m_Scale: {x: 6.6888113, y: 18.160358, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4837,7 +4837,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4921,8 +4921,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   m_beamPivot: {fileID: 2273827788620507778}
-  m_beam: {fileID: 2273827789869201628}
+  m_beam: {fileID: 8489749127602679237}
   m_defaultBeamTarget: {fileID: 7541506414252453342}
+  soundName: "event:/Is kristall/Is kristall p\xE5"
 --- !u!61 &2273827788386121533
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4990,7 +4991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2273827789869201631}
   - component: {fileID: 2273827789869201629}
-  - component: {fileID: 2273827789869201628}
+  - component: {fileID: 8489749127602679237}
   - component: {fileID: 4188194482563285946}
   m_Layer: 8
   m_Name: Ice
@@ -5039,7 +5040,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.5276, y: 2.65}
   m_EdgeRadius: 0
---- !u!114 &2273827789869201628
+--- !u!114 &8489749127602679237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5048,7 +5049,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2273827789869201624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b4a41a49a6229428f18da93b4d8d62, type: 3}
+  m_Script: {fileID: 11500000, guid: bad955bd41c3db844bb2015880fb9b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 2273827788620507778}
@@ -5057,9 +5058,12 @@ MonoBehaviour:
   angle: 90
   isOrigin: 1
   beamTarget: {fileID: 7541506414252453342}
-  wind_particles: {fileID: 0}
-  wind_light: {fileID: 0}
-  wind_swirl: {fileID: 0}
+  tileA: {fileID: 0}
+  tileB: {fileID: 0}
+  tilemapName: 
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &4188194482563285946
 Rigidbody2D:
   serializedVersion: 4
@@ -5230,7 +5234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4593848050475662156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 37.3, z: 0}
+  m_LocalPosition: {x: -0.5, y: -11.4, z: 0}
   m_LocalScale: {x: 3.6504, y: 3.6504, z: 3.6504}
   m_Children: []
   m_Father: {fileID: 6748727736430318483}
@@ -5871,7 +5875,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 2.5568128, y: 22.017227, z: 1}
+    m_Scale: {x: 2.5568128, y: 5.247388, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -9992,7 +9996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7079578920632005720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 37.5, z: 0}
+  m_LocalPosition: {x: -0.5, y: -9.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6748727736430318483}
@@ -10633,7 +10637,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 9.544102, y: 80.46927, z: 1}
+    m_Scale: {x: 9.544102, y: 20.939331, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -14743,7 +14747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7541506414252453343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 105, z: 0}
+  m_LocalPosition: {x: -4.2, y: 52.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2273827790345766161}
@@ -14766,7 +14770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6748727736430318483
 Transform:
   m_ObjectHideFlags: 0
@@ -14775,7 +14779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8168520184729536967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 6.1, z: 0}
+  m_LocalPosition: {x: -1.4, y: 54.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3295868698358574495}

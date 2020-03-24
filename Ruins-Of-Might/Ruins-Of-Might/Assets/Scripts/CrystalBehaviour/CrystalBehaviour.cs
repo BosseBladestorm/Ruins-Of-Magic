@@ -15,20 +15,27 @@ public class CrystalBehaviour : CrystalBase {
     [SerializeField] BeamBase m_beam = null;
     [SerializeField] Transform m_defaultBeamTarget;
 
+    [FMODUnity.EventRef]
+    [SerializeField] string soundName;
+    FMOD.Studio.EventInstance soundEvent;
+
     private void Start() {
         m_beamPivot.gameObject.SetActive(false);
-
+        soundEvent = FMODUnity.RuntimeManager.CreateInstance (soundName);
     }
 
     private void Update() {
 
-        RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, m_beamMask.value);
+        if (isTriggered) {
+            
+            RaycastHit2D hit = Physics2D.Linecast(m_beamPivot.position, m_defaultBeamTarget.position, m_beamMask.value);
 
-        if(isTriggered)
             if (hit.transform == null)
                 m_beam.ScaleToPoint(m_defaultBeamTarget.position);
             else
                 m_beam.ScaleToPoint(new Vector2(hit.point.x - 25f, hit.point.y - 25f));
+
+        }
 
     }
 
@@ -46,8 +53,8 @@ public class CrystalBehaviour : CrystalBase {
 
         if (isTriggered)
             return;
-        else
-            isTriggered = true;
+
+        isTriggered = true;
 
         GrowBeam();
 
@@ -57,10 +64,11 @@ public class CrystalBehaviour : CrystalBase {
 
         if (!isTriggered)
             return;
-        else
-            isTriggered = false;
+
+        isTriggered = false;
 
         ShrinkBeam();
+        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
     }
 
