@@ -93,7 +93,6 @@ public class StaffBehaviour : MonoBehaviour {
     public void StopFire() {
         m_IsFiring = false;
         m_animator.SetBool(animUseMagicBool, m_IsFiring);
-
         m_beam.SetActive(false);
 
         if (m_targetCrystal != null)
@@ -111,6 +110,7 @@ public class StaffBehaviour : MonoBehaviour {
         if (snapTarget != null) {
             RiftManager.activeRift.ChangeTarget(snapTarget);
             m_targetCrystal = null;
+
 
         } else {
 

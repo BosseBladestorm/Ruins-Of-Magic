@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WindBehaviour : BeamBase {
 
-    [SerializeField] ParticleSystem ice_particles;
-    [SerializeField] ParticleSystem ice_light;
-    [SerializeField] ParticleSystem ice_swirl;
+    [SerializeField] ParticleSystem wind_particles;
+    [SerializeField] ParticleSystem wind_light;
+    [SerializeField] ParticleSystem wind_swirl;
 
     private void Update() {
         BaseUpdate();
@@ -25,15 +25,15 @@ public class WindBehaviour : BeamBase {
         float dist = Vector2.Distance(pivot.position, point);
         float newLifeTime;
 
-        psMain = ice_particles.main;
+        psMain = wind_particles.main;
         newLifeTime = dist / 40f;
         psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.7f, newLifeTime * 0.9f);
 
-        psMain = ice_light.main;
+        psMain = wind_light.main;
         newLifeTime = dist / 28.5f;
         psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.5f, newLifeTime * 0.25f);
 
-        psMain = ice_swirl.main;
+        psMain = wind_swirl.main;
         newLifeTime = dist / 28.5f;
         psMain.startLifetime = new ParticleSystem.MinMaxCurve(newLifeTime * 0.5f, newLifeTime * 0.33f * 0.5f);
 
