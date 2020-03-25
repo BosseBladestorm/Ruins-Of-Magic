@@ -4499,24 +4499,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &3720876388864074014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Kristall.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Kristall.bank
-  SubDir: 
-  lastModified: 637206424368330273
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &3780718929921430232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5028,7 +5010,7 @@ MonoBehaviour:
   lastModified: 637206599720963274
   LoadResult: 0
   FileSizes: []
-  Exists: 0
+  Exists: 1
 --- !u!114 &4915179745141262679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5316,7 +5298,7 @@ MonoBehaviour:
   lastModified: 637206599720733894
   LoadResult: 0
   FileSizes: []
-  Exists: 0
+  Exists: 1
 --- !u!114 &5688449618296639958
 MonoBehaviour:
   m_ObjectHideFlags: 0
