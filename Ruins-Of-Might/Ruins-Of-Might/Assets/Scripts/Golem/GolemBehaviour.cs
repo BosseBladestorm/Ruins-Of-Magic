@@ -261,25 +261,24 @@ public class GolemBehaviour : CrystalBase
     public override void OnTriggerCrystal() {
 
 
-        connectedRifts++;
-
-        if (connectedRifts >= 1)
+        if (isTriggered)
             return;
 
-        StartCoroutine(ExampleCoroutine(true));
+        isTriggered = true;
+
+        StartCoroutine(ExampleCoroutine(isTriggered));
         SwitchState(State.IsActive);
 
     }
     public override void OnReleaseCrystal() {
 
+        if (!isTriggered)
+            return;
 
-        connectedRifts--;
-
-        if (connectedRifts < 1) {
-            isActive = false;
-            golemAnim.SetBool("IsActivated", false);
-
-        }
+        isTriggered = false;
+        isActive = isTriggered;
+        golemAnim.SetBool("IsActivated", false);
 
     }
+
 }
