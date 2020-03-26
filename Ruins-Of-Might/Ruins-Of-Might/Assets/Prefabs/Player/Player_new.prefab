@@ -99,6 +99,7 @@ MonoBehaviour:
   m_beamStart: {fileID: 4298702391076559161}
   m_spriteRenderer: {fileID: 3812172144750931886}
   target: {x: 0, y: 0, z: 0}
+  isFullyScaled: 0
 --- !u!95 &3233995516149821003
 Animator:
   serializedVersion: 3
@@ -342,9 +343,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1678790052448529602}
   - component: {fileID: -4074289844650894715}
-  - component: {fileID: -4358751324323690078}
   - component: {fileID: -1944040481424624275}
   - component: {fileID: -3017377226511319710}
+  - component: {fileID: 3765852370022385553}
   m_Layer: 2
   m_Name: Player_new
   m_TagString: Player
@@ -381,32 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecee74f6b41b42548849c52d38b36ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &-4358751324323690078
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9204194100324227527}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.60327244, y: 5.160756}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.753704, y: 9.530296}
-  m_EdgeRadius: 0
 --- !u!50 &-1944040481424624275
 Rigidbody2D:
   serializedVersion: 4
@@ -440,9 +415,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b8160b8f00b8a46a67e59d53c17b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 50
+  m_speed: 65
   m_jumpForce: 90
   m_burnDuration: 1.5
+  m_drownDuration: 1.5
   m_velocity: {x: 0, y: 0}
   m_transform: {fileID: 1678790052448529602}
   m_rigidbody: {fileID: -1944040481424624275}
@@ -455,6 +431,23 @@ MonoBehaviour:
   animGroundedBool: Grounded
   animWindBool: Flying
   animFireBool: Burning
+  animDrownBool: Drowning
+--- !u!70 &3765852370022385553
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204194100324227527}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 6804d961a64abdb4ca3a5baefe30ea00, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.59863424, y: 5.6659303}
+  m_Size: {x: 5.5238004, y: 10.414313}
+  m_Direction: 0
 --- !u!1001 &3445593636904235051
 PrefabInstance:
   m_ObjectHideFlags: 0

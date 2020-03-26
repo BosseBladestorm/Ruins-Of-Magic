@@ -15,7 +15,8 @@ MonoBehaviour:
   Path: "event:/Karakt\xE4r/Plask"
   guid: 22e3893ec737654894c8578773615344
   Banks:
-  - {fileID: -8296157183524219373}
+  - {fileID: -5304534767011900993}
+  - {fileID: 872634644870544726}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -38,7 +39,8 @@ MonoBehaviour:
   Path: event:/Music/Animatic
   guid: 0feaf5cb0b959b43b1b85630d9292a44
   Banks:
-  - {fileID: 9110611651742909850}
+  - {fileID: 5310143975169004111}
+  - {fileID: -5339064633832118301}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -271,6 +273,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8368041592715068893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Multi.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Multi.bank
+  SubDir: 
+  lastModified: 637207289576497257
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8310549020494837056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +306,8 @@ MonoBehaviour:
   Path: event:/Music/Fabrik Loop
   guid: 0b188ed019a50841b0e5d6fdb1c903ab
   Banks:
-  - {fileID: 1780347454679270586}
+  - {fileID: 1904879182122640343}
+  - {fileID: 960031414911899368}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -474,6 +495,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-7845671714209780132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambiance.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Ambiance.bank
+  SubDir: 
+  lastModified: 637207289575968679
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7802517336108101019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +546,8 @@ MonoBehaviour:
   Path: "event:/Eld kristall/Eld kristall p\xE5"
   guid: 9745cdf5e08b6e4d905da3ce740a0ef9
   Banks:
-  - {fileID: -7552291049425328104}
+  - {fileID: 3415392358005882162}
+  - {fileID: 3556592039707056263}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -822,7 +862,8 @@ MonoBehaviour:
   Path: event:/Golem/Golem Steg
   guid: b5f3a1bd9035f74cadbb4a14aa16ea37
   Banks:
-  - {fileID: -3654295059014708387}
+  - {fileID: 2778817262287508133}
+  - {fileID: -8368041592715068893}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -976,7 +1017,8 @@ MonoBehaviour:
   Path: "event:/Karakt\xE4r/Land 2"
   guid: 9ae8b03608835146857c0734608052db
   Banks:
-  - {fileID: 9110611651742909850}
+  - {fileID: 5310143975169004111}
+  - {fileID: -5339064633832118301}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1021,7 +1063,8 @@ MonoBehaviour:
   Path: "event:/Karakt\xE4r/Fotsteg"
   guid: add2c55cdbb8b24ebc8a6a53f1cc4ccd
   Banks:
-  - {fileID: -3654295059014708387}
+  - {fileID: 2778817262287508133}
+  - {fileID: -8368041592715068893}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1232,7 +1275,8 @@ MonoBehaviour:
   Path: event:/Music/Fabrik Loop ver.2
   guid: 6a491c8988d7724d8aef5f52c4b75ca8
   Banks:
-  - {fileID: 1780347454679270586}
+  - {fileID: 1904879182122640343}
+  - {fileID: 960031414911899368}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1568,6 +1612,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5726868634622834423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambiance.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Ambiance.bank
+  SubDir: 
+  lastModified: 637207289575968679
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5681476876393376696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1673,7 +1735,8 @@ MonoBehaviour:
   Path: "event:/Karakt\xE4r/Jump 1"
   guid: 1a9bf00730d4234fb1b5cac650501d7e
   Banks:
-  - {fileID: 9110611651742909850}
+  - {fileID: 5310143975169004111}
+  - {fileID: -5339064633832118301}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1714,7 +1777,8 @@ MonoBehaviour:
   Path: event:/Music/Credits
   guid: baf1b2337351d14181b965185480ee2e
   Banks:
-  - {fileID: 9110611651742909850}
+  - {fileID: 5310143975169004111}
+  - {fileID: -5339064633832118301}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1740,6 +1804,42 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5339064633832118301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637207289576487286
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5304534767011900993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Oneshots.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Oneshots.bank
+  SubDir: 
+  lastModified: 637207289576507240
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5297188479841309679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,7 +2116,8 @@ MonoBehaviour:
   Path: event:/Is kristall/Vatten fryser till is
   guid: 372401c8ffce5748bf8ab35c0b4a60c6
   Banks:
-  - {fileID: -8296157183524219373}
+  - {fileID: -5304534767011900993}
+  - {fileID: 872634644870544726}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2075,7 +2176,8 @@ MonoBehaviour:
   Path: "event:/Karakt\xE4r/Karakt\xE4r brinner"
   guid: d7d104ba70a89c4d92ed341e4fa50a88
   Banks:
-  - {fileID: -8296157183524219373}
+  - {fileID: -5304534767011900993}
+  - {fileID: 872634644870544726}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2281,6 +2383,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-3632306420386648477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Rift.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Rift.bank
+  SubDir: 
+  lastModified: 637206422033729864
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3594392854635497755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2350,7 +2470,8 @@ MonoBehaviour:
   Path: "event:/Karakt\xE4r/Beam Ambiance"
   guid: 2f02a1e897086146b4b2f85bac043e71
   Banks:
-  - {fileID: 1780347454679270586}
+  - {fileID: 1904879182122640343}
+  - {fileID: 960031414911899368}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2941,7 +3062,8 @@ MonoBehaviour:
   Path: "event:/Vind kristall/Flytta p\xE5 l\xE5da"
   guid: a5ca21d3dcd179488a64fcc2574f702f
   Banks:
-  - {fileID: 1780347454679270586}
+  - {fileID: 1904879182122640343}
+  - {fileID: 960031414911899368}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2987,7 +3109,8 @@ MonoBehaviour:
   Path: "event:/Is kristall/Is kristall p\xE5"
   guid: 8fc840fea5015b49a427fa9268fbf9bf
   Banks:
-  - {fileID: -7552291049425328104}
+  - {fileID: 3415392358005882162}
+  - {fileID: 3556592039707056263}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3420,13 +3543,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 2122916607960194078}
-  - {fileID: 2171586572029334473}
-  - {fileID: -7552291049425328104}
-  - {fileID: 1780347454679270586}
-  - {fileID: 9110611651742909850}
-  - {fileID: -3654295059014708387}
-  - {fileID: -8296157183524219373}
-  - {fileID: 4767420123042781879}
+  - {fileID: -5726868634622834423}
+  - {fileID: 3556592039707056263}
+  - {fileID: 960031414911899368}
+  - {fileID: -5339064633832118301}
+  - {fileID: -8368041592715068893}
+  - {fileID: 872634644870544726}
+  - {fileID: -3632306420386648477}
   EditorEvents:
   - {fileID: 3958100704385922088}
   - {fileID: 6854439438145411669}
@@ -3453,11 +3576,29 @@ MonoBehaviour:
   - {fileID: 7195552222088217513}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 9110611651742909850}
+  - {fileID: -5339064633832118301}
   StringsBanks:
   - {fileID: 2122916607960194078}
-  stringsBankWriteTime: 637206714815830571
+  stringsBankWriteTime: 637207289576487286
   cacheVersion: 3
+--- !u!114 &11691929226992866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Rift.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Rift.bank
+  SubDir: 
+  lastModified: 637206422033729864
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &17129583453655773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3629,7 +3770,8 @@ MonoBehaviour:
   Path: "event:/Gravity kristall/Gravity Kristall P\xE5"
   guid: 8ed50abb4e82b04bbccc4492031f3b3b
   Banks:
-  - {fileID: -7552291049425328104}
+  - {fileID: 3415392358005882162}
+  - {fileID: 3556592039707056263}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3709,6 +3851,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &872634644870544726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Oneshots.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Oneshots.bank
+  SubDir: 
+  lastModified: 637207289576507240
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &917899768625396032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3749,6 +3909,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 122181
+--- !u!114 &960031414911899368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Loops.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Loops.bank
+  SubDir: 
+  lastModified: 637207289576397534
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &990242072548942921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3764,7 +3942,8 @@ MonoBehaviour:
   Path: "event:/Eld kristall/Tr\xE4 brinner upp direkt"
   guid: bacb600d77cb5241b0bd31aa128f3173
   Banks:
-  - {fileID: -8296157183524219373}
+  - {fileID: -5304534767011900993}
+  - {fileID: 872634644870544726}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4006,6 +4185,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &1904879182122640343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Loops.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Loops.bank
+  SubDir: 
+  lastModified: 637207289576397534
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1976205751419018087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4092,7 +4289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637206714815830571
+  lastModified: 637207289576487286
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -4265,6 +4462,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2778817262287508133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Multi.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Multi.bank
+  SubDir: 
+  lastModified: 637207289576497257
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2900305103635140289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4391,6 +4606,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3415392358005882162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Kristall.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Kristall.bank
+  SubDir: 
+  lastModified: 637207289575998596
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3439106176690301089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4445,6 +4678,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3556592039707056263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Kristall.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Kristall.bank
+  SubDir: 
+  lastModified: 637207289575998596
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3585017821320379612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4514,7 +4765,8 @@ MonoBehaviour:
   Path: event:/Vatten/Vatten Ambiance
   guid: a4e2473b9628d440a14e8aed8d75d718
   Banks:
-  - {fileID: 2171586572029334473}
+  - {fileID: -7845671714209780132}
+  - {fileID: -5726868634622834423}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -4573,7 +4825,8 @@ MonoBehaviour:
   Path: event:/Rift/Rift Ambiance
   guid: bc0667a2c61b3d4582bed0c4f849d78d
   Banks:
-  - {fileID: 4767420123042781879}
+  - {fileID: 11691929226992866}
+  - {fileID: -3632306420386648477}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -4614,8 +4867,10 @@ MonoBehaviour:
   Path: event:/Ambiance/Ambiance
   guid: 0f2f63782d98e5419acada079c5072d4
   Banks:
-  - {fileID: 2171586572029334473}
-  - {fileID: 9110611651742909850}
+  - {fileID: -7845671714209780132}
+  - {fileID: 5310143975169004111}
+  - {fileID: -5726868634622834423}
+  - {fileID: -5339064633832118301}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -4710,7 +4965,8 @@ MonoBehaviour:
   Path: "event:/D\xF6rr/D\xF6rr"
   guid: c970db337d4fd949b7252b3c387f4412
   Banks:
-  - {fileID: -8296157183524219373}
+  - {fileID: -5304534767011900993}
+  - {fileID: 872634644870544726}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5191,6 +5447,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &5310143975169004111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ruins Of Magic FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637207289576487286
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5325180912331042525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5787,7 +6061,8 @@ MonoBehaviour:
   Path: event:/Vind kristall/Vind Kristall
   guid: 4ded1ee6f3419a41b755036f5ba3ae73
   Banks:
-  - {fileID: -7552291049425328104}
+  - {fileID: 3415392358005882162}
+  - {fileID: 3556592039707056263}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -5990,7 +6265,8 @@ MonoBehaviour:
   Path: event:/Music/Goal
   guid: 72b52c153ff7914fb379cc2ef4045677
   Banks:
-  - {fileID: -8296157183524219373}
+  - {fileID: -5304534767011900993}
+  - {fileID: 872634644870544726}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

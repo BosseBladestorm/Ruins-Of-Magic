@@ -7,8 +7,23 @@ public class IceBehaviour : BeamBase {
 
     [SerializeField] string waterName;
     [SerializeField] GameObject icePre;
+    [SerializeField] GameObject particles;
 
     private int nrChild;
+
+    public override void ShrinkBeam() {
+        base.ShrinkBeam();
+
+        particles.SetActive(false);
+
+    }
+
+    public override void ScaleToPoint(Vector3 point) {
+        base.ScaleToPoint(point);
+
+        particles.SetActive(true);
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collider) {
 
@@ -19,15 +34,10 @@ public class IceBehaviour : BeamBase {
 
             for (int i = 0; i < nrChild; i++) {
 
-                Transform go = collider.transform.GetChild(0);
+                Transform go = collider.transform.GetChild(i);
                 pos[i] = go.transform.position;
-                Destroy(go);
-
-            }
-
-            for (int i = 0; i < pos.Length; i++) {
-
-                Instantiate(icePre, pos[i], Quaternion.identity);
+                Destroy(go.gameObject);
+                Instantiate(icePre, pos[i], Quaternion.identity, collider.transform);
 
             }
         }

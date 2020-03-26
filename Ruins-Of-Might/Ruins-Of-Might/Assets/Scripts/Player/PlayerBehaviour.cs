@@ -8,6 +8,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] float m_speed = 10f;
     [SerializeField] float m_jumpForce = 50f;
     [SerializeField] float m_burnDuration = 1.5f;
+    [SerializeField] float m_drownDuration = 1.5f;
 
     [SerializeField] Vector2 m_velocity;
 
@@ -24,7 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public StaffBehaviour staff = null;
 
-    private bool m_isBurning = false;
+    private bool m_isPacified = false;
     private float m_runToIdleTime;
     private float m_runToIdleSensitivity = 0.1f;
 
@@ -34,6 +35,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] string animGroundedBool;
     [SerializeField] string animWindBool;
     [SerializeField] string animFireBool;
+    [SerializeField] string animDrownBool;
 
     void Start() {
         if (m_rigidbody == null) {
@@ -49,7 +51,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update() {
 
-        if (m_isBurning)
+        if (m_isPacified)
             return;
 
         if (Input.GetKeyDown(KeyCode.Space) && m_groundCheck.isGrounded || Input.GetKeyDown(KeyCode.W) && m_groundCheck.isGrounded) {
@@ -104,12 +106,24 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Burn() {
         m_animator.SetBool(animFireBool, true);
-        m_isBurning = true;
+        m_isPacified = true;
         StartCoroutine(BurnEnum());
     }
 
     public IEnumerator BurnEnum() {
         yield return new WaitForSeconds(m_burnDuration);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+
+    public void Drown() {
+        m_animator.SetBool(animDrownBool, true);
+        m_isPacified = true;
+        StartCoroutine(DrownEnum());
+    }
+
+    public IEnumerator DrownEnum() {
+        yield return new WaitForSeconds(m_drownDuration);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

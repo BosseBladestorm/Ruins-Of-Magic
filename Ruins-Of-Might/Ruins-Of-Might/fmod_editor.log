@@ -2,15 +2,12 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20007 (107206), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=192000, nAvgBytesPerSec=6144000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 16384 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[WRN] SystemI::init                            : Output requires a sample rate of 192000Hz, resampling will occur.
-[LOG] DownMix::init                            : dspbuffersize: 1024  rate: 48000. output speaker mode: 7, input speaker mode 3
-[LOG] DownMix::init                            : done.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001E2BC691EC8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000023886DDD8B8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,8 +15,99 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1782816
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 8768
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000095E0C8EE7C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA22808630
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA22808600
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA22808700
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA228087C0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000023898895A48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jump 1', format=2, channels=2, frequency=48000, lengthbytes=2944, lengthpcm=59122, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.300781.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] SystemI::createSound                     : filename = Assets\Ruins Of Magic FMOD\Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000023886712DE8 : node = 00000238D37E28B0
+[LOG] SystemI::createSound                     : add node to async list : head = 00000238E23BF9D8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000023886712DE8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\Ruins Of Magic FMOD\Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1782816
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 8768
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000238D37E29C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Vind Ambiance', format=2, channels=2, frequency=48000, lengthbytes=114784, lengthpcm=456000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.046356.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000023886712DE8
+[LOG] SoundI::getSubSound                      : sound 0000023886712DE8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Vind Ambiance (00000238FCA0C3C8)
+[LOG] SoundI::release                          :     Vind Ambiance (00000238E23C10E8)
+[LOG] SoundI::release                          :     Vind Ambiance (00000238FCA0CA88)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] SoundI::release                          :  (00000238F51B8AA8)
+[LOG] SoundI::release                          :     Beam Ambiance (00000238983DD228)
+[LOG] SoundI::release                          :  (0000023887206648)
+[LOG] SoundI::release                          :     Vind Kristall (00000238E23C08C8)
+[LOG] SoundI::release                          : Vind Ambiance (0000023886712DE8)
+[LOG] SoundI::release                          :     Vind Ambiance (00000238983DA648)
+[LOG] SoundI::release                          :     Vind Ambiance (00000238FEEEA528)
+[LOG] SoundI::release                          : Fabrik Loop (00000238FEB08CC8)
+[LOG] SoundI::release                          :     Fabrik Loop (00000238E23C27A8)
+[LOG] SoundI::release                          :     Fabrik Loop (00000238FEB082A8)
+[LOG] SoundI::release                          : Rift Ambiance (00000238FCA0D658)
+[LOG] SoundI::release                          :     Rift Ambiance (00000238983DC1E8)
+[LOG] SoundI::release                          :     Rift Ambiance (00000238FCA0D9B8)
+[LOG] SoundI::release                          :  (0000023886901BB8)
+[LOG] SoundI::release                          :     Bankande 2 (00000238E23C03E8)
+[LOG] SoundI::release                          :  (00000238869018D8)
+[LOG] SoundI::release                          :     Bankande 4 (00000238E23C1AA8)
+[LOG] SoundI::release                          :  (00000238869015F8)
+[LOG] SoundI::release                          :     Bankande (00000238E23C15C8)
+[LOG] SoundI::release                          :  (0000023886900EC8)
+[LOG] SoundI::release                          :     Random rubble (00000238E23C0728)
+[LOG] SoundI::release                          :  (00000238F51B7968)
+[LOG] SoundI::release                          :     Jump 1 (00000238983DA168)
+[LOG] SoundI::release                          :  (0000023886901768)
+[LOG] SoundI::release                          :     Land 2 (00000238E23BFA28)
+[LOG] SoundI::release                          :  (0000023887205398)
+[LOG] SoundI::release                          :     Eld kristall på (00000238E23C0DA8)
+[LOG] SoundI::release                          :  (0000023887205DA8)
+[LOG] SoundI::release                          :     Is kristall på (00000238E23C2468)
+[LOG] SoundI::release                          :  (00000238D3600528)
+[LOG] SoundI::release                          :     Walk cave7 (00000238983DC868)
+[LOG] SoundI::release                          :  (00000238E1FD1458)
+[LOG] SoundI::release                          :     Walk cave8 (00000238983DD708)
+[LOG] SoundI::release                          :  (00000238E1FD1738)
+[LOG] SoundI::release                          :     Walk cave1 (00000238983DCEE8)
+[LOG] SoundI::release                          :  (00000238FE876368)
+[LOG] SoundI::release                          :     Walk cave2 (00000238983DB1A8)
+[LOG] SoundI::release                          :  (0000023887206D78)
+[LOG] SoundI::release                          :     Walk cave3 (00000238E23C1C48)
+[LOG] SoundI::release                          :  (0000023887205AC8)
+[LOG] SoundI::release                          :     Walk cave4 (00000238983DBEA8)
+[LOG] SoundI::release                          :  (00000238872061F8)
+[LOG] SoundI::release                          :     Walk cave5 (00000238983DB008)
+[LOG] SoundI::release                          :  (00000238E1FD1CF8)
+[LOG] SoundI::release                          :     Walk cave6 (00000238983DA4A8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
@@ -36,4 +124,6 @@
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

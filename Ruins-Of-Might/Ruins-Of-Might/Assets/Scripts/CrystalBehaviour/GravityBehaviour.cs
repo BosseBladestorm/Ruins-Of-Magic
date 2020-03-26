@@ -26,15 +26,15 @@ public class GravityBehaviour : BeamBase {
         float newLifeTime;
 
         psMain = gravity_lightning.main; 
-        newLifeTime = dist / 22f;
+        newLifeTime = dist / 20f;
         psMain.startLifetime = newLifeTime;
 
         psMain = gravity_vortex.main;
-        newLifeTime = dist / 47f;
+        newLifeTime = dist / 50f;
         psMain.startLifetime = newLifeTime;
 
         psMain = gravity_dots.main;
-        newLifeTime = dist / 47f;
+        newLifeTime = dist / 50f;
         psMain.startLifetime = newLifeTime;
 
     }
